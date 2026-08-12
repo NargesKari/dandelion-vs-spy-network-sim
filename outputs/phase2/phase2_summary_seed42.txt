@@ -1,11 +1,11 @@
 === PHASE 2 SIMULATION RESULTS (Seed: 42) ===
 Nodes = 30, Bribed spies = 9 (n0, n1, n13, n19, n2, n22, n25, n7, n8)
-Total packets = 200, Observed by >=1 spy = 123
+Total packets = 200, Observed by >=1 spy = 136
 
 --- ACCURACY ---
-Baseline : 0.365
-Proposed : 0.365
+Baseline : 0.345
+Proposed : 0.300
 
 --- ADVERSARY SCORE (Score_adv) ---
-Baseline : 0.0406
-Proposed : 0.0406
+Baseline : 0.0383
+Proposed : 0.0333

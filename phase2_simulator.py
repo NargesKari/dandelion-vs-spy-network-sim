@@ -40,10 +40,10 @@ def run_phase2(seed: int, num_packets: int = 200, budget_fraction: float = 0.3,
         num_packets=num_packets, 
         log_path=log_path, 
         topology_seed=seed, 
-        spy_ids=spy_ids  # Pass the spy list
+        spy_ids=spy_ids 
     )
 
-    result = evaluate_attack_all_methods(log_path, spy_ids)
+    result = evaluate_attack_all_methods(log_path, spy_ids, topo=topo)
     return topo, spy_ids, result
 
 

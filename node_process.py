@@ -1,40 +1,41 @@
 """
-لایه شبکه گره: هر گره یک پردازه مستقل با یک سوکت UDP روی localhost است
-(طبق بخش ۱-۱ صورت پروژه)، با asyncio.DatagramProtocol برای I/O ناهمزمان.
+Node network layer: Each node is an independent process with a UDP socket 
+on localhost (as per project phase 1-1), using asyncio.DatagramProtocol 
+for asynchronous I/O.
 
-این ماژول حالا دو حالت فوروارد را پشتیبانی می‌کند (با پارامتر stem_p):
+This module now supports two forwarding modes (via the stem_p parameter):
 
-  - stem_p=None  -> حالت فاز ۱/۲: Flood ساده (به همه همسایه‌ها بجز فرستنده)
-  - stem_p=<0..1> -> حالت فاز ۳ به بعد: Dandelion (Stem تک‌مسیره + Fluff = Flood)
+  - stem_p=None  -> Phase 1/2 mode: Simple Flood (to all neighbors except sender)
+  - stem_p=<0..1> -> Phase 3+ mode: Dandelion (Single-path Stem + Fluff = Flood)
 
-منطق Dandelion (طبق صورت پروژه):
-  - مبدأ فقط به یک همسایه‌ی تصادفی می‌فرستد (STEM)، بدون قید و شرط.
-  - هر گره‌ی بعدی که یک بسته STEM دریافت می‌کند: با احتمال p در حالت
-    Stem می‌ماند و به یک همسایه‌ی تصادفیِ دیگر (غیر از فرستنده) می‌فرستد؛
-    با احتمال 1-p (یا اگر همسایه واجد شرایطی نماند)، بسته به FLUFF تبدیل
-    می‌شود و از همان‌جا مثل فاز ۱ به همه‌ی همسایه‌ها (به‌جز فرستنده) پخش
-    می‌شود.
-  - بسته‌ی FLUFF از همان لحظه‌ی تبدیل، مثل Flood ساده رفتار می‌کند.
+Dandelion logic (as per project specifications):
+  - The origin sends only to one random neighbor (STEM), unconditionally.
+  - Any subsequent node that receives a STEM packet: with probability p, it 
+    stays in the Stem state and forwards to another random neighbor (excluding 
+    the sender); with probability 1-p (or if no eligible neighbor remains), 
+    the packet transitions to FLUFF and is broadcast from there to all 
+    neighbors (excluding the sender) just like Phase 1.
+  - A FLUFF packet behaves exactly like a simple Flood from the moment of transition.
 
-پروتکل پیام روی UDP (JSON):
-  {"type": "PKT", "packet_id": "...", "state": "STEM"|"FLUFF"}   -> بسته شبکه
-  {"type": "INJECT", "packet_id": "..."}                          -> دستور کنترلی: این گره مبدأ بسته است
-  {"type": "SHUTDOWN"}                                            -> دستور کنترلی: پایان شبیه‌سازی
+Message protocol over UDP (JSON):
+  {"type": "PKT", "packet_id": "...", "state": "STEM"|"FLUFF"}   -> Network packet
+  {"type": "INJECT", "packet_id": "..."}                          -> Control cmd: this node is the origin
+  {"type": "SHUTDOWN"}                                            -> Control cmd: end simulation
 
-فاز ۵ — تأخیر عمدی گره‌های جاسوس:
-  اگر is_spy=True باشد، این گره پیش از هر ارسال (برای هر همسایه، جدا از
-  بقیه) یک تأخیر عمدی اضافی U(0, delay_base_ms همان لینک) اعمال می‌کند؛
-  یعنی سقف تأخیر عمدی دقیقاً برابر تأخیر پایه‌ی همان لینک است (طبق بخش
-  ۲-۲-ج صورت پروژه). این تأخیر:
-    - هرگز باعث حذف یا نگهداری نامحدود بسته نمی‌شود (فقط دیرتر ارسال
-      می‌شود، ارسال هنوز تضمینی است).
-    - از یک RNG کاملاً جدا (spy_rng، با seed مستقل از rng اصلی گره)
-      گرفته می‌شود؛ به این ترتیب فعال/غیرفعال بودن تأخیر جاسوسی هیچ
-      تأثیری روی توالی جیتر لینک یا سکه‌ی Stem/Fluff گره‌ها نمی‌گذارد و
-      مقایسه‌ی «با تأخیر» در برابر «بدون تأخیر» با seed یکسان کاملاً
-      کنترل‌شده باقی می‌ماند (تنها متغیر مستقل، خودِ تأخیر عمدی است).
-    - در لاگ مرجع با رویداد "spy_delay" ثبت می‌شود تا در گزارش قابل
-      تحلیل باشد (میانگین تأخیر اعمالی، تأثیر بر ترتیب مشاهدات و غیره).
+Phase 5 — Intentional delay by spy nodes:
+  If is_spy=True, this node applies an additional intentional delay of 
+  U(0, delay_base_ms of that specific link) before any transmission (for 
+  each neighbor independently); meaning the maximum intentional delay is 
+  exactly equal to the base delay of that link. This delay:
+    - Never causes packets to be dropped or held indefinitely (it is only 
+      delayed, delivery is still guaranteed).
+    - Is drawn from a completely isolated RNG (spy_rng, with an independent 
+      seed from the node's main rng); thus, enabling/disabling the spy delay 
+      has absolutely no effect on the link jitter sequence or the node's 
+      Stem/Fluff coin tosses. Comparing "with delay" vs "without delay" 
+      using the same seed remains perfectly controlled.
+    - Is recorded in the reference log with a "spy_delay" event for analysis 
+      in the report (average applied delay, effect on observation order, etc.).
 """
 
 import asyncio
@@ -70,12 +71,12 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
         self.log_path = log_path
         self.rng = rng
         self.loop = loop
-        self.stem_p = stem_p  # None => فاز ۱/۲ (flood)؛ float => فاز ۳+ (dandelion)
+        self.stem_p = stem_p  # None => phase 1/2 (flood); float => phase 3+ (dandelion)
         self.lock = lock
         self.transport = None
-        # فاز ۵: آیا این گره جاسوس است و مجاز به اعمال تأخیر عمدی هست؟
+        # Phase 5: Is this node a spy and permitted to apply intentional delay?
         self.is_spy = is_spy
-        self.spy_rng = spy_rng  # RNG مستقل، فقط برای کشیدن مقدار تأخیر عمدی
+        self.spy_rng = spy_rng  # Independent RNG, exclusively for drawing intentional delay
 
     def connection_made(self, transport):
         self.transport = transport
@@ -94,7 +95,7 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
         elif mtype == "SHUTDOWN":
             self.loop.call_later(0.05, self.loop.stop)
 
-    # ---- ابزارهای ارسال ----
+    # ---- Sending utilities ----
     def _send_packet(self, packet: Packet, addr: Addr):
         if self.transport is None:
             return
@@ -108,7 +109,7 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
 
         intentional_ms = 0.0
         if self.is_spy and self.spy_rng is not None:
-            # سقف تأخیر عمدی = delay_base همین لینک (نه بیشتر)؛ هرگز drop نمی‌شود.
+            # Intentional delay cap = delay_base of this link; never dropped.
             intentional_ms = self.spy_rng.uniform(0.0, delay_base)
             log_event(self.log_path, {
                 "event": "spy_delay",
@@ -123,14 +124,14 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
         self.loop.call_later(total_ms / 1000.0, self._send_packet, packet, peer_info.addr)
 
     def _forward_flood(self, packet: Packet, exclude_peer_id: str = None):
-        """پخش به همه همسایه‌ها به‌جز فرستنده (فاز ۱ / حالت Fluff)."""
+        """Broadcast to all neighbors except the sender (Phase 1 / Fluff mode)."""
         for peer_id in self.node.peers:
             if peer_id == exclude_peer_id:
                 continue
             self._schedule_send(packet, peer_id)
 
     def _forward_stem_single(self, packet: Packet, exclude_peer_id: str = None) -> Optional[str]:
-        """ارسال به دقیقاً یک همسایه‌ی تصادفی (غیر از فرستنده). خروجی: peer_id انتخاب‌شده یا None."""
+        """Send to exactly one random neighbor (excluding the sender). Returns chosen peer_id or None."""
         candidates = [pid for pid in self.node.peers if pid != exclude_peer_id]
         if not candidates:
             return None
@@ -138,13 +139,13 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
         self._schedule_send(packet, chosen)
         return chosen
 
-    # ---- پردازش بسته‌ی دریافتی از یک همسایه ----
+    # ---- Processing a packet received from a neighbor ----
     def _handle_packet(self, msg, addr: Addr):
         packet = Packet(packet_id=msg["packet_id"], state=msg["state"])
         sender_peer_id = self.addr_to_peer.get(addr)
 
         if self.node.has_seen(packet.packet_id):
-            return  # طبق Seen Set، بسته تکراری پردازش/ارسال مجدد نمی‌شود
+            return  # According to Seen Set, duplicate packets are neither processed nor forwarded again
 
         self.node.mark_seen(packet.packet_id)
         log_event(self.log_path, {
@@ -152,17 +153,17 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
             "node_id": self.node.node_id,
             "packet_id": packet.packet_id,
             "state": packet.state,
-            # sender_peer_id فقط در لاگ مرجع (ground-truth) ثبت می‌شود، نه در بسته
-            # شبکه — از فاز ۲ به بعد لازم است (تحلیل حمله، بازسازی مسیر Stem).
+            # sender_peer_id is only recorded in the reference ground-truth log, not in the 
+            # network packet — this is required from Phase 2 onwards (attack analysis, Stem path reconstruction).
             "sender_peer_id": sender_peer_id,
         }, lock=self.lock)
 
         if self.stem_p is None:
-            # حالت فاز ۱/۲: Flood ساده
+            # Phase 1/2 mode: Simple Flood
             self._forward_flood(packet, exclude_peer_id=sender_peer_id)
             return
 
-        # حالت فاز ۳+: Dandelion
+        # Phase 3+ mode: Dandelion
         if packet.state == FLUFF:
             self._forward_flood(packet, exclude_peer_id=sender_peer_id)
             return
@@ -173,10 +174,10 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
         if continue_stem:
             next_hop = self._forward_stem_single(packet, exclude_peer_id=sender_peer_id)
         if next_hop is None:
-            # یا با احتمال 1-p تصمیم به Fluff گرفتیم، یا همسایه‌ی واجد شرایطی نبود
+            # Either decided to Fluff with probability 1-p, or no eligible neighbor was available
             self._forward_flood(packet.as_fluff(), exclude_peer_id=sender_peer_id)
 
-    # ---- شروع بسته توسط مبدأ ----
+    # ---- Packet initiation by the origin ----
     def _handle_inject(self, msg):
         origin_state = STEM if self.stem_p is not None else FLUFF
         packet = Packet(packet_id=msg["packet_id"], state=origin_state)
@@ -191,26 +192,26 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
         }, lock=self.lock)
 
         if self.stem_p is None:
-            # فاز ۱/۲: مبدأ مستقیم به همه پخش می‌کند
+            # Phase 1/2: Origin broadcasts directly to everyone
             self._forward_flood(packet, exclude_peer_id=None)
             return
 
-        # فاز ۳+: مبدأ بدون قید و شرط فقط به یک همسایه‌ی تصادفی می‌فرستد (STEM)
+        # Phase 3+: Origin unconditionally sends to just one random neighbor (STEM)
         next_hop = self._forward_stem_single(packet, exclude_peer_id=None)
         if next_hop is None:
-            # اگر مبدأ هیچ همسایه‌ای نداشت (نباید پیش بیاید چون حداقل درجه تضمین شده)
+            # If origin has no neighbors (shouldn't happen since minimum degree is guaranteed)
             self._forward_flood(packet.as_fluff(), exclude_peer_id=None)
 
 
 def run_node(node_id: str, self_addr, peers: Dict[str, Addr], peer_delay: Dict[str, float],
              log_path: str, seed: int, stem_p: Optional[float] = None, lock=None,
              is_spy: bool = False, spy_delay_seed: Optional[int] = None):
-    """Entry point اجرا شده در یک پردازه مستقل (از طریق multiprocessing).
+    """Entry point executed in an independent process (via multiprocessing).
 
-    is_spy / spy_delay_seed فقط برای فاز ۵ معنی دارند: اگر is_spy=True باشد
-    یک RNG کاملاً مستقل (seed=spy_delay_seed) فقط برای کشیدن تأخیر عمدی
-    ساخته می‌شود؛ در فازهای ۱ تا ۴ (is_spy=False، حالت پیش‌فرض) هیچ تأخیر
-    عمدی‌ای اعمال نمی‌شود و رفتار دقیقاً مثل قبل باقی می‌ماند.
+    is_spy / spy_delay_seed are only meaningful for Phase 5: if is_spy=True, 
+    a completely independent RNG (seed=spy_delay_seed) is created solely for 
+    drawing intentional delays; in phases 1 to 4 (is_spy=False, default mode), 
+    no intentional delay is applied and the behavior remains exactly as before.
     """
     node = Node(self_addr=tuple(self_addr), node_id=node_id, is_honest=not is_spy)
     addr_to_peer: Dict[Addr, str] = {}

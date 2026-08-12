@@ -1,13 +1,12 @@
 """
-فاز ۲ — طراحی حمله به پخش عمومی.
+Designing the attack on public broadcast
 
-این ماژول دو بخش مستقل دارد:
+This module has two independent parts:
 
-  1) select_bribed_nodes(...)  — الگوریتم انتخاب گره‌های جاسوس (حداکثر ۳۰٪).
-  2) baseline_guess / proposed_guess — دو روش حدسِ مبدأ از روی مشاهدات جاسوس‌ها.
+  1) select_bribed_nodes(...)  — Spy selection algorithm (max 30%).
+  2) baseline_guess / proposed_guess — Two methods for guessing the origin based on spy observations.
 
-هر دو بخش را در پاسخ متنی مربوطه با جزئیات توضیح داده‌ام؛ خلاصه منطق هرکدام
-هم به‌صورت docstring در همین فایل آمده.
+The logic for both is detailed in the respective docstrings below.
 """
 
 import random
@@ -20,20 +19,20 @@ from sim_log import read_log
 
 
 # ---------------------------------------------------------------------------
-# ۱) انتخاب گره‌های جاسوس
+# 1) Spy Nodes Selection
 # ---------------------------------------------------------------------------
 def select_bribed_nodes(topo, budget_fraction: float = 0.3) -> Set[int]:
     """
-    امتیاز هر گره = درجه‌اش + ۲ × (تعداد یال‌های مرزی خوشه‌اش که به این گره
-    وصل‌اند). گره‌های مرزی خوشه (bridge/gateway) امتیاز مضاعف می‌گیرند چون
-    هر بسته‌ای که بین دو خوشه رد و بدل شود اجباراً از یکی از همین گره‌ها
-    عبور می‌کند — بریدن این گره‌ها بیشترین «دید» را با کمترین تعداد جاسوس
-    به ما می‌دهد.
+    Node score = its degree + 2 * (number of its cluster's boundary edges 
+    connected to this node). Cluster boundary nodes (bridge/gateway) receive 
+    double points because any packet exchanged between two clusters must 
+    pass through one of them — intercepting these nodes gives us the most 
+    'visibility' with the fewest number of spies.
 
-    برای جلوگیری از تمرکز همه جاسوس‌ها در یک خوشه (که فقط بسته‌های نزدیک
-    به آن خوشه را خوب می‌بیند)، انتخاب به‌صورت round-robin بین خوشه‌ها انجام
-    می‌شود: از هر خوشه، پرامتیازترین گره‌ی هنوز انتخاب‌نشده برداشته می‌شود،
-    و این چرخه تا رسیدن به بودجه ادامه پیدا می‌کند.
+    To prevent concentrating all spies in one cluster (which would only see 
+    packets near that cluster well), the selection is done round-robin among 
+    clusters: from each cluster, the highest-scoring unselected node is picked, 
+    and this cycle continues until the budget is reached.
     """
     g = topo.graph
     cluster_of = topo.cluster_of
@@ -70,20 +69,20 @@ def select_bribed_nodes(topo, budget_fraction: float = 0.3) -> Set[int]:
                 pointers[c] = p + 1
                 progressed = True
         if not progressed:
-            break  # همه گره‌ها تمام شدند
+            break  # All nodes are exhausted
 
     return set(chosen)
 
 
 # ---------------------------------------------------------------------------
-# ۲) روش‌های حدسِ مبدأ
+# 2) Origin Guessing Methods
 # ---------------------------------------------------------------------------
 def _spy_sightings_by_packet(log_path: str, spy_ids: Set[str]):
     """
-    برای هر packet_id، لیست رویدادهای 'receive' که node_id آن‌ها جزو جاسوس‌هاست
-    را بر اساس wall_time مرتب برمی‌گرداند. هر رویداد شامل state (STEM/FLUFF)
-    و sender_peer_id هم هست (اینکه جاسوس بسته را از کدام همسایه و در چه
-    وضعیتی شنیده).
+    For each packet_id, returns a list of 'receive' events where the node_id 
+    belongs to the spies, sorted by wall_time. Each event includes the state 
+    (STEM/FLUFF) and sender_peer_id (which neighbor the spy heard the packet 
+    from and in what state).
     """
     events = read_log(log_path)
     origins: Dict[str, dict] = {}
@@ -103,23 +102,31 @@ def _spy_sightings_by_packet(log_path: str, spy_ids: Set[str]):
 
 def baseline_guess(sightings_for_packet: List[dict]) -> str:
     """
-    روش پایه (فاز ۲): مبدأ حدس‌زده‌شده = خودِ جاسوسی که زودتر از همه بسته را
-    دیده است — چه در وضعیت STEM چه FLUFF. روی Flood ساده معقول بود؛ روی
-    Dandelion (فاز ۳) این روش گمراه‌کننده می‌شود (توضیح در proposed_guess).
+    Baseline method (Phase 2): One-hop backtrack.
+    
+    Since spies are no longer selected as packet origins, guessing the spy 
+    itself yields 0% accuracy. The new baseline assumes the neighbor who 
+    sent the packet to the first observing spy (sender_peer_id) is the origin.
     """
-    return sightings_for_packet[0]["node_id"]
+    earliest = sightings_for_packet[0]
+    sender = earliest.get("sender_peer_id")
+    
+    # Fallback to the node itself if sender is None (should not happen in practice)
+    return sender if sender is not None else earliest["node_id"]
 
 
 def proposed_guess(sightings_for_packet: List[dict]) -> str:
     """
-    روش پیشنهادی فاز ۲ — «بازگشت یک‌هاپه» (بدون توجه به STEM/FLUFF):
-    حدس = همسایه‌ای که بسته را برای زودبین‌ترین جاسوس فرستاده
-    (sender_peer_id). روی Flood خوب کار می‌کند چون انتشار شعاعی و هم‌زمان
-    است. روی Dandelion (فاز ۳) دیگر خوب کار نمی‌کند: اگر زودبین‌ترین جاسوس
-    بسته را در وضعیت FLUFF دیده باشد، یعنی بعد از نقطه‌ی تبدیل Stem->Fluff
-    آن را دیده — که می‌تواند از مبدأ واقعی خیلی دور باشد (چون قبل از تبدیل،
-    بسته از مسیر تک‌به‌تکِ Stem رد شده و هیچ جاسوسی آن را ندیده). «یک قدم
-    عقب» از این جاسوس فقط ما را به نقطه‌ی تبدیل نزدیک می‌کند، نه به مبدأ.
+    Proposed method for Phase 2 — "One-hop backtrack" (ignoring STEM/FLUFF):
+    Guess = the neighbor who sent the packet to the earliest-seeing spy 
+    (sender_peer_id). Works well for Flood because dissemination is radial 
+    and simultaneous. 
+    Does not work well for Dandelion (Phase 3): If the earliest spy saw the 
+    packet in FLUFF state, it means it saw it after the Stem->Fluff transition 
+    point — which could be very far from the actual origin (since before the 
+    transition, the packet traveled the point-to-point Stem path and no spy 
+    saw it). "One step back" from this spy only gets us closer to the transition 
+    point, not the origin.
     """
     earliest = sightings_for_packet[0]
     sender = earliest.get("sender_peer_id")
@@ -128,34 +135,34 @@ def proposed_guess(sightings_for_packet: List[dict]) -> str:
 
 def phase4_guess(sightings_for_packet: List[dict]) -> str:
     """
-    روش فاز ۴ — «بازگشت یک‌هاپه‌ی محدود به STEM» (STEM-only Backtrack):
+    Phase 4 method — "STEM-only Backtrack":
 
-    ایده‌ی اصلی: چون در Dandelion فقط بسته‌هایی که هنوز در وضعیت STEM
-    هستند واقعاً از مسیر پنهانِ نزدیک به مبدأ عبور کرده‌اند، **فقط** به
-    مشاهداتی که جاسوس بسته را در وضعیت STEM دیده اعتماد می‌کنیم (نه FLUFF).
-    این مشاهدات به‌طور تضمینی روی همان مسیر تک‌به‌تکِ Stem قرار دارند،
-    پس هرچه زودتر باشند به مبدأ نزدیک‌ترند.
+    Core idea: In Dandelion, only packets in the STEM state have truly 
+    traversed the hidden path near the origin. Therefore, we **only** trust 
+    observations where the spy saw the packet in the STEM state (not FLUFF).
+    These observations are guaranteed to be on the point-to-point Stem path, 
+    so the earlier they are, the closer they are to the origin.
 
-    الگوریتم:
-      ۱) از بین مشاهدات این جاسوس‌ها، فقط آن‌هایی که state == STEM را
-         نگه دار (بر اساس wall_time already مرتب‌اند).
-      ۲) اگر حداقل یکی وجود داشت: زودترینِ آن‌ها را بردار و «یک قدم
-         عقب» برو (sender_peer_id آن — دقیقاً مثل proposed_guess، اما این
-         بار روی مشاهده‌ی STEM، نه هر مشاهده‌ای).
-      ۳) اگر هیچ جاسوسی بسته را در وضعیت STEM ندید (یعنی مسیر Stem قبل
-         از رسیدن به هر جاسوسی به Fluff تبدیل شده)، اطلاعات مسیر پنهان
-         را نداریم؛ در این حالت به بهترین گزینه‌ی موجود عقب‌نشینی می‌کنیم:
-         همان proposed_guess (بازگشت یک‌هاپه از زودبین‌ترین مشاهده‌ی
-         FLUFF) — چون از baseline_guess باز هم بهتر است، هرچند مثل حالت
-         (۲) دقیق نیست.
+    Algorithm:
+      1) Among the observations of these spies, keep only those where 
+         state == STEM (already sorted by wall_time).
+      2) If at least one exists: pick the earliest one and go "one step back" 
+         (its sender_peer_id — exactly like proposed_guess, but this time 
+         on a STEM observation, not just any observation).
+      3) If no spy saw the packet in the STEM state (meaning the Stem path 
+         turned to Fluff before reaching any spy), we lack hidden path data; 
+         in this case, we fallback to the best available option: the same 
+         proposed_guess (one-hop backtrack from the earliest FLUFF observation) 
+         — because it's still better than baseline_guess, though less accurate 
+         than case (2).
 
-    چرا این از proposed_guess فاز ۲ بهتر است: proposed_guess همیشه از
-    زودبین‌ترین مشاهده (STEM یا FLUFF، هرکدام زودتر بود) استفاده می‌کند؛
-    اما یک مشاهده‌ی FLUFF می‌تواند از نظر زمانی زودتر از یک مشاهده‌ی STEM
-    باشد در حالی که از نظر مکانی خیلی دورتر از مبدأ است (چون Fluff یعنی
-    بعد از تبدیل، پخش شعاعی و سریع شروع شده و می‌تواند زودتر به یک جاسوسِ
-    نزدیکِ نقطه‌ی تبدیل برسد، حتی اگر آن نقطه چند هاپ با مبدأ فاصله داشته
-    باشد). با اولویت‌دادن قطعی به مشاهدات STEM، این خطا حذف می‌شود.
+    Why this is better than Phase 2's proposed_guess: proposed_guess always 
+    uses the earliest observation overall (STEM or FLUFF); but a FLUFF observation 
+    can temporally precede a STEM observation while being spatially much farther 
+    from the origin (since Fluff means rapid radial broadcast has started and 
+    can reach a spy near the transition point faster, even if that point is 
+    several hops away from the origin). By strictly prioritizing STEM observations, 
+    this error is eliminated.
     """
     stem_sightings = [e for e in sightings_for_packet if e["state"] == "STEM"]
     if stem_sightings:
@@ -167,7 +174,7 @@ def phase4_guess(sightings_for_packet: List[dict]) -> str:
 
 
 # ---------------------------------------------------------------------------
-# ارزیابی: دقت و Score_adv برای یک روش حدسِ دلخواه
+# Evaluation: Accuracy and Score_adv for a given guessing method
 # ---------------------------------------------------------------------------
 def evaluate_attack(log_path: str, spy_ids: Set[str], guess_fn=baseline_guess):
     origins, sightings = _spy_sightings_by_packet(log_path, spy_ids)
@@ -179,7 +186,7 @@ def evaluate_attack(log_path: str, spy_ids: Set[str], guess_fn=baseline_guess):
     for pid, o in origins.items():
         obs = sightings.get(pid)
         if not obs:
-            continue  # هیچ جاسوسی این بسته را ندید -> قابل حدس نیست
+            continue  # No spy saw this packet -> unguessable
         observed += 1
         if guess_fn(obs) == o["node_id"]:
             correct += 1
@@ -197,7 +204,7 @@ def evaluate_attack(log_path: str, spy_ids: Set[str], guess_fn=baseline_guess):
 
 
 def evaluate_attack_all_methods(log_path: str, spy_ids: Set[str]):
-    """برای سازگاری با phase2_simulator: دقت/Score_adv هر دو روش فاز ۲ با هم."""
+    """For compatibility with phase2_simulator: returns both Phase 2 methods' stats together."""
     r_base = evaluate_attack(log_path, spy_ids, baseline_guess)
     r_prop = evaluate_attack(log_path, spy_ids, proposed_guess)
     return {

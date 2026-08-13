@@ -1,0 +1,13 @@
+spies (7): n0, n1, n12, n19, n3, n5, n8
+--- p = 0.9 ---
+  baseline (phase2)              acc(m/md/sd)=0.517/0.525/0.036   Score_adv(m/md/sd)=0.0739/0.0750/0.0051
+  proposed (phase2)              acc(m/md/sd)=0.516/0.535/0.036   Score_adv(m/md/sd)=0.0737/0.0764/0.0052
+  phase4 (STEM-only backtrack)   acc(m/md/sd)=0.520/0.530/0.038   Score_adv(m/md/sd)=0.0743/0.0757/0.0054
+--- p = 0.5 ---
+  baseline (phase2)              acc(m/md/sd)=0.525/0.515/0.019   Score_adv(m/md/sd)=0.0750/0.0736/0.0027
+  proposed (phase2)              acc(m/md/sd)=0.526/0.525/0.033   Score_adv(m/md/sd)=0.0751/0.0750/0.0048
+  phase4 (STEM-only backtrack)   acc(m/md/sd)=0.535/0.535/0.021   Score_adv(m/md/sd)=0.0764/0.0764/0.0030
+--- p = 0.1 ---
+  baseline (phase2)              acc(m/md/sd)=0.529/0.535/0.012   Score_adv(m/md/sd)=0.0756/0.0764/0.0017
+  proposed (phase2)              acc(m/md/sd)=0.525/0.530/0.010   Score_adv(m/md/sd)=0.0750/0.0757/0.0015
+  phase4 (STEM-only backtrack)   acc(m/md/sd)=0.544/0.545/0.012   Score_adv(m/md/sd)=0.0777/0.0779/0.0017

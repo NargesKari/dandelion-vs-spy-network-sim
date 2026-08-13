@@ -1,33 +1,31 @@
 """
-فاز ۳ — پویش پارامتر p برای Dandelion.
+Phase 3 — Parameter p sweep for Dandelion.
 
-طراحی آزمایش (و چرایی آن):
-  - `TOPOLOGY_SEED` و `ORIGIN_SEED` برای همه‌ی اجراها (هر سه مقدار p و هر
-    ۵ تکرار) ثابت نگه داشته می‌شوند. یعنی همه‌ی اجراها دقیقاً روی همان
-    توپولوژی و همان توالی «کدام گره کِی بسته تولید می‌کند» اجرا می‌شوند.
-    این کار لازم است تا تفاوت نتایج بین p=0.9 و p=0.1 واقعاً ناشی از خودِ
-    p باشد، نه ناشی از تصادفی بودن توپولوژی یا زمان‌بندی تزریق بسته‌ها.
-  - چیزی که بین ۵ تکرارِ هر p عوض می‌شود فقط `run_seed` است: این seed هم
-    جیتر تأخیر لینک‌ها و هم سکه‌ی احتمالاتی «ادامه‌ی Stem یا تبدیل به
-    Fluff» را کنترل می‌کند. تغییر آن باعث تنوع در رفتار شبکه می‌شود که
-    دقیقاً همان چیزی است که برای محاسبه‌ی میانگین/میانه/انحراف معیار
-    لازم داریم.
+Experimental Design (and rationale):
+  - `TOPOLOGY_SEED` and `ORIGIN_SEED` are kept constant for all runs (all three p values and all
+    5 iterations). This means all runs are executed on the exact same topology and the exact same
+    sequence of "which node generates a packet and when". This is necessary so that differences
+    in results between p=0.9 and p=0.1 are truly due to p itself, not due to randomness in the
+    topology or packet injection scheduling.
+  - The only thing that changes among the 5 iterations of each p is the `run_seed`: This seed
+    controls both the link delay jitter and the probabilistic coin flip for "continue Stem or
+    convert to Fluff". Changing it introduces variance in the network behavior, which is exactly
+    what we need to calculate the mean/median/standard deviation.
 
-دو خانواده معیار گزارش می‌شود:
-  - `avg_coverage`: میانگین نسبت گره‌هایی که هر بسته را دریافت کرده‌اند
-    (۰ تا ۱). این معیار مهم‌تر از T_80% است چون در Dandelion واقعی، یک
-    بسته ممکن است اصلاً به همه‌جا نرسد (توضیح زیر).
-  - `T_80%`: زمان رسیدن به ۸۰٪ گره‌ها، فقط برای بسته‌هایی که به آن رسیدند.
+Two families of metrics are reported:
+  - `avg_coverage`: The average fraction of nodes that received each packet
+    (0 to 1). This metric is more important than T_80% because in a real Dandelion network, a
+    packet might not reach everywhere at all (explanation below).
+  - `T_80%`: The time to reach 80% of the nodes, only for packets that actually reached it.
 
-نکته‌ی مهم و غیرمنتظره‌ای که در تست‌ها دیده شد: چون در این پیاده‌سازی
-مسیر Stem یک *گشت تصادفی* روی گراف است (نه یک مسیر ثابت از پیش تعیین‌شده
-مثل Dandelion اصلی)، ممکن است مسیر Stem به یک گره‌ای برگردد که قبلاً
-همان بسته را دیده است. آن گره طبق SeenSet بسته را نادیده می‌گیرد و اصلاً
-آن را فوروارد نمی‌کند — یعنی بسته بدون اینکه هرگز به Fluff تبدیل شود
-"می‌میرد" و به بقیه‌ی شبکه نمی‌رسد. هرچه p بزرگ‌تر باشد، مسیر Stem
-طولانی‌تر است و احتمال این برخورد (collision) بیشتر می‌شود. به همین
-دلیل انتظار داریم p=0.9 میانگین پوشش پایین‌تری نسبت به p=0.1 داشته باشد
-— این یک یافته‌ی واقعی و قابل گزارش است، نه یک باگ.
+Important and unexpected finding observed in tests: Because the Stem path in this implementation
+is a *random walk* on the graph (not a fixed predetermined path like the original Dandelion),
+the Stem path might return to a node that has already seen the same packet. According to the
+SeenSet, that node ignores the packet and does not forward it at all — meaning the packet "dies"
+without ever turning into Fluff and does not reach the rest of the network. The larger p is,
+the longer the Stem path, and the higher the probability of this collision. Therefore, we expect
+p=0.9 to have a lower average coverage compared to p=0.1 — this is a real and reportable finding,
+not a bug.
 """
 
 import statistics
@@ -35,14 +33,10 @@ from pathlib import Path
 
 from phase1_simulator import compute_t80, run_phase1
 from sim_log import read_log
+from config import TOPOLOGY_SEED, ORIGIN_SEED, P_VALUES, RUNS_PER_P, NUM_PACKETS, OUTPUTS_DIR
 
-TOPOLOGY_SEED = 42
-ORIGIN_SEED = 42
-P_VALUES = (0.9, 0.5, 0.1)
-RUNS_PER_P = 5
-NUM_PACKETS = 200
 SETTLE_TIME_S = 6.0
-LOG_DIR = "phase3_logs"
+LOG_DIR = f"{OUTPUTS_DIR}/logs/phase3"
 
 
 def coverage_fractions(log_path: str, total_nodes: int):
@@ -55,7 +49,7 @@ def coverage_fractions(log_path: str, total_nodes: int):
 
 
 def run_one(p: float, run_idx: int):
-    run_seed = int(p * 1000) * 100 + run_idx  # هر ترکیب (p, run_idx) یک seed یکتا و قابل بازتولید
+    run_seed = int(p * 1000) * 100 + run_idx  # Each (p, run_idx) combination gets a unique, reproducible seed
     log_path = f"{LOG_DIR}/p{p}_run{run_idx}.jsonl"
 
     topo, _node_ids = run_phase1(
@@ -105,5 +99,44 @@ def summarize(results) -> str:
 
 
 if __name__ == "__main__":
+    import matplotlib.pyplot as plt
+    from topology import generate_topology
+
+    phase3_out_dir = Path(OUTPUTS_DIR) / "phase3"
+    phase3_out_dir.mkdir(parents=True, exist_ok=True)
+
+    # The same topology from Phase 1/2 (same TOPOLOGY_SEED from config.py) -- saved/plotted
+    # to ensure the constraint "topology must remain constant across all 5 phases" is met.
+    topo = generate_topology(TOPOLOGY_SEED)
+    topo.plot(str(phase3_out_dir / f"topology_seed{TOPOLOGY_SEED}.png"))
+
     results = run_sweep()
-    print(summarize(results))
+    summary_text = summarize(results)
+    print(summary_text)
+
+    with open(phase3_out_dir / "phase3_summary.txt", "w", encoding="utf-8") as f:
+        f.write(f"TOPOLOGY_SEED={TOPOLOGY_SEED}  ORIGIN_SEED={ORIGIN_SEED}  "
+                f"NUM_PACKETS={NUM_PACKETS}  RUNS_PER_P={RUNS_PER_P}\n\n")
+        f.write(summary_text + "\n")
+
+    # --- Chart 1: Average coverage (avg_coverage) vs. p (boxplot over 5 runs) ---
+    fig, ax = plt.subplots(figsize=(7, 5))
+    data = [[r["avg_coverage"] for r in results[p]] for p in P_VALUES]
+    ax.boxplot(data, tick_labels=[f"p={p}" for p in P_VALUES])
+    ax.set_ylabel("Average Fraction of Covered Nodes")
+    ax.set_title(f"Phase 3: Network Coverage vs. p (Dandelion), {RUNS_PER_P} Runs per p")
+    ax.grid(axis="y", alpha=0.4)
+    fig.savefig(str(phase3_out_dir / "coverage_vs_p.png"), dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+    # --- Chart 2: T_80% (ms) vs. p (boxplot over all packets in 5 runs) ---
+    fig, ax = plt.subplots(figsize=(7, 5))
+    data_t80 = [[t for r in results[p] for t in r["t80_ms"]] for p in P_VALUES]
+    ax.boxplot(data_t80, tick_labels=[f"p={p}" for p in P_VALUES])
+    ax.set_ylabel("T_80% (milliseconds)")
+    ax.set_title("Phase 3: Time to Reach 80% of Nodes vs. p")
+    ax.grid(axis="y", alpha=0.4)
+    fig.savefig(str(phase3_out_dir / "t80_vs_p.png"), dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+    print(f"Outputs saved to: {phase3_out_dir}")

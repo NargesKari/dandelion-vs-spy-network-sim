@@ -1,0 +1,15 @@
+=== PHASE 2 SIMULATION RESULTS (Seed: 321) ===
+Nodes = 24, Bribed spies = 7 (n0, n1, n12, n19, n3, n5, n8)
+Total packets = 200, Observed by >=1 spy = 154
+
+--- ACCURACY ---
+Baseline (one-hop backtrack)         : 0.615
+Proposed (Vector Profiling, new)     : 0.700
+Common-ancestor (older method)       : 0.615
+Multilateration (TDOA)                : 0.370
+
+--- ADVERSARY SCORE (Score_adv) ---
+Baseline (one-hop backtrack)         : 0.0879
+Proposed (Vector Profiling, new)     : 0.1000
+Common-ancestor (older method)       : 0.0879
+Multilateration (TDOA)                : 0.0529

@@ -1,0 +1,41 @@
+spies (7): n0, n1, n12, n19, n3, n5, n8
+
+=== p = 0.9 ===
+  --- NO delay (baseline) ---
+    avg_coverage(m/md/sd)=0.392/0.390/0.016   reached80_frac(avg)=0.131   T_80%ms(m/md/sd)=1254.490/1256.156/339.429
+    baseline (phase2)    acc(m/md/sd)=0.509/0.510/0.040   Score_adv(m/md/sd)=0.073/0.073/0.006
+    proposed (phase2)    acc(m/md/sd)=0.510/0.515/0.040   Score_adv(m/md/sd)=0.073/0.074/0.006
+    phase4 (STEM-only)   acc(m/md/sd)=0.511/0.515/0.041   Score_adv(m/md/sd)=0.073/0.074/0.006
+  --- WITH intentional delay ---
+    avg_coverage(m/md/sd)=0.446/0.442/0.022   reached80_frac(avg)=0.191   T_80%ms(m/md/sd)=1456.227/1427.457/402.221
+    baseline (phase2)    acc(m/md/sd)=0.437/0.445/0.028   Score_adv(m/md/sd)=0.062/0.064/0.004
+    proposed (phase2)    acc(m/md/sd)=0.433/0.450/0.028   Score_adv(m/md/sd)=0.062/0.064/0.004
+    phase4 (STEM-only)   acc(m/md/sd)=0.438/0.445/0.027   Score_adv(m/md/sd)=0.063/0.064/0.004
+    intentional_delay applied: avg=94.2ms over 5336 sends across 5 runs
+
+=== p = 0.5 ===
+  --- NO delay (baseline) ---
+    avg_coverage(m/md/sd)=0.649/0.712/0.142   reached80_frac(avg)=0.326   T_80%ms(m/md/sd)=1185.139/1161.588/321.172
+    baseline (phase2)    acc(m/md/sd)=0.477/0.485/0.041   Score_adv(m/md/sd)=0.068/0.069/0.006
+    proposed (phase2)    acc(m/md/sd)=0.481/0.485/0.035   Score_adv(m/md/sd)=0.069/0.069/0.005
+    phase4 (STEM-only)   acc(m/md/sd)=0.487/0.495/0.039   Score_adv(m/md/sd)=0.070/0.071/0.006
+  --- WITH intentional delay ---
+    avg_coverage(m/md/sd)=0.768/0.783/0.023   reached80_frac(avg)=0.478   T_80%ms(m/md/sd)=1557.188/1526.975/457.822
+    baseline (phase2)    acc(m/md/sd)=0.418/0.420/0.034   Score_adv(m/md/sd)=0.060/0.060/0.005
+    proposed (phase2)    acc(m/md/sd)=0.415/0.420/0.031   Score_adv(m/md/sd)=0.059/0.060/0.004
+    phase4 (STEM-only)   acc(m/md/sd)=0.422/0.430/0.034   Score_adv(m/md/sd)=0.060/0.061/0.005
+    intentional_delay applied: avg=95.5ms over 10637 sends across 5 runs
+
+=== p = 0.1 ===
+  --- NO delay (baseline) ---
+    avg_coverage(m/md/sd)=0.824/0.823/0.007   reached80_frac(avg)=0.526   T_80%ms(m/md/sd)=1138.920/1133.316/277.153
+    baseline (phase2)    acc(m/md/sd)=0.508/0.510/0.033   Score_adv(m/md/sd)=0.073/0.073/0.005
+    proposed (phase2)    acc(m/md/sd)=0.511/0.520/0.024   Score_adv(m/md/sd)=0.073/0.074/0.003
+    phase4 (STEM-only)   acc(m/md/sd)=0.528/0.540/0.031   Score_adv(m/md/sd)=0.075/0.077/0.004
+  --- WITH intentional delay ---
+    avg_coverage(m/md/sd)=0.901/0.896/0.017   reached80_frac(avg)=0.637   T_80%ms(m/md/sd)=1804.599/1762.495/622.962
+    baseline (phase2)    acc(m/md/sd)=0.439/0.435/0.017   Score_adv(m/md/sd)=0.063/0.062/0.002
+    proposed (phase2)    acc(m/md/sd)=0.437/0.430/0.016   Score_adv(m/md/sd)=0.062/0.061/0.002
+    phase4 (STEM-only)   acc(m/md/sd)=0.443/0.435/0.017   Score_adv(m/md/sd)=0.063/0.062/0.002
+    intentional_delay applied: avg=97.2ms over 13501 sends across 5 runs
+

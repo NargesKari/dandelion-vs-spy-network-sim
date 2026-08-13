@@ -77,7 +77,7 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
     from pathlib import Path
 
-    seed_val = 42
+    seed_val = 321
 
     # 1. Create master output directories for Phase 2
     base_out_dir = Path("outputs")

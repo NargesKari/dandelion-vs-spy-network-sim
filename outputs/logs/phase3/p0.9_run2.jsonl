@@ -1,0 +1,995 @@
+{"event": "origin", "node_id": "n20", "packet_id": "89efb3e9-c0f0-402e-a889-14a338d15996", "wall_time": 1786639862.5686557}
+{"event": "origin", "node_id": "n23", "packet_id": "1bde5395-df2f-41ab-a9c2-35b68e013e5e", "wall_time": 1786639862.5794117}
+{"event": "origin", "node_id": "n7", "packet_id": "1897712c-d054-4e0e-bab6-e50c99010dcd", "wall_time": 1786639862.5869617}
+{"event": "origin", "node_id": "n3", "packet_id": "8490d0ca-5752-40a0-9c75-396f2c3bd08d", "wall_time": 1786639862.6031513}
+{"event": "origin", "node_id": "n17", "packet_id": "7bcb9dfd-3bed-400c-9f06-9e2c5a6d10a9", "wall_time": 1786639862.610194}
+{"event": "origin", "node_id": "n13", "packet_id": "dd0dd1b7-8c58-4a97-8d12-8442be06ec12", "wall_time": 1786639862.6163042}
+{"event": "origin", "node_id": "n2", "packet_id": "bdc83543-3efe-4dc3-8e06-5c001e58781f", "wall_time": 1786639862.6253502}
+{"event": "origin", "node_id": "n16", "packet_id": "07d9d81d-427e-4959-944d-1fdc72fc4e23", "wall_time": 1786639862.6409695}
+{"event": "origin", "node_id": "n17", "packet_id": "1f67805d-455c-4ff1-ae93-d71f44487a57", "wall_time": 1786639862.649534}
+{"event": "origin", "node_id": "n20", "packet_id": "74ff8f70-79c5-41ce-a724-3f2f9472c4d5", "wall_time": 1786639862.6659129}
+{"event": "origin", "node_id": "n13", "packet_id": "fbf39542-36b3-474a-a825-d931168d980f", "wall_time": 1786639862.6744924}
+{"event": "origin", "node_id": "n18", "packet_id": "72851485-97b1-47e8-b233-a204e4009a6e", "wall_time": 1786639862.6841974}
+{"event": "origin", "node_id": "n0", "packet_id": "8c8f2164-e01f-47df-bd02-d5162163352f", "wall_time": 1786639862.701481}
+{"event": "origin", "node_id": "n5", "packet_id": "f726de74-aa6d-4042-860b-095b3da5b794", "wall_time": 1786639862.7182126}
+{"event": "origin", "node_id": "n10", "packet_id": "4c991444-7106-4534-b624-7349cbe28ec1", "wall_time": 1786639862.728284}
+{"event": "origin", "node_id": "n6", "packet_id": "e5176729-5893-4ca0-b5a1-cd576b563fe6", "wall_time": 1786639862.7547138}
+{"event": "origin", "node_id": "n10", "packet_id": "9b0a7706-0aaa-4707-a526-1abf2fe1272d", "wall_time": 1786639862.7757158}
+{"event": "origin", "node_id": "n12", "packet_id": "3905f6b2-cb60-4dfd-bdba-3111d301cdb1", "wall_time": 1786639862.7855065}
+{"event": "origin", "node_id": "n11", "packet_id": "288ec885-b53e-400a-8399-841a863f6855", "wall_time": 1786639862.8009253}
+{"event": "origin", "node_id": "n1", "packet_id": "50ffe2d7-b244-4ac2-8b01-ec5df1e051b0", "wall_time": 1786639862.8184924}
+{"event": "origin", "node_id": "n17", "packet_id": "efbfbdc1-2f1d-4139-a4e5-fd193418e9af", "wall_time": 1786639862.8266554}
+{"event": "origin", "node_id": "n12", "packet_id": "8bedc2bf-13bc-4351-8978-7e0a7db46dd1", "wall_time": 1786639862.8333411}
+{"event": "origin", "node_id": "n9", "packet_id": "5f62e147-9385-457a-b91c-c1085ed2fe88", "wall_time": 1786639862.8529077}
+{"event": "origin", "node_id": "n19", "packet_id": "0f1765c7-5cd0-43bf-ba72-44679b022e75", "wall_time": 1786639862.8848772}
+{"event": "origin", "node_id": "n11", "packet_id": "637195b1-5660-437d-bb47-1ab3ccef2000", "wall_time": 1786639862.9025426}
+{"event": "origin", "node_id": "n22", "packet_id": "9fa99581-6d36-4698-9a7a-19489a5cc858", "wall_time": 1786639862.9141037}
+{"event": "origin", "node_id": "n21", "packet_id": "b4707109-1cc0-4e7b-ac22-3fa56b528f67", "wall_time": 1786639862.9236872}
+{"event": "origin", "node_id": "n9", "packet_id": "3fe4a69d-fcd9-4038-a759-e2a5c38f620a", "wall_time": 1786639862.9479995}
+{"event": "origin", "node_id": "n7", "packet_id": "e7b9d3fe-2741-4f14-bfbe-139d7068d744", "wall_time": 1786639862.9682028}
+{"event": "origin", "node_id": "n12", "packet_id": "2149e920-8b1f-4d0c-97c4-d1073c52ab1f", "wall_time": 1786639862.97831}
+{"event": "origin", "node_id": "n20", "packet_id": "e984b848-8eaa-40df-98dd-cd6566474584", "wall_time": 1786639862.9965937}
+{"event": "origin", "node_id": "n5", "packet_id": "8cab3c17-c9d1-4fe1-a95e-72eb6327d6a4", "wall_time": 1786639863.0078347}
+{"event": "origin", "node_id": "n6", "packet_id": "b1d17d05-21da-406b-9052-3d45c1022bbd", "wall_time": 1786639863.0238495}
+{"event": "origin", "node_id": "n22", "packet_id": "004248c6-4ec9-48e1-a5f6-1f3a5c9eda8c", "wall_time": 1786639863.0439925}
+{"event": "origin", "node_id": "n20", "packet_id": "d57b20b2-148d-4888-b0c4-2565692ad68b", "wall_time": 1786639863.0503101}
+{"event": "origin", "node_id": "n20", "packet_id": "1549707e-a223-4bf6-bda8-3a853e7e45e1", "wall_time": 1786639863.0583215}
+{"event": "origin", "node_id": "n23", "packet_id": "0922ed9d-6aeb-4cb4-b096-7c7e0f5ae4bb", "wall_time": 1786639863.0674157}
+{"event": "origin", "node_id": "n14", "packet_id": "5bbba3ab-97e2-4fb4-a215-695c9dfd2bdd", "wall_time": 1786639863.078861}
+{"event": "origin", "node_id": "n20", "packet_id": "6d3a5c47-57db-4cb2-bda4-669c74a93f15", "wall_time": 1786639863.0957117}
+{"event": "origin", "node_id": "n7", "packet_id": "ffbd498d-2b37-4ffd-adff-0f703c7da1cc", "wall_time": 1786639863.1122463}
+{"event": "origin", "node_id": "n1", "packet_id": "809fcafd-3084-4be9-902d-8e52599924a3", "wall_time": 1786639863.1211958}
+{"event": "receive", "node_id": "n1", "packet_id": "809fcafd-3084-4be9-902d-8e52599924a3", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.1222093}
+{"event": "origin", "node_id": "n1", "packet_id": "b76ad0ea-9d58-4613-b873-ab3d8d517c09", "wall_time": 1786639863.1394048}
+{"event": "receive", "node_id": "n1", "packet_id": "b76ad0ea-9d58-4613-b873-ab3d8d517c09", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.1404228}
+{"event": "origin", "node_id": "n12", "packet_id": "dc3c5282-8ca9-42d9-8294-a3d20f734c47", "wall_time": 1786639863.14946}
+{"event": "origin", "node_id": "n6", "packet_id": "510e03f6-6006-4b30-8fa2-5fcf523d0467", "wall_time": 1786639863.1692667}
+{"event": "receive", "node_id": "n6", "packet_id": "510e03f6-6006-4b30-8fa2-5fcf523d0467", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.1692667}
+{"event": "origin", "node_id": "n18", "packet_id": "855de7ec-9a67-4e16-8949-8e6df3786a9f", "wall_time": 1786639863.1890583}
+{"event": "origin", "node_id": "n10", "packet_id": "efef394d-6ed4-40bd-a726-d14bff67fb1b", "wall_time": 1786639863.1981025}
+{"event": "origin", "node_id": "n15", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "wall_time": 1786639863.2096949}
+{"event": "receive", "node_id": "n15", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.210203}
+{"event": "origin", "node_id": "n20", "packet_id": "7825300f-0b73-4f3f-afd7-eb0e749b3a88", "wall_time": 1786639863.2223155}
+{"event": "receive", "node_id": "n20", "packet_id": "7825300f-0b73-4f3f-afd7-eb0e749b3a88", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.22333}
+{"event": "origin", "node_id": "n8", "packet_id": "1e3b2e82-fced-4230-b1e2-07edd6a99401", "wall_time": 1786639863.2298584}
+{"event": "receive", "node_id": "n8", "packet_id": "1e3b2e82-fced-4230-b1e2-07edd6a99401", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.2308676}
+{"event": "receive", "node_id": "n11", "packet_id": "b76ad0ea-9d58-4613-b873-ab3d8d517c09", "state": "STEM", "sender_peer_id": "n1", "wall_time": 1786639863.2353754}
+{"event": "receive", "node_id": "n1", "packet_id": "510e03f6-6006-4b30-8fa2-5fcf523d0467", "state": "STEM", "sender_peer_id": "n6", "wall_time": 1786639863.2353754}
+{"event": "origin", "node_id": "n23", "packet_id": "a7fa19cd-e04a-4c41-8be6-19a0c15f56b0", "wall_time": 1786639863.2439163}
+{"event": "receive", "node_id": "n23", "packet_id": "a7fa19cd-e04a-4c41-8be6-19a0c15f56b0", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.2439163}
+{"event": "origin", "node_id": "n8", "packet_id": "69913a5e-81eb-4741-874c-80c17f916270", "wall_time": 1786639863.2610745}
+{"event": "receive", "node_id": "n8", "packet_id": "69913a5e-81eb-4741-874c-80c17f916270", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.262083}
+{"event": "origin", "node_id": "n13", "packet_id": "b114bd7a-9240-4f10-97ce-a22bdd87e1d9", "wall_time": 1786639863.2811196}
+{"event": "receive", "node_id": "n13", "packet_id": "b114bd7a-9240-4f10-97ce-a22bdd87e1d9", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.282128}
+{"event": "receive", "node_id": "n16", "packet_id": "b76ad0ea-9d58-4613-b873-ab3d8d517c09", "state": "STEM", "sender_peer_id": "n11", "wall_time": 1786639863.282128}
+{"event": "receive", "node_id": "n0", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639863.282128}
+{"event": "origin", "node_id": "n12", "packet_id": "f4ac9beb-6149-4237-b6dc-1a257ba22fa2", "wall_time": 1786639863.2924786}
+{"event": "receive", "node_id": "n12", "packet_id": "f4ac9beb-6149-4237-b6dc-1a257ba22fa2", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.2929842}
+{"event": "origin", "node_id": "n4", "packet_id": "65b7266a-cce1-40bd-9edb-3c72fb3d6a8c", "wall_time": 1786639863.3060565}
+{"event": "receive", "node_id": "n4", "packet_id": "65b7266a-cce1-40bd-9edb-3c72fb3d6a8c", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.3070629}
+{"event": "origin", "node_id": "n2", "packet_id": "b7093875-6e39-4702-b1c8-6e6ab0c8924d", "wall_time": 1786639863.323713}
+{"event": "receive", "node_id": "n2", "packet_id": "b7093875-6e39-4702-b1c8-6e6ab0c8924d", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.323713}
+{"event": "origin", "node_id": "n3", "packet_id": "727a70cb-57fd-49b3-9218-5a8267946488", "wall_time": 1786639863.3319614}
+{"event": "receive", "node_id": "n3", "packet_id": "727a70cb-57fd-49b3-9218-5a8267946488", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.3329732}
+{"event": "receive", "node_id": "n3", "packet_id": "1e3b2e82-fced-4230-b1e2-07edd6a99401", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639863.345061}
+{"event": "receive", "node_id": "n13", "packet_id": "69913a5e-81eb-4741-874c-80c17f916270", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639863.345061}
+{"event": "receive", "node_id": "n8", "packet_id": "b114bd7a-9240-4f10-97ce-a22bdd87e1d9", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639863.3455856}
+{"event": "origin", "node_id": "n5", "packet_id": "5a0b9814-9b3c-4e62-823d-d19339232f8c", "wall_time": 1786639863.3497143}
+{"event": "receive", "node_id": "n5", "packet_id": "5a0b9814-9b3c-4e62-823d-d19339232f8c", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.350734}
+{"event": "receive", "node_id": "n16", "packet_id": "a7fa19cd-e04a-4c41-8be6-19a0c15f56b0", "state": "STEM", "sender_peer_id": "n23", "wall_time": 1786639863.3595195}
+{"event": "receive", "node_id": "n23", "packet_id": "b76ad0ea-9d58-4613-b873-ab3d8d517c09", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639863.3605275}
+{"event": "origin", "node_id": "n13", "packet_id": "16e0dc25-430c-44a3-a1d3-1d2db0f1acf8", "wall_time": 1786639863.3645875}
+{"event": "receive", "node_id": "n13", "packet_id": "16e0dc25-430c-44a3-a1d3-1d2db0f1acf8", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.3656008}
+{"event": "origin", "node_id": "n12", "packet_id": "48121838-a7d9-44ab-a63b-5054f2d435b4", "wall_time": 1786639863.3756418}
+{"event": "receive", "node_id": "n12", "packet_id": "48121838-a7d9-44ab-a63b-5054f2d435b4", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.3756418}
+{"event": "origin", "node_id": "n14", "packet_id": "ea43a7f2-726f-4700-a8c4-6f31c0799726", "wall_time": 1786639863.3895047}
+{"event": "receive", "node_id": "n14", "packet_id": "ea43a7f2-726f-4700-a8c4-6f31c0799726", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.3905308}
+{"event": "receive", "node_id": "n17", "packet_id": "f4ac9beb-6149-4237-b6dc-1a257ba22fa2", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639863.4062448}
+{"event": "receive", "node_id": "n6", "packet_id": "a7fa19cd-e04a-4c41-8be6-19a0c15f56b0", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639863.4062448}
+{"event": "receive", "node_id": "n18", "packet_id": "b114bd7a-9240-4f10-97ce-a22bdd87e1d9", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639863.4062448}
+{"event": "receive", "node_id": "n10", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639863.4062448}
+{"event": "origin", "node_id": "n17", "packet_id": "77da9f5e-8a0f-4e8a-aaa6-8956dc487519", "wall_time": 1786639863.4087818}
+{"event": "receive", "node_id": "n17", "packet_id": "77da9f5e-8a0f-4e8a-aaa6-8956dc487519", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.4087818}
+{"event": "origin", "node_id": "n0", "packet_id": "965bc6cc-3678-4210-8099-6ec556f7db69", "wall_time": 1786639863.424575}
+{"event": "receive", "node_id": "n0", "packet_id": "965bc6cc-3678-4210-8099-6ec556f7db69", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.425626}
+{"event": "receive", "node_id": "n3", "packet_id": "69913a5e-81eb-4741-874c-80c17f916270", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639863.4367216}
+{"event": "receive", "node_id": "n5", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "FLUFF", "sender_peer_id": "n10", "wall_time": 1786639863.4367216}
+{"event": "origin", "node_id": "n3", "packet_id": "2f3395ea-7034-4052-b7dd-6f7c19c5f65f", "wall_time": 1786639863.4413488}
+{"event": "receive", "node_id": "n3", "packet_id": "2f3395ea-7034-4052-b7dd-6f7c19c5f65f", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.4425013}
+{"event": "origin", "node_id": "n17", "packet_id": "9336c3f3-ded5-4316-97fe-7eacccef59ce", "wall_time": 1786639863.4585376}
+{"event": "receive", "node_id": "n17", "packet_id": "9336c3f3-ded5-4316-97fe-7eacccef59ce", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.4605515}
+{"event": "receive", "node_id": "n17", "packet_id": "b7093875-6e39-4702-b1c8-6e6ab0c8924d", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639863.4676416}
+{"event": "receive", "node_id": "n3", "packet_id": "b114bd7a-9240-4f10-97ce-a22bdd87e1d9", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639863.4686525}
+{"event": "origin", "node_id": "n20", "packet_id": "d3d86e19-210a-4609-83c0-3f36d48b0370", "wall_time": 1786639863.4708903}
+{"event": "receive", "node_id": "n20", "packet_id": "d3d86e19-210a-4609-83c0-3f36d48b0370", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.4708903}
+{"event": "origin", "node_id": "n9", "packet_id": "65b69a4a-9f13-4660-ad58-7e33600122b9", "wall_time": 1786639863.4833238}
+{"event": "receive", "node_id": "n8", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639863.4833238}
+{"event": "receive", "node_id": "n15", "packet_id": "5a0b9814-9b3c-4e62-823d-d19339232f8c", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639863.4833238}
+{"event": "receive", "node_id": "n9", "packet_id": "65b69a4a-9f13-4660-ad58-7e33600122b9", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.4843411}
+{"event": "origin", "node_id": "n14", "packet_id": "21bdfc65-7749-494c-bc93-7c3b60c4bdad", "wall_time": 1786639863.489097}
+{"event": "receive", "node_id": "n14", "packet_id": "21bdfc65-7749-494c-bc93-7c3b60c4bdad", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.489097}
+{"event": "origin", "node_id": "n23", "packet_id": "d01918cb-245c-4b6e-b439-575befb31edc", "wall_time": 1786639863.5083795}
+{"event": "receive", "node_id": "n23", "packet_id": "d01918cb-245c-4b6e-b439-575befb31edc", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.509143}
+{"event": "origin", "node_id": "n8", "packet_id": "8cbce688-3c35-477c-957f-e530d47beb5c", "wall_time": 1786639863.5296617}
+{"event": "receive", "node_id": "n8", "packet_id": "8cbce688-3c35-477c-957f-e530d47beb5c", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.5309124}
+{"event": "receive", "node_id": "n18", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639863.5309124}
+{"event": "receive", "node_id": "n14", "packet_id": "16e0dc25-430c-44a3-a1d3-1d2db0f1acf8", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639863.5324244}
+{"event": "receive", "node_id": "n8", "packet_id": "2f3395ea-7034-4052-b7dd-6f7c19c5f65f", "state": "STEM", "sender_peer_id": "n3", "wall_time": 1786639863.533038}
+{"event": "origin", "node_id": "n5", "packet_id": "c90be732-ef8c-4b96-8cf9-f02c69453698", "wall_time": 1786639863.5437043}
+{"event": "receive", "node_id": "n5", "packet_id": "c90be732-ef8c-4b96-8cf9-f02c69453698", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.545453}
+{"event": "receive", "node_id": "n0", "packet_id": "5a0b9814-9b3c-4e62-823d-d19339232f8c", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639863.546468}
+{"event": "receive", "node_id": "n7", "packet_id": "f4ac9beb-6149-4237-b6dc-1a257ba22fa2", "state": "FLUFF", "sender_peer_id": "n17", "wall_time": 1786639863.5622807}
+{"event": "receive", "node_id": "n2", "packet_id": "f4ac9beb-6149-4237-b6dc-1a257ba22fa2", "state": "FLUFF", "sender_peer_id": "n17", "wall_time": 1786639863.5622807}
+{"event": "receive", "node_id": "n7", "packet_id": "77da9f5e-8a0f-4e8a-aaa6-8956dc487519", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639863.563922}
+{"event": "origin", "node_id": "n3", "packet_id": "f5e028b9-aa16-4860-a0c0-f3a164727cce", "wall_time": 1786639863.563922}
+{"event": "receive", "node_id": "n3", "packet_id": "f5e028b9-aa16-4860-a0c0-f3a164727cce", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.5649326}
+{"event": "receive", "node_id": "n13", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639863.5781069}
+{"event": "receive", "node_id": "n3", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639863.5781069}
+{"event": "receive", "node_id": "n13", "packet_id": "ea43a7f2-726f-4700-a8c4-6f31c0799726", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639863.5796192}
+{"event": "origin", "node_id": "n9", "packet_id": "ee8f5400-096b-482c-855d-61005c598823", "wall_time": 1786639863.583857}
+{"event": "receive", "node_id": "n9", "packet_id": "ee8f5400-096b-482c-855d-61005c598823", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.583857}
+{"event": "receive", "node_id": "n19", "packet_id": "65b7266a-cce1-40bd-9edb-3c72fb3d6a8c", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639863.5937011}
+{"event": "origin", "node_id": "n16", "packet_id": "5959ebda-ad43-44bb-a425-385c23d0d538", "wall_time": 1786639863.599121}
+{"event": "receive", "node_id": "n16", "packet_id": "5959ebda-ad43-44bb-a425-385c23d0d538", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.599121}
+{"event": "origin", "node_id": "n4", "packet_id": "7bc21354-525f-40b0-9054-b4a639698dec", "wall_time": 1786639863.610603}
+{"event": "receive", "node_id": "n2", "packet_id": "48121838-a7d9-44ab-a63b-5054f2d435b4", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639863.610603}
+{"event": "receive", "node_id": "n4", "packet_id": "7bc21354-525f-40b0-9054-b4a639698dec", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.610603}
+{"event": "origin", "node_id": "n5", "packet_id": "72611c4d-6d53-4cde-941c-07136e9c1d79", "wall_time": 1786639863.6240225}
+{"event": "receive", "node_id": "n5", "packet_id": "72611c4d-6d53-4cde-941c-07136e9c1d79", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.624641}
+{"event": "receive", "node_id": "n6", "packet_id": "5959ebda-ad43-44bb-a425-385c23d0d538", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639863.6257424}
+{"event": "receive", "node_id": "n2", "packet_id": "9336c3f3-ded5-4316-97fe-7eacccef59ce", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639863.6257424}
+{"event": "receive", "node_id": "n3", "packet_id": "8cbce688-3c35-477c-957f-e530d47beb5c", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639863.6257424}
+{"event": "origin", "node_id": "n16", "packet_id": "b6a86b6e-b43c-447d-abe2-d7b49519aa53", "wall_time": 1786639863.6444223}
+{"event": "receive", "node_id": "n16", "packet_id": "b6a86b6e-b43c-447d-abe2-d7b49519aa53", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.6454442}
+{"event": "origin", "node_id": "n19", "packet_id": "dd49ba3a-cb6d-4ef1-82ed-36a02f1ce9d1", "wall_time": 1786639863.6555595}
+{"event": "receive", "node_id": "n19", "packet_id": "dd49ba3a-cb6d-4ef1-82ed-36a02f1ce9d1", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.6570911}
+{"event": "receive", "node_id": "n3", "packet_id": "ea43a7f2-726f-4700-a8c4-6f31c0799726", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639863.6570911}
+{"event": "receive", "node_id": "n0", "packet_id": "7825300f-0b73-4f3f-afd7-eb0e749b3a88", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639863.658091}
+{"event": "receive", "node_id": "n21", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639863.658091}
+{"event": "receive", "node_id": "n7", "packet_id": "510e03f6-6006-4b30-8fa2-5fcf523d0467", "state": "STEM", "sender_peer_id": "n1", "wall_time": 1786639863.658091}
+{"event": "receive", "node_id": "n10", "packet_id": "72611c4d-6d53-4cde-941c-07136e9c1d79", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639863.6586041}
+{"event": "receive", "node_id": "n7", "packet_id": "b7093875-6e39-4702-b1c8-6e6ab0c8924d", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639863.6626885}
+{"event": "origin", "node_id": "n0", "packet_id": "05adaf4a-1213-4c29-8394-5ae479858aa2", "wall_time": 1786639863.6637068}
+{"event": "receive", "node_id": "n10", "packet_id": "5a0b9814-9b3c-4e62-823d-d19339232f8c", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639863.6642196}
+{"event": "receive", "node_id": "n0", "packet_id": "05adaf4a-1213-4c29-8394-5ae479858aa2", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.6657355}
+{"event": "receive", "node_id": "n20", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639863.6677513}
+{"event": "origin", "node_id": "n11", "packet_id": "71099243-93c9-48f4-bbe3-73d498d26e07", "wall_time": 1786639863.6844108}
+{"event": "receive", "node_id": "n11", "packet_id": "71099243-93c9-48f4-bbe3-73d498d26e07", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.6856046}
+{"event": "receive", "node_id": "n15", "packet_id": "c90be732-ef8c-4b96-8cf9-f02c69453698", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639863.6876988}
+{"event": "receive", "node_id": "n18", "packet_id": "8cbce688-3c35-477c-957f-e530d47beb5c", "state": "FLUFF", "sender_peer_id": "n3", "wall_time": 1786639863.6886234}
+{"event": "origin", "node_id": "n9", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "wall_time": 1786639863.6944802}
+{"event": "receive", "node_id": "n9", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.6955018}
+{"event": "origin", "node_id": "n7", "packet_id": "dcc096a6-0d97-4c9d-9cf3-90b8b27697b2", "wall_time": 1786639863.7143025}
+{"event": "receive", "node_id": "n7", "packet_id": "dcc096a6-0d97-4c9d-9cf3-90b8b27697b2", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.716957}
+{"event": "receive", "node_id": "n13", "packet_id": "8cbce688-3c35-477c-957f-e530d47beb5c", "state": "FLUFF", "sender_peer_id": "n3", "wall_time": 1786639863.7194786}
+{"event": "receive", "node_id": "n0", "packet_id": "2f3395ea-7034-4052-b7dd-6f7c19c5f65f", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639863.7194786}
+{"event": "origin", "node_id": "n2", "packet_id": "fc580abd-740b-4df2-8220-ff270024661e", "wall_time": 1786639863.7225194}
+{"event": "receive", "node_id": "n2", "packet_id": "fc580abd-740b-4df2-8220-ff270024661e", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.7237554}
+{"event": "receive", "node_id": "n16", "packet_id": "71099243-93c9-48f4-bbe3-73d498d26e07", "state": "STEM", "sender_peer_id": "n11", "wall_time": 1786639863.7356317}
+{"event": "receive", "node_id": "n4", "packet_id": "ee8f5400-096b-482c-855d-61005c598823", "state": "STEM", "sender_peer_id": "n9", "wall_time": 1786639863.7356317}
+{"event": "receive", "node_id": "n23", "packet_id": "b6a86b6e-b43c-447d-abe2-d7b49519aa53", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639863.737649}
+{"event": "origin", "node_id": "n15", "packet_id": "2104e0eb-b850-49de-876b-2adaf00d3e63", "wall_time": 1786639863.7416332}
+{"event": "receive", "node_id": "n15", "packet_id": "2104e0eb-b850-49de-876b-2adaf00d3e63", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.7427087}
+{"event": "receive", "node_id": "n15", "packet_id": "05adaf4a-1213-4c29-8394-5ae479858aa2", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639863.7506688}
+{"event": "receive", "node_id": "n22", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639863.7506688}
+{"event": "origin", "node_id": "n17", "packet_id": "56a119c5-6265-4541-aff0-68e6b778b900", "wall_time": 1786639863.759854}
+{"event": "receive", "node_id": "n17", "packet_id": "56a119c5-6265-4541-aff0-68e6b778b900", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.759854}
+{"event": "receive", "node_id": "n14", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639863.7658424}
+{"event": "receive", "node_id": "n19", "packet_id": "21bdfc65-7749-494c-bc93-7c3b60c4bdad", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639863.7658424}
+{"event": "origin", "node_id": "n4", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "wall_time": 1786639863.7762835}
+{"event": "receive", "node_id": "n4", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.7772875}
+{"event": "receive", "node_id": "n0", "packet_id": "c90be732-ef8c-4b96-8cf9-f02c69453698", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639863.7818549}
+{"event": "receive", "node_id": "n10", "packet_id": "7825300f-0b73-4f3f-afd7-eb0e749b3a88", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639863.7818549}
+{"event": "receive", "node_id": "n17", "packet_id": "48121838-a7d9-44ab-a63b-5054f2d435b4", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639863.7818549}
+{"event": "receive", "node_id": "n6", "packet_id": "71099243-93c9-48f4-bbe3-73d498d26e07", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639863.7818549}
+{"event": "receive", "node_id": "n19", "packet_id": "65b69a4a-9f13-4660-ad58-7e33600122b9", "state": "STEM", "sender_peer_id": "n9", "wall_time": 1786639863.7818549}
+{"event": "receive", "node_id": "n0", "packet_id": "72611c4d-6d53-4cde-941c-07136e9c1d79", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639863.7828503}
+{"event": "receive", "node_id": "n17", "packet_id": "510e03f6-6006-4b30-8fa2-5fcf523d0467", "state": "STEM", "sender_peer_id": "n7", "wall_time": 1786639863.7828503}
+{"event": "origin", "node_id": "n17", "packet_id": "555a418f-6733-4683-b9e7-1c674e6edc78", "wall_time": 1786639863.7843626}
+{"event": "receive", "node_id": "n17", "packet_id": "555a418f-6733-4683-b9e7-1c674e6edc78", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.786752}
+{"event": "origin", "node_id": "n16", "packet_id": "17aada52-edbe-4918-bbb0-a9fd94981af5", "wall_time": 1786639863.8049505}
+{"event": "receive", "node_id": "n16", "packet_id": "17aada52-edbe-4918-bbb0-a9fd94981af5", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.8064487}
+{"event": "origin", "node_id": "n13", "packet_id": "a503c5f0-5b88-4085-ba8f-4793946713bd", "wall_time": 1786639863.825655}
+{"event": "receive", "node_id": "n13", "packet_id": "a503c5f0-5b88-4085-ba8f-4793946713bd", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.8267066}
+{"event": "receive", "node_id": "n5", "packet_id": "7825300f-0b73-4f3f-afd7-eb0e749b3a88", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639863.8287067}
+{"event": "origin", "node_id": "n17", "packet_id": "c0f168fc-dfa8-4bc2-9105-cba4dc15399a", "wall_time": 1786639863.8432078}
+{"event": "receive", "node_id": "n17", "packet_id": "c0f168fc-dfa8-4bc2-9105-cba4dc15399a", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.8442347}
+{"event": "receive", "node_id": "n0", "packet_id": "d3d86e19-210a-4609-83c0-3f36d48b0370", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639863.8442347}
+{"event": "receive", "node_id": "n5", "packet_id": "2104e0eb-b850-49de-876b-2adaf00d3e63", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639863.8442347}
+{"event": "receive", "node_id": "n6", "packet_id": "17aada52-edbe-4918-bbb0-a9fd94981af5", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639863.8442347}
+{"event": "receive", "node_id": "n4", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "STEM", "sender_peer_id": "n9", "wall_time": 1786639863.8442347}
+{"event": "receive", "node_id": "n15", "packet_id": "72611c4d-6d53-4cde-941c-07136e9c1d79", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639863.845749}
+{"event": "receive", "node_id": "n5", "packet_id": "05adaf4a-1213-4c29-8394-5ae479858aa2", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639863.845749}
+{"event": "origin", "node_id": "n22", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "wall_time": 1786639863.851594}
+{"event": "receive", "node_id": "n22", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.852626}
+{"event": "origin", "node_id": "n9", "packet_id": "1da07f07-e781-4ef4-9042-8c3c3ce52804", "wall_time": 1786639863.8634157}
+{"event": "receive", "node_id": "n9", "packet_id": "1da07f07-e781-4ef4-9042-8c3c3ce52804", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.8639448}
+{"event": "receive", "node_id": "n12", "packet_id": "9336c3f3-ded5-4316-97fe-7eacccef59ce", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639863.8742847}
+{"event": "receive", "node_id": "n4", "packet_id": "dd49ba3a-cb6d-4ef1-82ed-36a02f1ce9d1", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639863.8742847}
+{"event": "receive", "node_id": "n19", "packet_id": "7bc21354-525f-40b0-9054-b4a639698dec", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639863.875794}
+{"event": "origin", "node_id": "n21", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "wall_time": 1786639863.8796651}
+{"event": "receive", "node_id": "n21", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.8806703}
+{"event": "receive", "node_id": "n19", "packet_id": "16e0dc25-430c-44a3-a1d3-1d2db0f1acf8", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639863.889708}
+{"event": "receive", "node_id": "n12", "packet_id": "510e03f6-6006-4b30-8fa2-5fcf523d0467", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639863.889708}
+{"event": "receive", "node_id": "n7", "packet_id": "555a418f-6733-4683-b9e7-1c674e6edc78", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639863.889708}
+{"event": "origin", "node_id": "n14", "packet_id": "53b9801f-a8fd-4468-913c-abe2b44ad88c", "wall_time": 1786639863.899865}
+{"event": "receive", "node_id": "n14", "packet_id": "53b9801f-a8fd-4468-913c-abe2b44ad88c", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.9009478}
+{"event": "origin", "node_id": "n14", "packet_id": "3c29ead4-9c7d-4cf0-8780-014bb068d29a", "wall_time": 1786639863.9074318}
+{"event": "receive", "node_id": "n14", "packet_id": "3c29ead4-9c7d-4cf0-8780-014bb068d29a", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.908448}
+{"event": "origin", "node_id": "n7", "packet_id": "ac13e6b9-6b08-4eec-babc-2473bc0f4703", "wall_time": 1786639863.9144378}
+{"event": "receive", "node_id": "n7", "packet_id": "ac13e6b9-6b08-4eec-babc-2473bc0f4703", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.9168751}
+{"event": "receive", "node_id": "n2", "packet_id": "56a119c5-6265-4541-aff0-68e6b778b900", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639863.9215593}
+{"event": "receive", "node_id": "n14", "packet_id": "65b7266a-cce1-40bd-9edb-3c72fb3d6a8c", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639863.9215593}
+{"event": "receive", "node_id": "n12", "packet_id": "c0f168fc-dfa8-4bc2-9105-cba4dc15399a", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639863.9225748}
+{"event": "origin", "node_id": "n0", "packet_id": "fc847343-d47b-4fb6-acb9-01377b05cb2c", "wall_time": 1786639863.9305065}
+{"event": "receive", "node_id": "n0", "packet_id": "fc847343-d47b-4fb6-acb9-01377b05cb2c", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.9323497}
+{"event": "receive", "node_id": "n14", "packet_id": "8cbce688-3c35-477c-957f-e530d47beb5c", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639863.9369085}
+{"event": "origin", "node_id": "n7", "packet_id": "e76c604c-bdd0-4326-83de-23b11377635b", "wall_time": 1786639863.9465873}
+{"event": "receive", "node_id": "n7", "packet_id": "e76c604c-bdd0-4326-83de-23b11377635b", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.9476523}
+{"event": "receive", "node_id": "n19", "packet_id": "ee8f5400-096b-482c-855d-61005c598823", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639863.9521792}
+{"event": "receive", "node_id": "n15", "packet_id": "7825300f-0b73-4f3f-afd7-eb0e749b3a88", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639863.9521792}
+{"event": "origin", "node_id": "n0", "packet_id": "acc14c52-c0cc-4cde-a924-00dcf3578b44", "wall_time": 1786639863.9531858}
+{"event": "receive", "node_id": "n0", "packet_id": "acc14c52-c0cc-4cde-a924-00dcf3578b44", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.9546528}
+{"event": "receive", "node_id": "n10", "packet_id": "d3d86e19-210a-4609-83c0-3f36d48b0370", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639863.9556503}
+{"event": "receive", "node_id": "n22", "packet_id": "965bc6cc-3678-4210-8099-6ec556f7db69", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639863.9556503}
+{"event": "origin", "node_id": "n20", "packet_id": "731e5238-7970-4605-bc40-007d2d8e144f", "wall_time": 1786639863.9596856}
+{"event": "receive", "node_id": "n20", "packet_id": "731e5238-7970-4605-bc40-007d2d8e144f", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.9606972}
+{"event": "origin", "node_id": "n2", "packet_id": "ed11800d-a5d9-4b7e-b3e8-b1781bbb9e3e", "wall_time": 1786639863.9798884}
+{"event": "receive", "node_id": "n2", "packet_id": "ed11800d-a5d9-4b7e-b3e8-b1781bbb9e3e", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.9809234}
+{"event": "receive", "node_id": "n12", "packet_id": "fc580abd-740b-4df2-8220-ff270024661e", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639863.9819324}
+{"event": "receive", "node_id": "n5", "packet_id": "d3d86e19-210a-4609-83c0-3f36d48b0370", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639863.9830089}
+{"event": "origin", "node_id": "n10", "packet_id": "7f7fd933-3699-4ad2-ba61-6e5d0261a667", "wall_time": 1786639863.9864068}
+{"event": "receive", "node_id": "n10", "packet_id": "7f7fd933-3699-4ad2-ba61-6e5d0261a667", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639863.9887931}
+{"event": "origin", "node_id": "n7", "packet_id": "74f4258a-920b-42e9-ac8d-7380503be4c2", "wall_time": 1786639863.998464}
+{"event": "receive", "node_id": "n4", "packet_id": "65b69a4a-9f13-4660-ad58-7e33600122b9", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639863.998464}
+{"event": "receive", "node_id": "n7", "packet_id": "74f4258a-920b-42e9-ac8d-7380503be4c2", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.0011158}
+{"event": "receive", "node_id": "n9", "packet_id": "dd49ba3a-cb6d-4ef1-82ed-36a02f1ce9d1", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639864.003157}
+{"event": "origin", "node_id": "n15", "packet_id": "fa9a327b-45e5-4ac7-91a0-96ce9b0a8953", "wall_time": 1786639864.0093377}
+{"event": "receive", "node_id": "n15", "packet_id": "fa9a327b-45e5-4ac7-91a0-96ce9b0a8953", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.0121264}
+{"event": "receive", "node_id": "n8", "packet_id": "c90be732-ef8c-4b96-8cf9-f02c69453698", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639864.0141966}
+{"event": "origin", "node_id": "n4", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "wall_time": 1786639864.0281599}
+{"event": "receive", "node_id": "n4", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.0293822}
+{"event": "receive", "node_id": "n5", "packet_id": "7f7fd933-3699-4ad2-ba61-6e5d0261a667", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639864.0293822}
+{"event": "receive", "node_id": "n19", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639864.0304036}
+{"event": "origin", "node_id": "n18", "packet_id": "beef38de-db56-48e8-a5ac-d094f0d25098", "wall_time": 1786639864.042658}
+{"event": "receive", "node_id": "n18", "packet_id": "beef38de-db56-48e8-a5ac-d094f0d25098", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.0442135}
+{"event": "receive", "node_id": "n14", "packet_id": "a503c5f0-5b88-4085-ba8f-4793946713bd", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639864.0447447}
+{"event": "receive", "node_id": "n16", "packet_id": "9336c3f3-ded5-4316-97fe-7eacccef59ce", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639864.0452619}
+{"event": "receive", "node_id": "n19", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "FLUFF", "sender_peer_id": "n14", "wall_time": 1786639864.0464196}
+{"event": "receive", "node_id": "n18", "packet_id": "c90be732-ef8c-4b96-8cf9-f02c69453698", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639864.0601904}
+{"event": "origin", "node_id": "n7", "packet_id": "a8f8eaaa-d79e-4602-ad72-042a4ccf5c6e", "wall_time": 1786639864.0612426}
+{"event": "receive", "node_id": "n7", "packet_id": "a8f8eaaa-d79e-4602-ad72-042a4ccf5c6e", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.0638611}
+{"event": "receive", "node_id": "n17", "packet_id": "ac13e6b9-6b08-4eec-babc-2473bc0f4703", "state": "STEM", "sender_peer_id": "n7", "wall_time": 1786639864.0651324}
+{"event": "origin", "node_id": "n13", "packet_id": "3461b12f-e375-4501-8215-096e4a0fb11c", "wall_time": 1786639864.0714388}
+{"event": "receive", "node_id": "n13", "packet_id": "3461b12f-e375-4501-8215-096e4a0fb11c", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.0724936}
+{"event": "receive", "node_id": "n16", "packet_id": "c0f168fc-dfa8-4bc2-9105-cba4dc15399a", "state": "FLUFF", "sender_peer_id": "n12", "wall_time": 1786639864.076097}
+{"event": "receive", "node_id": "n6", "packet_id": "9336c3f3-ded5-4316-97fe-7eacccef59ce", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639864.077614}
+{"event": "origin", "node_id": "n3", "packet_id": "dec8c2ea-66f1-400c-9f4c-c5c189e6e972", "wall_time": 1786639864.0878448}
+{"event": "receive", "node_id": "n3", "packet_id": "dec8c2ea-66f1-400c-9f4c-c5c189e6e972", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.089857}
+{"event": "receive", "node_id": "n4", "packet_id": "16e0dc25-430c-44a3-a1d3-1d2db0f1acf8", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639864.0908625}
+{"event": "receive", "node_id": "n10", "packet_id": "fc847343-d47b-4fb6-acb9-01377b05cb2c", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639864.0908625}
+{"event": "receive", "node_id": "n0", "packet_id": "fa9a327b-45e5-4ac7-91a0-96ce9b0a8953", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639864.0908625}
+{"event": "origin", "node_id": "n11", "packet_id": "3a094235-ec56-4b0e-8d1a-9c0d2594e1d3", "wall_time": 1786639864.1008804}
+{"event": "receive", "node_id": "n11", "packet_id": "3a094235-ec56-4b0e-8d1a-9c0d2594e1d3", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.1042578}
+{"event": "receive", "node_id": "n13", "packet_id": "3c29ead4-9c7d-4cf0-8780-014bb068d29a", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639864.1068938}
+{"event": "receive", "node_id": "n3", "packet_id": "beef38de-db56-48e8-a5ac-d094f0d25098", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639864.1068938}
+{"event": "receive", "node_id": "n6", "packet_id": "c0f168fc-dfa8-4bc2-9105-cba4dc15399a", "state": "FLUFF", "sender_peer_id": "n16", "wall_time": 1786639864.1068938}
+{"event": "receive", "node_id": "n13", "packet_id": "53b9801f-a8fd-4468-913c-abe2b44ad88c", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639864.1090071}
+{"event": "receive", "node_id": "n3", "packet_id": "c90be732-ef8c-4b96-8cf9-f02c69453698", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639864.111084}
+{"event": "origin", "node_id": "n14", "packet_id": "6f4e092a-a720-4314-9942-eb9bdba9d36e", "wall_time": 1786639864.1222346}
+{"event": "receive", "node_id": "n19", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "FLUFF", "sender_peer_id": "n4", "wall_time": 1786639864.122775}
+{"event": "receive", "node_id": "n14", "packet_id": "6f4e092a-a720-4314-9942-eb9bdba9d36e", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.1256511}
+{"event": "receive", "node_id": "n13", "packet_id": "65b7266a-cce1-40bd-9edb-3c72fb3d6a8c", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639864.1284142}
+{"event": "receive", "node_id": "n16", "packet_id": "fc580abd-740b-4df2-8220-ff270024661e", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639864.1380947}
+{"event": "receive", "node_id": "n5", "packet_id": "fc847343-d47b-4fb6-acb9-01377b05cb2c", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639864.1380947}
+{"event": "receive", "node_id": "n12", "packet_id": "56a119c5-6265-4541-aff0-68e6b778b900", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639864.1380947}
+{"event": "receive", "node_id": "n11", "packet_id": "c0f168fc-dfa8-4bc2-9105-cba4dc15399a", "state": "FLUFF", "sender_peer_id": "n16", "wall_time": 1786639864.1380947}
+{"event": "receive", "node_id": "n2", "packet_id": "510e03f6-6006-4b30-8fa2-5fcf523d0467", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639864.1380947}
+{"event": "origin", "node_id": "n1", "packet_id": "3a1971fa-b1d7-458c-bd9b-645c03b715a2", "wall_time": 1786639864.1408203}
+{"event": "origin", "node_id": "n20", "packet_id": "75318bf7-224a-439c-89f5-b51eb1a4a03f", "wall_time": 1786639864.153869}
+{"event": "receive", "node_id": "n20", "packet_id": "75318bf7-224a-439c-89f5-b51eb1a4a03f", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.155508}
+{"event": "receive", "node_id": "n8", "packet_id": "3461b12f-e375-4501-8215-096e4a0fb11c", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639864.168587}
+{"event": "receive", "node_id": "n2", "packet_id": "c0f168fc-dfa8-4bc2-9105-cba4dc15399a", "state": "FLUFF", "sender_peer_id": "n12", "wall_time": 1786639864.168587}
+{"event": "receive", "node_id": "n9", "packet_id": "21bdfc65-7749-494c-bc93-7c3b60c4bdad", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639864.168587}
+{"event": "receive", "node_id": "n18", "packet_id": "dec8c2ea-66f1-400c-9f4c-c5c189e6e972", "state": "STEM", "sender_peer_id": "n3", "wall_time": 1786639864.168587}
+{"event": "receive", "node_id": "n12", "packet_id": "ac13e6b9-6b08-4eec-babc-2473bc0f4703", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639864.168587}
+{"event": "receive", "node_id": "n3", "packet_id": "3c29ead4-9c7d-4cf0-8780-014bb068d29a", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639864.169612}
+{"event": "receive", "node_id": "n8", "packet_id": "53b9801f-a8fd-4468-913c-abe2b44ad88c", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639864.169612}
+{"event": "origin", "node_id": "n12", "packet_id": "2deb2b59-0648-4aff-91a6-a2e191db7694", "wall_time": 1786639864.172008}
+{"event": "receive", "node_id": "n17", "packet_id": "ed11800d-a5d9-4b7e-b3e8-b1781bbb9e3e", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639864.173074}
+{"event": "receive", "node_id": "n12", "packet_id": "2deb2b59-0648-4aff-91a6-a2e191db7694", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.1821158}
+{"event": "receive", "node_id": "n23", "packet_id": "c0f168fc-dfa8-4bc2-9105-cba4dc15399a", "state": "FLUFF", "sender_peer_id": "n16", "wall_time": 1786639864.1836193}
+{"event": "receive", "node_id": "n5", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639864.1836193}
+{"event": "origin", "node_id": "n3", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "wall_time": 1786639864.191396}
+{"event": "receive", "node_id": "n3", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.192412}
+{"event": "origin", "node_id": "n6", "packet_id": "3e94239b-d607-445f-844d-d333c40f50ba", "wall_time": 1786639864.2059069}
+{"event": "receive", "node_id": "n6", "packet_id": "3e94239b-d607-445f-844d-d333c40f50ba", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.2074723}
+{"event": "receive", "node_id": "n19", "packet_id": "1da07f07-e781-4ef4-9042-8c3c3ce52804", "state": "STEM", "sender_peer_id": "n9", "wall_time": 1786639864.214707}
+{"event": "receive", "node_id": "n21", "packet_id": "731e5238-7970-4605-bc40-007d2d8e144f", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639864.214707}
+{"event": "receive", "node_id": "n14", "packet_id": "7bc21354-525f-40b0-9054-b4a639698dec", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639864.214707}
+{"event": "receive", "node_id": "n8", "packet_id": "65b7266a-cce1-40bd-9edb-3c72fb3d6a8c", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639864.214707}
+{"event": "origin", "node_id": "n4", "packet_id": "f66419a2-df22-457a-8aa3-881d7b537852", "wall_time": 1786639864.2184582}
+{"event": "receive", "node_id": "n4", "packet_id": "f66419a2-df22-457a-8aa3-881d7b537852", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.2214108}
+{"event": "receive", "node_id": "n10", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.2297618}
+{"event": "receive", "node_id": "n8", "packet_id": "dec8c2ea-66f1-400c-9f4c-c5c189e6e972", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639864.2297618}
+{"event": "receive", "node_id": "n10", "packet_id": "fa9a327b-45e5-4ac7-91a0-96ce9b0a8953", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639864.2318127}
+{"event": "origin", "node_id": "n8", "packet_id": "689d3e2c-fa2e-483c-af36-1c2342b7efc9", "wall_time": 1786639864.2333634}
+{"event": "receive", "node_id": "n8", "packet_id": "beef38de-db56-48e8-a5ac-d094f0d25098", "state": "STEM", "sender_peer_id": "n3", "wall_time": 1786639864.2333634}
+{"event": "receive", "node_id": "n8", "packet_id": "689d3e2c-fa2e-483c-af36-1c2342b7efc9", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.23832}
+{"event": "receive", "node_id": "n23", "packet_id": "fc580abd-740b-4df2-8220-ff270024661e", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639864.2457502}
+{"event": "receive", "node_id": "n16", "packet_id": "3e94239b-d607-445f-844d-d333c40f50ba", "state": "STEM", "sender_peer_id": "n6", "wall_time": 1786639864.2457502}
+{"event": "origin", "node_id": "n2", "packet_id": "b879e95e-ad0e-4fc1-9628-c89528626fe5", "wall_time": 1786639864.2488594}
+{"event": "receive", "node_id": "n2", "packet_id": "b879e95e-ad0e-4fc1-9628-c89528626fe5", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.2553499}
+{"event": "origin", "node_id": "n17", "packet_id": "daccf560-a877-448b-b7b2-a43c04f14035", "wall_time": 1786639864.261236}
+{"event": "receive", "node_id": "n9", "packet_id": "16e0dc25-430c-44a3-a1d3-1d2db0f1acf8", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639864.261782}
+{"event": "receive", "node_id": "n22", "packet_id": "2f3395ea-7034-4052-b7dd-6f7c19c5f65f", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639864.261782}
+{"event": "receive", "node_id": "n17", "packet_id": "daccf560-a877-448b-b7b2-a43c04f14035", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.2638502}
+{"event": "receive", "node_id": "n8", "packet_id": "3c29ead4-9c7d-4cf0-8780-014bb068d29a", "state": "STEM", "sender_peer_id": "n3", "wall_time": 1786639864.275814}
+{"event": "receive", "node_id": "n15", "packet_id": "fc847343-d47b-4fb6-acb9-01377b05cb2c", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.275814}
+{"event": "receive", "node_id": "n5", "packet_id": "fa9a327b-45e5-4ac7-91a0-96ce9b0a8953", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639864.275814}
+{"event": "receive", "node_id": "n8", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "STEM", "sender_peer_id": "n3", "wall_time": 1786639864.2776253}
+{"event": "origin", "node_id": "n20", "packet_id": "992a3502-5877-4adf-bde9-ecd67b9e4818", "wall_time": 1786639864.2848911}
+{"event": "receive", "node_id": "n20", "packet_id": "992a3502-5877-4adf-bde9-ecd67b9e4818", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.2872243}
+{"event": "receive", "node_id": "n11", "packet_id": "3e94239b-d607-445f-844d-d333c40f50ba", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639864.2916465}
+{"event": "receive", "node_id": "n14", "packet_id": "ee8f5400-096b-482c-855d-61005c598823", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639864.2916465}
+{"event": "receive", "node_id": "n19", "packet_id": "8cbce688-3c35-477c-957f-e530d47beb5c", "state": "FLUFF", "sender_peer_id": "n14", "wall_time": 1786639864.2916465}
+{"event": "receive", "node_id": "n4", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639864.2916465}
+{"event": "receive", "node_id": "n13", "packet_id": "6f4e092a-a720-4314-9942-eb9bdba9d36e", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639864.2916465}
+{"event": "receive", "node_id": "n19", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639864.297225}
+{"event": "receive", "node_id": "n13", "packet_id": "beef38de-db56-48e8-a5ac-d094f0d25098", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639864.3071334}
+{"event": "receive", "node_id": "n18", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.3071334}
+{"event": "origin", "node_id": "n0", "packet_id": "b918aad7-c077-447c-a0d0-87832a226ed2", "wall_time": 1786639864.307757}
+{"event": "receive", "node_id": "n18", "packet_id": "3c29ead4-9c7d-4cf0-8780-014bb068d29a", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.3087893}
+{"event": "receive", "node_id": "n0", "packet_id": "b918aad7-c077-447c-a0d0-87832a226ed2", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.3113222}
+{"event": "origin", "node_id": "n7", "packet_id": "b5e9f62a-c99a-49fd-9fdf-edfa74ac86c6", "wall_time": 1786639864.3185098}
+{"event": "receive", "node_id": "n7", "packet_id": "b5e9f62a-c99a-49fd-9fdf-edfa74ac86c6", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.3195207}
+{"event": "receive", "node_id": "n4", "packet_id": "21bdfc65-7749-494c-bc93-7c3b60c4bdad", "state": "STEM", "sender_peer_id": "n9", "wall_time": 1786639864.3218563}
+{"event": "receive", "node_id": "n7", "packet_id": "ed11800d-a5d9-4b7e-b3e8-b1781bbb9e3e", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639864.3227437}
+{"event": "origin", "node_id": "n15", "packet_id": "f863a218-6c9a-4511-a497-96263e2a17d6", "wall_time": 1786639864.332024}
+{"event": "receive", "node_id": "n15", "packet_id": "f863a218-6c9a-4511-a497-96263e2a17d6", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.3332725}
+{"event": "receive", "node_id": "n21", "packet_id": "7f7fd933-3699-4ad2-ba61-6e5d0261a667", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.336734}
+{"event": "receive", "node_id": "n16", "packet_id": "2deb2b59-0648-4aff-91a6-a2e191db7694", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639864.336734}
+{"event": "receive", "node_id": "n22", "packet_id": "2104e0eb-b850-49de-876b-2adaf00d3e63", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.336734}
+{"event": "receive", "node_id": "n16", "packet_id": "ac13e6b9-6b08-4eec-babc-2473bc0f4703", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639864.3399985}
+{"event": "receive", "node_id": "n0", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "STEM", "sender_peer_id": "n22", "wall_time": 1786639864.340507}
+{"event": "receive", "node_id": "n19", "packet_id": "a503c5f0-5b88-4085-ba8f-4793946713bd", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639864.3516781}
+{"event": "receive", "node_id": "n14", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639864.3516781}
+{"event": "receive", "node_id": "n0", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639864.3516781}
+{"event": "receive", "node_id": "n13", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.3521867}
+{"event": "origin", "node_id": "n12", "packet_id": "52230a3a-db16-4357-97e0-5cfbc0785a5f", "wall_time": 1786639864.352708}
+{"event": "receive", "node_id": "n0", "packet_id": "53b9801f-a8fd-4468-913c-abe2b44ad88c", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639864.352708}
+{"event": "receive", "node_id": "n3", "packet_id": "6f4e092a-a720-4314-9942-eb9bdba9d36e", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639864.3540974}
+{"event": "receive", "node_id": "n12", "packet_id": "52230a3a-db16-4357-97e0-5cfbc0785a5f", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.3557696}
+{"event": "origin", "node_id": "n5", "packet_id": "46d307bd-b50d-456f-9993-4b3f98c3952c", "wall_time": 1786639864.3662577}
+{"event": "receive", "node_id": "n5", "packet_id": "46d307bd-b50d-456f-9993-4b3f98c3952c", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.3673804}
+{"event": "receive", "node_id": "n22", "packet_id": "05adaf4a-1213-4c29-8394-5ae479858aa2", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.3673804}
+{"event": "origin", "node_id": "n12", "packet_id": "a8f230da-510f-4804-b295-89f886c52295", "wall_time": 1786639864.3761616}
+{"event": "receive", "node_id": "n12", "packet_id": "a8f230da-510f-4804-b295-89f886c52295", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.3771954}
+{"event": "receive", "node_id": "n11", "packet_id": "2deb2b59-0648-4aff-91a6-a2e191db7694", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639864.3843148}
+{"event": "origin", "node_id": "n14", "packet_id": "a44b2645-b9c3-496e-a67a-e0b5d17b4e51", "wall_time": 1786639864.3858323}
+{"event": "receive", "node_id": "n11", "packet_id": "ac13e6b9-6b08-4eec-babc-2473bc0f4703", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639864.3858323}
+{"event": "receive", "node_id": "n14", "packet_id": "a44b2645-b9c3-496e-a67a-e0b5d17b4e51", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.3868604}
+{"event": "receive", "node_id": "n13", "packet_id": "7bc21354-525f-40b0-9054-b4a639698dec", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639864.3878498}
+{"event": "receive", "node_id": "n9", "packet_id": "9d59a352-b844-42aa-a804-d0845d1bc636", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639864.398592}
+{"event": "receive", "node_id": "n0", "packet_id": "65b7266a-cce1-40bd-9edb-3c72fb3d6a8c", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639864.398592}
+{"event": "receive", "node_id": "n0", "packet_id": "dec8c2ea-66f1-400c-9f4c-c5c189e6e972", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639864.4027119}
+{"event": "receive", "node_id": "n15", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.4027119}
+{"event": "receive", "node_id": "n0", "packet_id": "3461b12f-e375-4501-8215-096e4a0fb11c", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639864.4037287}
+{"event": "origin", "node_id": "n22", "packet_id": "3ac48467-c4eb-4ee6-9c14-89819fe1ec61", "wall_time": 1786639864.406806}
+{"event": "receive", "node_id": "n22", "packet_id": "3ac48467-c4eb-4ee6-9c14-89819fe1ec61", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.407882}
+{"event": "origin", "node_id": "n17", "packet_id": "231df336-48bb-464e-bf93-56338ca7eda9", "wall_time": 1786639864.4224918}
+{"event": "receive", "node_id": "n17", "packet_id": "231df336-48bb-464e-bf93-56338ca7eda9", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.4240203}
+{"event": "receive", "node_id": "n7", "packet_id": "daccf560-a877-448b-b7b2-a43c04f14035", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639864.4240203}
+{"event": "receive", "node_id": "n5", "packet_id": "f863a218-6c9a-4511-a497-96263e2a17d6", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639864.4295466}
+{"event": "receive", "node_id": "n17", "packet_id": "b879e95e-ad0e-4fc1-9628-c89528626fe5", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639864.4295466}
+{"event": "origin", "node_id": "n15", "packet_id": "72559330-474b-4666-bedd-0be45bec1c42", "wall_time": 1786639864.430728}
+{"event": "receive", "node_id": "n15", "packet_id": "72559330-474b-4666-bedd-0be45bec1c42", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.4317362}
+{"event": "origin", "node_id": "n9", "packet_id": "23b88fb5-7208-4402-a859-34185df8abac", "wall_time": 1786639864.4401076}
+{"event": "receive", "node_id": "n9", "packet_id": "23b88fb5-7208-4402-a859-34185df8abac", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.4401076}
+{"event": "receive", "node_id": "n15", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.4445422}
+{"event": "receive", "node_id": "n0", "packet_id": "689d3e2c-fa2e-483c-af36-1c2342b7efc9", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639864.4445422}
+{"event": "receive", "node_id": "n10", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.4445422}
+{"event": "origin", "node_id": "n1", "packet_id": "51c72540-872c-4bba-bf3b-e86da1c7c888", "wall_time": 1786639864.4547184}
+{"event": "receive", "node_id": "n3", "packet_id": "7bc21354-525f-40b0-9054-b4a639698dec", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639864.459762}
+{"event": "receive", "node_id": "n22", "packet_id": "d3d86e19-210a-4609-83c0-3f36d48b0370", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.459762}
+{"event": "receive", "node_id": "n5", "packet_id": "965bc6cc-3678-4210-8099-6ec556f7db69", "state": "STEM", "sender_peer_id": "n22", "wall_time": 1786639864.459762}
+{"event": "receive", "node_id": "n10", "packet_id": "f863a218-6c9a-4511-a497-96263e2a17d6", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.459762}
+{"event": "receive", "node_id": "n17", "packet_id": "52230a3a-db16-4357-97e0-5cfbc0785a5f", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639864.459762}
+{"event": "origin", "node_id": "n17", "packet_id": "3d51fa41-0bd7-48e1-9e8b-80de6c2f20be", "wall_time": 1786639864.4613023}
+{"event": "receive", "node_id": "n15", "packet_id": "46d307bd-b50d-456f-9993-4b3f98c3952c", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.4613023}
+{"event": "receive", "node_id": "n17", "packet_id": "3d51fa41-0bd7-48e1-9e8b-80de6c2f20be", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.4628172}
+{"event": "origin", "node_id": "n10", "packet_id": "5c4aa4a2-978f-413f-acd5-d76de7ff2aca", "wall_time": 1786639864.4682252}
+{"event": "receive", "node_id": "n10", "packet_id": "5c4aa4a2-978f-413f-acd5-d76de7ff2aca", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.4682252}
+{"event": "receive", "node_id": "n14", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639864.4757729}
+{"event": "receive", "node_id": "n5", "packet_id": "731e5238-7970-4605-bc40-007d2d8e144f", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639864.4762845}
+{"event": "origin", "node_id": "n18", "packet_id": "07fcf77f-d41e-4a3d-91fc-55cb16fa6598", "wall_time": 1786639864.4808984}
+{"event": "receive", "node_id": "n18", "packet_id": "07fcf77f-d41e-4a3d-91fc-55cb16fa6598", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.4808984}
+{"event": "origin", "node_id": "n16", "packet_id": "fd84a28b-4b3e-4ffc-b5f5-20fc3f1000e9", "wall_time": 1786639864.4884577}
+{"event": "receive", "node_id": "n16", "packet_id": "fd84a28b-4b3e-4ffc-b5f5-20fc3f1000e9", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.4884577}
+{"event": "receive", "node_id": "n15", "packet_id": "dec8c2ea-66f1-400c-9f4c-c5c189e6e972", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639864.4909403}
+{"event": "receive", "node_id": "n0", "packet_id": "72559330-474b-4666-bedd-0be45bec1c42", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639864.4909403}
+{"event": "receive", "node_id": "n5", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "FLUFF", "sender_peer_id": "n10", "wall_time": 1786639864.4909403}
+{"event": "receive", "node_id": "n5", "packet_id": "5c4aa4a2-978f-413f-acd5-d76de7ff2aca", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639864.4925492}
+{"event": "receive", "node_id": "n10", "packet_id": "731e5238-7970-4605-bc40-007d2d8e144f", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.4925492}
+{"event": "receive", "node_id": "n10", "packet_id": "965bc6cc-3678-4210-8099-6ec556f7db69", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.4935563}
+{"event": "origin", "node_id": "n16", "packet_id": "2782b7cf-eba3-428d-9f22-f685cd597d78", "wall_time": 1786639864.4953506}
+{"event": "receive", "node_id": "n16", "packet_id": "2782b7cf-eba3-428d-9f22-f685cd597d78", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.4958577}
+{"event": "origin", "node_id": "n5", "packet_id": "9fa13610-a45f-4af4-9c07-9b40745489b4", "wall_time": 1786639864.5018766}
+{"event": "receive", "node_id": "n5", "packet_id": "9fa13610-a45f-4af4-9c07-9b40745489b4", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.5018766}
+{"event": "receive", "node_id": "n13", "packet_id": "ee8f5400-096b-482c-855d-61005c598823", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639864.5056314}
+{"event": "receive", "node_id": "n19", "packet_id": "f66419a2-df22-457a-8aa3-881d7b537852", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639864.5056314}
+{"event": "receive", "node_id": "n4", "packet_id": "8cbce688-3c35-477c-957f-e530d47beb5c", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639864.5066469}
+{"event": "origin", "node_id": "n2", "packet_id": "5996746b-4723-4d07-a214-be013e861dfa", "wall_time": 1786639864.5180235}
+{"event": "receive", "node_id": "n2", "packet_id": "5996746b-4723-4d07-a214-be013e861dfa", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.5180235}
+{"event": "receive", "node_id": "n17", "packet_id": "b5e9f62a-c99a-49fd-9fdf-edfa74ac86c6", "state": "STEM", "sender_peer_id": "n7", "wall_time": 1786639864.5214207}
+{"event": "receive", "node_id": "n8", "packet_id": "07fcf77f-d41e-4a3d-91fc-55cb16fa6598", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639864.5214207}
+{"event": "receive", "node_id": "n0", "packet_id": "3c29ead4-9c7d-4cf0-8780-014bb068d29a", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.5224082}
+{"event": "receive", "node_id": "n0", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.5234056}
+{"event": "origin", "node_id": "n7", "packet_id": "88956ca3-8f6c-4c16-91eb-f2e7aabebcd4", "wall_time": 1786639864.5297012}
+{"event": "receive", "node_id": "n7", "packet_id": "88956ca3-8f6c-4c16-91eb-f2e7aabebcd4", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.5307288}
+{"event": "receive", "node_id": "n0", "packet_id": "46d307bd-b50d-456f-9993-4b3f98c3952c", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639864.5362892}
+{"event": "origin", "node_id": "n18", "packet_id": "39966152-b683-43ca-81e8-a1cb4bf55cd1", "wall_time": 1786639864.538787}
+{"event": "receive", "node_id": "n18", "packet_id": "39966152-b683-43ca-81e8-a1cb4bf55cd1", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.538787}
+{"event": "origin", "node_id": "n19", "packet_id": "dd7a6e7c-fec9-47c9-8518-94bb847cfe1e", "wall_time": 1786639864.5442762}
+{"event": "receive", "node_id": "n19", "packet_id": "dd7a6e7c-fec9-47c9-8518-94bb847cfe1e", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.5448055}
+{"event": "receive", "node_id": "n14", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639864.5458121}
+{"event": "origin", "node_id": "n2", "packet_id": "74111923-b2a1-49e2-8496-184706f30a35", "wall_time": 1786639864.5561004}
+{"event": "receive", "node_id": "n2", "packet_id": "74111923-b2a1-49e2-8496-184706f30a35", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.5571063}
+{"event": "receive", "node_id": "n14", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639864.5668442}
+{"event": "receive", "node_id": "n22", "packet_id": "acc14c52-c0cc-4cde-a924-00dcf3578b44", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639864.5668442}
+{"event": "receive", "node_id": "n0", "packet_id": "75318bf7-224a-439c-89f5-b51eb1a4a03f", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639864.5668442}
+{"event": "receive", "node_id": "n3", "packet_id": "ee8f5400-096b-482c-855d-61005c598823", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639864.5668442}
+{"event": "receive", "node_id": "n21", "packet_id": "fa9a327b-45e5-4ac7-91a0-96ce9b0a8953", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.5668442}
+{"event": "receive", "node_id": "n8", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.5668442}
+{"event": "receive", "node_id": "n13", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639864.5685043}
+{"event": "origin", "node_id": "n18", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "wall_time": 1786639864.570529}
+{"event": "receive", "node_id": "n20", "packet_id": "7f7fd933-3699-4ad2-ba61-6e5d0261a667", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639864.5715475}
+{"event": "receive", "node_id": "n18", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.5736728}
+{"event": "receive", "node_id": "n4", "packet_id": "a503c5f0-5b88-4085-ba8f-4793946713bd", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639864.5824618}
+{"event": "receive", "node_id": "n23", "packet_id": "fd84a28b-4b3e-4ffc-b5f5-20fc3f1000e9", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639864.5824618}
+{"event": "receive", "node_id": "n9", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639864.5824618}
+{"event": "receive", "node_id": "n14", "packet_id": "1da07f07-e781-4ef4-9042-8c3c3ce52804", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639864.5824618}
+{"event": "origin", "node_id": "n10", "packet_id": "868322a0-f667-4230-8ca2-361eac77361b", "wall_time": 1786639864.5927644}
+{"event": "receive", "node_id": "n10", "packet_id": "868322a0-f667-4230-8ca2-361eac77361b", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.593784}
+{"event": "receive", "node_id": "n0", "packet_id": "f863a218-6c9a-4511-a497-96263e2a17d6", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639864.5948217}
+{"event": "receive", "node_id": "n15", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.5948217}
+{"event": "receive", "node_id": "n8", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.5958288}
+{"event": "receive", "node_id": "n15", "packet_id": "3c29ead4-9c7d-4cf0-8780-014bb068d29a", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.5958288}
+{"event": "receive", "node_id": "n5", "packet_id": "dec8c2ea-66f1-400c-9f4c-c5c189e6e972", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639864.5958288}
+{"event": "receive", "node_id": "n3", "packet_id": "39966152-b683-43ca-81e8-a1cb4bf55cd1", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639864.5971358}
+{"event": "receive", "node_id": "n16", "packet_id": "a8f230da-510f-4804-b295-89f886c52295", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639864.5971358}
+{"event": "receive", "node_id": "n7", "packet_id": "b879e95e-ad0e-4fc1-9628-c89528626fe5", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639864.5971358}
+{"event": "receive", "node_id": "n12", "packet_id": "b5e9f62a-c99a-49fd-9fdf-edfa74ac86c6", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639864.5971358}
+{"event": "receive", "node_id": "n15", "packet_id": "9fa13610-a45f-4af4-9c07-9b40745489b4", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.5981486}
+{"event": "receive", "node_id": "n23", "packet_id": "2782b7cf-eba3-428d-9f22-f685cd597d78", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639864.5994084}
+{"event": "origin", "node_id": "n6", "packet_id": "7b61d994-1a8a-437e-b1a6-80c652e9c7dd", "wall_time": 1786639864.609093}
+{"event": "receive", "node_id": "n6", "packet_id": "7b61d994-1a8a-437e-b1a6-80c652e9c7dd", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.609093}
+{"event": "origin", "node_id": "n10", "packet_id": "d7a9c8cc-168a-479d-8ba0-5517426f4e7d", "wall_time": 1786639864.6183867}
+{"event": "receive", "node_id": "n10", "packet_id": "d7a9c8cc-168a-479d-8ba0-5517426f4e7d", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.6194053}
+{"event": "receive", "node_id": "n0", "packet_id": "731e5238-7970-4605-bc40-007d2d8e144f", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639864.6205645}
+{"event": "receive", "node_id": "n10", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.6205645}
+{"event": "origin", "node_id": "n12", "packet_id": "b737b403-3278-464c-8ce3-0b1119224559", "wall_time": 1786639864.626012}
+{"event": "receive", "node_id": "n12", "packet_id": "b737b403-3278-464c-8ce3-0b1119224559", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.6270168}
+{"event": "receive", "node_id": "n3", "packet_id": "07fcf77f-d41e-4a3d-91fc-55cb16fa6598", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639864.6275432}
+{"event": "receive", "node_id": "n2", "packet_id": "52230a3a-db16-4357-97e0-5cfbc0785a5f", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639864.6275432}
+{"event": "receive", "node_id": "n18", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.6280525}
+{"event": "receive", "node_id": "n2", "packet_id": "231df336-48bb-464e-bf93-56338ca7eda9", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639864.6290624}
+{"event": "receive", "node_id": "n3", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639864.6290624}
+{"event": "origin", "node_id": "n20", "packet_id": "6930d943-9602-4db0-a64c-70cd0d78dd83", "wall_time": 1786639864.636403}
+{"event": "receive", "node_id": "n20", "packet_id": "6930d943-9602-4db0-a64c-70cd0d78dd83", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.6374395}
+{"event": "receive", "node_id": "n9", "packet_id": "8cbce688-3c35-477c-957f-e530d47beb5c", "state": "FLUFF", "sender_peer_id": "n4", "wall_time": 1786639864.6428242}
+{"event": "receive", "node_id": "n3", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639864.6428242}
+{"event": "receive", "node_id": "n11", "packet_id": "a8f230da-510f-4804-b295-89f886c52295", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639864.6428242}
+{"event": "receive", "node_id": "n13", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "FLUFF", "sender_peer_id": "n14", "wall_time": 1786639864.6428242}
+{"event": "receive", "node_id": "n19", "packet_id": "a44b2645-b9c3-496e-a67a-e0b5d17b4e51", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639864.6428242}
+{"event": "origin", "node_id": "n10", "packet_id": "9e02bbac-d1e4-44d1-97ba-4d3c0b0e7bb6", "wall_time": 1786639864.6571894}
+{"event": "receive", "node_id": "n10", "packet_id": "9e02bbac-d1e4-44d1-97ba-4d3c0b0e7bb6", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.6582398}
+{"event": "receive", "node_id": "n5", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "FLUFF", "sender_peer_id": "n10", "wall_time": 1786639864.6582398}
+{"event": "receive", "node_id": "n18", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.6582398}
+{"event": "receive", "node_id": "n16", "packet_id": "7b61d994-1a8a-437e-b1a6-80c652e9c7dd", "state": "STEM", "sender_peer_id": "n6", "wall_time": 1786639864.6582398}
+{"event": "receive", "node_id": "n2", "packet_id": "3d51fa41-0bd7-48e1-9e8b-80de6c2f20be", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639864.6592643}
+{"event": "receive", "node_id": "n3", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.6592643}
+{"event": "receive", "node_id": "n13", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.659784}
+{"event": "origin", "node_id": "n2", "packet_id": "7118fcbc-4691-476e-9e8a-120974431089", "wall_time": 1786639864.6634839}
+{"event": "receive", "node_id": "n2", "packet_id": "7118fcbc-4691-476e-9e8a-120974431089", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.6725593}
+{"event": "receive", "node_id": "n10", "packet_id": "3c29ead4-9c7d-4cf0-8780-014bb068d29a", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.6736546}
+{"event": "receive", "node_id": "n0", "packet_id": "9fa13610-a45f-4af4-9c07-9b40745489b4", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639864.6736546}
+{"event": "receive", "node_id": "n20", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.6736546}
+{"event": "receive", "node_id": "n13", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.688486}
+{"event": "receive", "node_id": "n18", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "state": "FLUFF", "sender_peer_id": "n3", "wall_time": 1786639864.688486}
+{"event": "origin", "node_id": "n19", "packet_id": "fe9ea1f4-f5c8-4d4a-b244-cf9dc2bc9d4a", "wall_time": 1786639864.6925921}
+{"event": "receive", "node_id": "n19", "packet_id": "fe9ea1f4-f5c8-4d4a-b244-cf9dc2bc9d4a", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.6936138}
+{"event": "origin", "node_id": "n3", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "wall_time": 1786639864.6993296}
+{"event": "receive", "node_id": "n3", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.6998813}
+{"event": "receive", "node_id": "n13", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "FLUFF", "sender_peer_id": "n3", "wall_time": 1786639864.700893}
+{"event": "receive", "node_id": "n8", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639864.7023187}
+{"event": "receive", "node_id": "n3", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.7033296}
+{"event": "receive", "node_id": "n17", "packet_id": "b737b403-3278-464c-8ce3-0b1119224559", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639864.7038772}
+{"event": "receive", "node_id": "n20", "packet_id": "53b9801f-a8fd-4468-913c-abe2b44ad88c", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639864.704388}
+{"event": "receive", "node_id": "n0", "packet_id": "868322a0-f667-4230-8ca2-361eac77361b", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639864.704388}
+{"event": "receive", "node_id": "n5", "packet_id": "2f3395ea-7034-4052-b7dd-6f7c19c5f65f", "state": "STEM", "sender_peer_id": "n22", "wall_time": 1786639864.704388}
+{"event": "receive", "node_id": "n10", "packet_id": "75318bf7-224a-439c-89f5-b51eb1a4a03f", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639864.704388}
+{"event": "receive", "node_id": "n9", "packet_id": "a503c5f0-5b88-4085-ba8f-4793946713bd", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639864.704388}
+{"event": "receive", "node_id": "n5", "packet_id": "3c29ead4-9c7d-4cf0-8780-014bb068d29a", "state": "FLUFF", "sender_peer_id": "n10", "wall_time": 1786639864.7064755}
+{"event": "origin", "node_id": "n6", "packet_id": "e808104f-faa6-4d65-8f1e-70adde4e478e", "wall_time": 1786639864.7128963}
+{"event": "receive", "node_id": "n6", "packet_id": "e808104f-faa6-4d65-8f1e-70adde4e478e", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.7139142}
+{"event": "receive", "node_id": "n11", "packet_id": "7b61d994-1a8a-437e-b1a6-80c652e9c7dd", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639864.7204418}
+{"event": "receive", "node_id": "n8", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "state": "FLUFF", "sender_peer_id": "n18", "wall_time": 1786639864.720981}
+{"event": "receive", "node_id": "n17", "packet_id": "74111923-b2a1-49e2-8496-184706f30a35", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639864.720981}
+{"event": "receive", "node_id": "n8", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "FLUFF", "sender_peer_id": "n3", "wall_time": 1786639864.7240822}
+{"event": "origin", "node_id": "n4", "packet_id": "a2a56418-e2e4-42de-949d-cfcedd6b94cf", "wall_time": 1786639864.734047}
+{"event": "receive", "node_id": "n3", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639864.7365224}
+{"event": "receive", "node_id": "n5", "packet_id": "75318bf7-224a-439c-89f5-b51eb1a4a03f", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639864.7365224}
+{"event": "receive", "node_id": "n0", "packet_id": "d7a9c8cc-168a-479d-8ba0-5517426f4e7d", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639864.737046}
+{"event": "receive", "node_id": "n8", "packet_id": "72559330-474b-4666-bedd-0be45bec1c42", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639864.737046}
+{"event": "receive", "node_id": "n10", "packet_id": "2f3395ea-7034-4052-b7dd-6f7c19c5f65f", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.737046}
+{"event": "receive", "node_id": "n4", "packet_id": "a2a56418-e2e4-42de-949d-cfcedd6b94cf", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.737046}
+{"event": "receive", "node_id": "n21", "packet_id": "5c4aa4a2-978f-413f-acd5-d76de7ff2aca", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.7402134}
+{"event": "receive", "node_id": "n18", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.7422836}
+{"event": "receive", "node_id": "n16", "packet_id": "e808104f-faa6-4d65-8f1e-70adde4e478e", "state": "STEM", "sender_peer_id": "n6", "wall_time": 1786639864.7512128}
+{"event": "receive", "node_id": "n0", "packet_id": "9e02bbac-d1e4-44d1-97ba-4d3c0b0e7bb6", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639864.7517242}
+{"event": "receive", "node_id": "n19", "packet_id": "23b88fb5-7208-4402-a859-34185df8abac", "state": "STEM", "sender_peer_id": "n9", "wall_time": 1786639864.7517242}
+{"event": "origin", "node_id": "n2", "packet_id": "f10d5732-ecb0-41b8-93aa-b6df2035760f", "wall_time": 1786639864.7563987}
+{"event": "receive", "node_id": "n2", "packet_id": "f10d5732-ecb0-41b8-93aa-b6df2035760f", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.7579644}
+{"event": "origin", "node_id": "n11", "packet_id": "197d8f6a-d0a1-4879-9b72-87177349b8e4", "wall_time": 1786639864.7667959}
+{"event": "receive", "node_id": "n0", "packet_id": "992a3502-5877-4adf-bde9-ecd67b9e4818", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639864.7667959}
+{"event": "receive", "node_id": "n18", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "STEM", "sender_peer_id": "n3", "wall_time": 1786639864.7667959}
+{"event": "receive", "node_id": "n11", "packet_id": "197d8f6a-d0a1-4879-9b72-87177349b8e4", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.7682114}
+{"event": "receive", "node_id": "n16", "packet_id": "b5e9f62a-c99a-49fd-9fdf-edfa74ac86c6", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639864.7821717}
+{"event": "receive", "node_id": "n13", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "FLUFF", "sender_peer_id": "n14", "wall_time": 1786639864.7821717}
+{"event": "origin", "node_id": "n14", "packet_id": "65dcc798-b45a-4208-b784-94c19d9d4206", "wall_time": 1786639864.786326}
+{"event": "receive", "node_id": "n14", "packet_id": "65dcc798-b45a-4208-b784-94c19d9d4206", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.7873523}
+{"event": "origin", "node_id": "n22", "packet_id": "772f734b-1e61-4d04-aede-aef13643e33c", "wall_time": 1786639864.7970312}
+{"event": "receive", "node_id": "n12", "packet_id": "5996746b-4723-4d07-a214-be013e861dfa", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639864.7970312}
+{"event": "receive", "node_id": "n20", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.7970312}
+{"event": "receive", "node_id": "n17", "packet_id": "7118fcbc-4691-476e-9e8a-120974431089", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639864.7970312}
+{"event": "receive", "node_id": "n22", "packet_id": "772f734b-1e61-4d04-aede-aef13643e33c", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.798434}
+{"event": "receive", "node_id": "n20", "packet_id": "fa9a327b-45e5-4ac7-91a0-96ce9b0a8953", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639864.7994423}
+{"event": "receive", "node_id": "n20", "packet_id": "3461b12f-e375-4501-8215-096e4a0fb11c", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639864.8004546}
+{"event": "receive", "node_id": "n20", "packet_id": "65b7266a-cce1-40bd-9edb-3c72fb3d6a8c", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639864.8004546}
+{"event": "origin", "node_id": "n20", "packet_id": "ed475589-7cbf-4c53-b4a4-9500b7468222", "wall_time": 1786639864.8111336}
+{"event": "receive", "node_id": "n20", "packet_id": "ed475589-7cbf-4c53-b4a4-9500b7468222", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.8121593}
+{"event": "receive", "node_id": "n13", "packet_id": "1da07f07-e781-4ef4-9042-8c3c3ce52804", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639864.8126667}
+{"event": "receive", "node_id": "n21", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639864.8126667}
+{"event": "receive", "node_id": "n8", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639864.8126667}
+{"event": "receive", "node_id": "n6", "packet_id": "b5e9f62a-c99a-49fd-9fdf-edfa74ac86c6", "state": "FLUFF", "sender_peer_id": "n16", "wall_time": 1786639864.8126667}
+{"event": "receive", "node_id": "n11", "packet_id": "b5e9f62a-c99a-49fd-9fdf-edfa74ac86c6", "state": "FLUFF", "sender_peer_id": "n16", "wall_time": 1786639864.8126667}
+{"event": "receive", "node_id": "n13", "packet_id": "72559330-474b-4666-bedd-0be45bec1c42", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639864.8131714}
+{"event": "receive", "node_id": "n21", "packet_id": "dec8c2ea-66f1-400c-9f4c-c5c189e6e972", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639864.8141806}
+{"event": "origin", "node_id": "n21", "packet_id": "0ccbfb79-28f6-450d-a33e-e3e5f5ffe780", "wall_time": 1786639864.829702}
+{"event": "receive", "node_id": "n21", "packet_id": "0ccbfb79-28f6-450d-a33e-e3e5f5ffe780", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.8312588}
+{"event": "receive", "node_id": "n14", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639864.8440728}
+{"event": "receive", "node_id": "n9", "packet_id": "f66419a2-df22-457a-8aa3-881d7b537852", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639864.8440728}
+{"event": "receive", "node_id": "n4", "packet_id": "a44b2645-b9c3-496e-a67a-e0b5d17b4e51", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639864.8440728}
+{"event": "receive", "node_id": "n12", "packet_id": "231df336-48bb-464e-bf93-56338ca7eda9", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639864.8440728}
+{"event": "receive", "node_id": "n14", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639864.8446057}
+{"event": "origin", "node_id": "n9", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "wall_time": 1786639864.8508918}
+{"event": "receive", "node_id": "n9", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.8525577}
+{"event": "receive", "node_id": "n22", "packet_id": "b918aad7-c077-447c-a0d0-87832a226ed2", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639864.8588572}
+{"event": "receive", "node_id": "n2", "packet_id": "b737b403-3278-464c-8ce3-0b1119224559", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639864.8588572}
+{"event": "receive", "node_id": "n7", "packet_id": "74111923-b2a1-49e2-8496-184706f30a35", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639864.8588572}
+{"event": "origin", "node_id": "n3", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "wall_time": 1786639864.8717642}
+{"event": "receive", "node_id": "n3", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.873177}
+{"event": "receive", "node_id": "n8", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639864.8741906}
+{"event": "receive", "node_id": "n17", "packet_id": "5996746b-4723-4d07-a214-be013e861dfa", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639864.8741906}
+{"event": "receive", "node_id": "n21", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639864.8741906}
+{"event": "receive", "node_id": "n3", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639864.8741906}
+{"event": "receive", "node_id": "n14", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639864.874699}
+{"event": "receive", "node_id": "n8", "packet_id": "1da07f07-e781-4ef4-9042-8c3c3ce52804", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639864.875204}
+{"event": "receive", "node_id": "n13", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.875204}
+{"event": "receive", "node_id": "n0", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.875204}
+{"event": "receive", "node_id": "n21", "packet_id": "6930d943-9602-4db0-a64c-70cd0d78dd83", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639864.8757167}
+{"event": "origin", "node_id": "n4", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "wall_time": 1786639864.8817863}
+{"event": "receive", "node_id": "n4", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.8827999}
+{"event": "receive", "node_id": "n9", "packet_id": "a2a56418-e2e4-42de-949d-cfcedd6b94cf", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639864.883803}
+{"event": "receive", "node_id": "n23", "packet_id": "b5e9f62a-c99a-49fd-9fdf-edfa74ac86c6", "state": "FLUFF", "sender_peer_id": "n16", "wall_time": 1786639864.8899636}
+{"event": "origin", "node_id": "n3", "packet_id": "8493f25c-c87f-4a9c-a7b7-09961e7ebe7a", "wall_time": 1786639864.8990538}
+{"event": "receive", "node_id": "n3", "packet_id": "8493f25c-c87f-4a9c-a7b7-09961e7ebe7a", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.9005866}
+{"event": "receive", "node_id": "n18", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "FLUFF", "sender_peer_id": "n3", "wall_time": 1786639864.9005866}
+{"event": "receive", "node_id": "n4", "packet_id": "fe9ea1f4-f5c8-4d4a-b244-cf9dc2bc9d4a", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639864.9054732}
+{"event": "receive", "node_id": "n12", "packet_id": "7118fcbc-4691-476e-9e8a-120974431089", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639864.9054732}
+{"event": "origin", "node_id": "n4", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "wall_time": 1786639864.9090452}
+{"event": "receive", "node_id": "n4", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.9090452}
+{"event": "origin", "node_id": "n19", "packet_id": "1f7a6f3c-bbb2-4a48-9926-ce9b7bcba464", "wall_time": 1786639864.9181113}
+{"event": "receive", "node_id": "n19", "packet_id": "1f7a6f3c-bbb2-4a48-9926-ce9b7bcba464", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.9181113}
+{"event": "receive", "node_id": "n9", "packet_id": "dd7a6e7c-fec9-47c9-8518-94bb847cfe1e", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639864.919881}
+{"event": "receive", "node_id": "n12", "packet_id": "e808104f-faa6-4d65-8f1e-70adde4e478e", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639864.9214177}
+{"event": "receive", "node_id": "n3", "packet_id": "72559330-474b-4666-bedd-0be45bec1c42", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639864.9214177}
+{"event": "receive", "node_id": "n18", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "STEM", "sender_peer_id": "n3", "wall_time": 1786639864.9214177}
+{"event": "receive", "node_id": "n0", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.9214177}
+{"event": "receive", "node_id": "n0", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639864.9244006}
+{"event": "receive", "node_id": "n15", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.9244006}
+{"event": "origin", "node_id": "n10", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "wall_time": 1786639864.926704}
+{"event": "receive", "node_id": "n10", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.9277294}
+{"event": "receive", "node_id": "n12", "packet_id": "3d51fa41-0bd7-48e1-9e8b-80de6c2f20be", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639864.9366043}
+{"event": "receive", "node_id": "n17", "packet_id": "f10d5732-ecb0-41b8-93aa-b6df2035760f", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639864.9366043}
+{"event": "origin", "node_id": "n20", "packet_id": "b38d5c96-49eb-48c1-af0c-698fb6740347", "wall_time": 1786639864.9466817}
+{"event": "receive", "node_id": "n20", "packet_id": "b38d5c96-49eb-48c1-af0c-698fb6740347", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.9480176}
+{"event": "receive", "node_id": "n21", "packet_id": "53b9801f-a8fd-4468-913c-abe2b44ad88c", "state": "FLUFF", "sender_peer_id": "n20", "wall_time": 1786639864.9490206}
+{"event": "receive", "node_id": "n22", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.9525552}
+{"event": "receive", "node_id": "n21", "packet_id": "3c29ead4-9c7d-4cf0-8780-014bb068d29a", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639864.9525552}
+{"event": "receive", "node_id": "n20", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.9525552}
+{"event": "origin", "node_id": "n16", "packet_id": "99bf9734-1173-4d01-b43f-334b517aa394", "wall_time": 1786639864.960098}
+{"event": "receive", "node_id": "n16", "packet_id": "99bf9734-1173-4d01-b43f-334b517aa394", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.961632}
+{"event": "origin", "node_id": "n1", "packet_id": "560fabd7-759d-43c3-b0e3-b7a8dc4f4945", "wall_time": 1786639864.9673073}
+{"event": "receive", "node_id": "n5", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639864.9687998}
+{"event": "receive", "node_id": "n8", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "FLUFF", "sender_peer_id": "n18", "wall_time": 1786639864.9687998}
+{"event": "receive", "node_id": "n19", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "FLUFF", "sender_peer_id": "n14", "wall_time": 1786639864.9687998}
+{"event": "receive", "node_id": "n18", "packet_id": "8493f25c-c87f-4a9c-a7b7-09961e7ebe7a", "state": "STEM", "sender_peer_id": "n3", "wall_time": 1786639864.9687998}
+{"event": "receive", "node_id": "n13", "packet_id": "65dcc798-b45a-4208-b784-94c19d9d4206", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639864.9687998}
+{"event": "receive", "node_id": "n3", "packet_id": "1da07f07-e781-4ef4-9042-8c3c3ce52804", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639864.9698117}
+{"event": "receive", "node_id": "n18", "packet_id": "72559330-474b-4666-bedd-0be45bec1c42", "state": "STEM", "sender_peer_id": "n3", "wall_time": 1786639864.974125}
+{"event": "receive", "node_id": "n15", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.984369}
+{"event": "receive", "node_id": "n4", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "STEM", "sender_peer_id": "n9", "wall_time": 1786639864.984369}
+{"event": "receive", "node_id": "n9", "packet_id": "a44b2645-b9c3-496e-a67a-e0b5d17b4e51", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639864.984369}
+{"event": "receive", "node_id": "n0", "packet_id": "3ac48467-c4eb-4ee6-9c14-89819fe1ec61", "state": "STEM", "sender_peer_id": "n22", "wall_time": 1786639864.984369}
+{"event": "receive", "node_id": "n20", "packet_id": "3c29ead4-9c7d-4cf0-8780-014bb068d29a", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639864.9848785}
+{"event": "origin", "node_id": "n13", "packet_id": "069b352d-9bb7-49bb-85cb-a73255889394", "wall_time": 1786639864.9874384}
+{"event": "receive", "node_id": "n0", "packet_id": "2104e0eb-b850-49de-876b-2adaf00d3e63", "state": "STEM", "sender_peer_id": "n22", "wall_time": 1786639864.988456}
+{"event": "receive", "node_id": "n13", "packet_id": "069b352d-9bb7-49bb-85cb-a73255889394", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639864.991509}
+{"event": "origin", "node_id": "n1", "packet_id": "d4ed99b4-5c01-4a67-a321-56d5df4eeef6", "wall_time": 1786639864.996118}
+{"event": "receive", "node_id": "n17", "packet_id": "e808104f-faa6-4d65-8f1e-70adde4e478e", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639864.9996343}
+{"event": "receive", "node_id": "n16", "packet_id": "231df336-48bb-464e-bf93-56338ca7eda9", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639864.9996343}
+{"event": "receive", "node_id": "n7", "packet_id": "5996746b-4723-4d07-a214-be013e861dfa", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639865.0006397}
+{"event": "origin", "node_id": "n4", "packet_id": "4bb39961-be56-43a1-8330-5e8655152090", "wall_time": 1786639865.0116637}
+{"event": "receive", "node_id": "n4", "packet_id": "4bb39961-be56-43a1-8330-5e8655152090", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.012677}
+{"event": "receive", "node_id": "n20", "packet_id": "5c4aa4a2-978f-413f-acd5-d76de7ff2aca", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639865.015739}
+{"event": "receive", "node_id": "n0", "packet_id": "7f7fd933-3699-4ad2-ba61-6e5d0261a667", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639865.0164018}
+{"event": "receive", "node_id": "n10", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.015739}
+{"event": "receive", "node_id": "n8", "packet_id": "8493f25c-c87f-4a9c-a7b7-09961e7ebe7a", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639865.0164018}
+{"event": "receive", "node_id": "n15", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.0164018}
+{"event": "receive", "node_id": "n22", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.0184193}
+{"event": "origin", "node_id": "n8", "packet_id": "a1e3df8e-bbdf-4b63-a0f1-3b7f15944234", "wall_time": 1786639865.019938}
+{"event": "receive", "node_id": "n8", "packet_id": "a1e3df8e-bbdf-4b63-a0f1-3b7f15944234", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.0256643}
+{"event": "receive", "node_id": "n13", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639865.0271695}
+{"event": "receive", "node_id": "n11", "packet_id": "99bf9734-1173-4d01-b43f-334b517aa394", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639865.031485}
+{"event": "receive", "node_id": "n12", "packet_id": "f10d5732-ecb0-41b8-93aa-b6df2035760f", "state": "FLUFF", "sender_peer_id": "n17", "wall_time": 1786639865.031485}
+{"event": "receive", "node_id": "n11", "packet_id": "231df336-48bb-464e-bf93-56338ca7eda9", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639865.032521}
+{"event": "origin", "node_id": "n14", "packet_id": "f71a7f7d-c271-46fc-8278-d277dfa1a33e", "wall_time": 1786639865.0392864}
+{"event": "receive", "node_id": "n14", "packet_id": "f71a7f7d-c271-46fc-8278-d277dfa1a33e", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.0405097}
+{"event": "receive", "node_id": "n14", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639865.0469313}
+{"event": "receive", "node_id": "n0", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639865.0469313}
+{"event": "receive", "node_id": "n9", "packet_id": "fe9ea1f4-f5c8-4d4a-b244-cf9dc2bc9d4a", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639865.0469313}
+{"event": "receive", "node_id": "n20", "packet_id": "f863a218-6c9a-4511-a497-96263e2a17d6", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.0469313}
+{"event": "receive", "node_id": "n10", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.0479517}
+{"event": "receive", "node_id": "n0", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639865.0489953}
+{"event": "receive", "node_id": "n20", "packet_id": "9fa13610-a45f-4af4-9c07-9b40745489b4", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.0516903}
+{"event": "receive", "node_id": "n5", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "FLUFF", "sender_peer_id": "n10", "wall_time": 1786639865.0522678}
+{"event": "receive", "node_id": "n10", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.0533123}
+{"event": "origin", "node_id": "n13", "packet_id": "0f9a7109-8571-4da9-a368-7d552617cd99", "wall_time": 1786639865.0543542}
+{"event": "receive", "node_id": "n13", "packet_id": "0f9a7109-8571-4da9-a368-7d552617cd99", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.056672}
+{"event": "receive", "node_id": "n3", "packet_id": "65dcc798-b45a-4208-b784-94c19d9d4206", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639865.0587003}
+{"event": "origin", "node_id": "n3", "packet_id": "a67d0e46-6f21-4781-80f5-5a2ed1742c9f", "wall_time": 1786639865.0627377}
+{"event": "receive", "node_id": "n3", "packet_id": "a67d0e46-6f21-4781-80f5-5a2ed1742c9f", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.0648496}
+{"event": "receive", "node_id": "n5", "packet_id": "acc14c52-c0cc-4cde-a924-00dcf3578b44", "state": "STEM", "sender_peer_id": "n22", "wall_time": 1786639865.0780656}
+{"event": "receive", "node_id": "n7", "packet_id": "f10d5732-ecb0-41b8-93aa-b6df2035760f", "state": "FLUFF", "sender_peer_id": "n17", "wall_time": 1786639865.0780656}
+{"event": "receive", "node_id": "n5", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "FLUFF", "sender_peer_id": "n10", "wall_time": 1786639865.0796862}
+{"event": "receive", "node_id": "n5", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "state": "FLUFF", "sender_peer_id": "n10", "wall_time": 1786639865.0827777}
+{"event": "origin", "node_id": "n22", "packet_id": "263d795f-4171-414a-bfd4-9409f7aeb39e", "wall_time": 1786639865.0834172}
+{"event": "receive", "node_id": "n22", "packet_id": "263d795f-4171-414a-bfd4-9409f7aeb39e", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.085528}
+{"event": "origin", "node_id": "n17", "packet_id": "bc5116c7-5c8e-4af8-ab22-23b2745d0b19", "wall_time": 1786639865.0906441}
+{"event": "receive", "node_id": "n17", "packet_id": "bc5116c7-5c8e-4af8-ab22-23b2745d0b19", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.091814}
+{"event": "receive", "node_id": "n16", "packet_id": "7118fcbc-4691-476e-9e8a-120974431089", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639865.0945146}
+{"event": "receive", "node_id": "n4", "packet_id": "dd7a6e7c-fec9-47c9-8518-94bb847cfe1e", "state": "STEM", "sender_peer_id": "n9", "wall_time": 1786639865.0945146}
+{"event": "receive", "node_id": "n5", "packet_id": "0ccbfb79-28f6-450d-a33e-e3e5f5ffe780", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639865.0945146}
+{"event": "receive", "node_id": "n21", "packet_id": "65b7266a-cce1-40bd-9edb-3c72fb3d6a8c", "state": "FLUFF", "sender_peer_id": "n20", "wall_time": 1786639865.0945146}
+{"event": "receive", "node_id": "n20", "packet_id": "868322a0-f667-4230-8ca2-361eac77361b", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.0945146}
+{"event": "receive", "node_id": "n10", "packet_id": "2104e0eb-b850-49de-876b-2adaf00d3e63", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.0945146}
+{"event": "receive", "node_id": "n13", "packet_id": "8493f25c-c87f-4a9c-a7b7-09961e7ebe7a", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639865.0945146}
+{"event": "receive", "node_id": "n21", "packet_id": "3461b12f-e375-4501-8215-096e4a0fb11c", "state": "FLUFF", "sender_peer_id": "n20", "wall_time": 1786639865.0976746}
+{"event": "receive", "node_id": "n20", "packet_id": "dec8c2ea-66f1-400c-9f4c-c5c189e6e972", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639865.098659}
+{"event": "origin", "node_id": "n11", "packet_id": "487f77d5-3662-4414-a9ab-6f15d5904f26", "wall_time": 1786639865.1055539}
+{"event": "receive", "node_id": "n11", "packet_id": "487f77d5-3662-4414-a9ab-6f15d5904f26", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.1065667}
+{"event": "receive", "node_id": "n16", "packet_id": "3d51fa41-0bd7-48e1-9e8b-80de6c2f20be", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639865.1096401}
+{"event": "origin", "node_id": "n4", "packet_id": "22d5bcf3-eed3-4705-97e2-99fe17d6be27", "wall_time": 1786639865.1181197}
+{"event": "receive", "node_id": "n4", "packet_id": "22d5bcf3-eed3-4705-97e2-99fe17d6be27", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.1189353}
+{"event": "receive", "node_id": "n19", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639865.1204953}
+{"event": "receive", "node_id": "n9", "packet_id": "4bb39961-be56-43a1-8330-5e8655152090", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639865.1215222}
+{"event": "receive", "node_id": "n14", "packet_id": "23b88fb5-7208-4402-a859-34185df8abac", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639865.1225235}
+{"event": "receive", "node_id": "n15", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.1240892}
+{"event": "receive", "node_id": "n20", "packet_id": "d7a9c8cc-168a-479d-8ba0-5517426f4e7d", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.1240892}
+{"event": "receive", "node_id": "n5", "packet_id": "6930d943-9602-4db0-a64c-70cd0d78dd83", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639865.1240892}
+{"event": "receive", "node_id": "n10", "packet_id": "3ac48467-c4eb-4ee6-9c14-89819fe1ec61", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.1240892}
+{"event": "receive", "node_id": "n15", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.1240892}
+{"event": "origin", "node_id": "n1", "packet_id": "45dded4d-05a5-4f57-88fd-df21e925ccfa", "wall_time": 1786639865.1290805}
+{"event": "receive", "node_id": "n18", "packet_id": "a67d0e46-6f21-4781-80f5-5a2ed1742c9f", "state": "STEM", "sender_peer_id": "n3", "wall_time": 1786639865.140447}
+{"event": "receive", "node_id": "n7", "packet_id": "e808104f-faa6-4d65-8f1e-70adde4e478e", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639865.140447}
+{"event": "origin", "node_id": "n1", "packet_id": "9d3f759e-d46e-4d82-8da5-973415a23505", "wall_time": 1786639865.14874}
+{"event": "receive", "node_id": "n8", "packet_id": "0f9a7109-8571-4da9-a368-7d552617cd99", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639865.156334}
+{"event": "receive", "node_id": "n22", "packet_id": "689d3e2c-fa2e-483c-af36-1c2342b7efc9", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.156334}
+{"event": "receive", "node_id": "n3", "packet_id": "a1e3df8e-bbdf-4b63-a0f1-3b7f15944234", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639865.156334}
+{"event": "receive", "node_id": "n10", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.156334}
+{"event": "receive", "node_id": "n0", "packet_id": "ed475589-7cbf-4c53-b4a4-9500b7468222", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639865.156334}
+{"event": "receive", "node_id": "n5", "packet_id": "3ac48467-c4eb-4ee6-9c14-89819fe1ec61", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639865.1604693}
+{"event": "receive", "node_id": "n0", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639865.1614969}
+{"event": "origin", "node_id": "n6", "packet_id": "80d93bea-a32e-45af-a903-7b89918cc14a", "wall_time": 1786639865.1657987}
+{"event": "receive", "node_id": "n6", "packet_id": "80d93bea-a32e-45af-a903-7b89918cc14a", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.1668236}
+{"event": "receive", "node_id": "n19", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639865.170555}
+{"event": "origin", "node_id": "n21", "packet_id": "7b4f238a-9b99-4c96-a156-393d0bfdf9f2", "wall_time": 1786639865.1736703}
+{"event": "receive", "node_id": "n21", "packet_id": "7b4f238a-9b99-4c96-a156-393d0bfdf9f2", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.174691}
+{"event": "receive", "node_id": "n5", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "FLUFF", "sender_peer_id": "n10", "wall_time": 1786639865.1858187}
+{"event": "receive", "node_id": "n8", "packet_id": "65dcc798-b45a-4208-b784-94c19d9d4206", "state": "STEM", "sender_peer_id": "n3", "wall_time": 1786639865.1858187}
+{"event": "receive", "node_id": "n14", "packet_id": "069b352d-9bb7-49bb-85cb-a73255889394", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639865.1858187}
+{"event": "receive", "node_id": "n19", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "FLUFF", "sender_peer_id": "n14", "wall_time": 1786639865.1898499}
+{"event": "receive", "node_id": "n19", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "FLUFF", "sender_peer_id": "n14", "wall_time": 1786639865.1909642}
+{"event": "origin", "node_id": "n17", "packet_id": "a544c786-6a0b-4bb1-8544-93156253b36c", "wall_time": 1786639865.1929927}
+{"event": "receive", "node_id": "n17", "packet_id": "a544c786-6a0b-4bb1-8544-93156253b36c", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.1940722}
+{"event": "receive", "node_id": "n8", "packet_id": "a67d0e46-6f21-4781-80f5-5a2ed1742c9f", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639865.201706}
+{"event": "receive", "node_id": "n23", "packet_id": "3d51fa41-0bd7-48e1-9e8b-80de6c2f20be", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639865.201706}
+{"event": "receive", "node_id": "n10", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.201706}
+{"event": "receive", "node_id": "n19", "packet_id": "a2a56418-e2e4-42de-949d-cfcedd6b94cf", "state": "STEM", "sender_peer_id": "n9", "wall_time": 1786639865.201706}
+{"event": "receive", "node_id": "n22", "packet_id": "3c29ead4-9c7d-4cf0-8780-014bb068d29a", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.201706}
+{"event": "receive", "node_id": "n15", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.2026045}
+{"event": "receive", "node_id": "n18", "packet_id": "0f9a7109-8571-4da9-a368-7d552617cd99", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639865.2031193}
+{"event": "receive", "node_id": "n23", "packet_id": "7118fcbc-4691-476e-9e8a-120974431089", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639865.2031193}
+{"event": "receive", "node_id": "n4", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639865.2041333}
+{"event": "receive", "node_id": "n22", "packet_id": "731e5238-7970-4605-bc40-007d2d8e144f", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.205649}
+{"event": "receive", "node_id": "n22", "packet_id": "46d307bd-b50d-456f-9993-4b3f98c3952c", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.2076612}
+{"event": "origin", "node_id": "n13", "packet_id": "48e1fd58-9502-42f6-a36e-65a5c0ab67d8", "wall_time": 1786639865.2146585}
+{"event": "receive", "node_id": "n13", "packet_id": "48e1fd58-9502-42f6-a36e-65a5c0ab67d8", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.2157092}
+{"event": "receive", "node_id": "n14", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639865.2167222}
+{"event": "receive", "node_id": "n16", "packet_id": "f10d5732-ecb0-41b8-93aa-b6df2035760f", "state": "FLUFF", "sender_peer_id": "n12", "wall_time": 1786639865.2167222}
+{"event": "receive", "node_id": "n15", "packet_id": "0ccbfb79-28f6-450d-a33e-e3e5f5ffe780", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.2167222}
+{"event": "receive", "node_id": "n19", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "FLUFF", "sender_peer_id": "n14", "wall_time": 1786639865.2167222}
+{"event": "origin", "node_id": "n23", "packet_id": "2981bedb-ce43-41d9-86fe-c5a80726b356", "wall_time": 1786639865.222529}
+{"event": "receive", "node_id": "n23", "packet_id": "2981bedb-ce43-41d9-86fe-c5a80726b356", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.2230628}
+{"event": "receive", "node_id": "n5", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "FLUFF", "sender_peer_id": "n10", "wall_time": 1786639865.2323}
+{"event": "origin", "node_id": "n7", "packet_id": "4434a773-9227-40c8-aea4-67fcec9763e8", "wall_time": 1786639865.241587}
+{"event": "receive", "node_id": "n7", "packet_id": "4434a773-9227-40c8-aea4-67fcec9763e8", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.2431214}
+{"event": "receive", "node_id": "n22", "packet_id": "75318bf7-224a-439c-89f5-b51eb1a4a03f", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.2476685}
+{"event": "receive", "node_id": "n21", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.2476685}
+{"event": "receive", "node_id": "n5", "packet_id": "53b9801f-a8fd-4468-913c-abe2b44ad88c", "state": "FLUFF", "sender_peer_id": "n21", "wall_time": 1786639865.2496483}
+{"event": "origin", "node_id": "n5", "packet_id": "4f05cc9a-61a1-4c5f-88a2-32260392ce86", "wall_time": 1786639865.2614906}
+{"event": "receive", "node_id": "n5", "packet_id": "4f05cc9a-61a1-4c5f-88a2-32260392ce86", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.2620144}
+{"event": "receive", "node_id": "n3", "packet_id": "0f9a7109-8571-4da9-a368-7d552617cd99", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639865.2638907}
+{"event": "receive", "node_id": "n10", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.2638907}
+{"event": "receive", "node_id": "n2", "packet_id": "bc5116c7-5c8e-4af8-ab22-23b2745d0b19", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639865.2638907}
+{"event": "receive", "node_id": "n6", "packet_id": "f10d5732-ecb0-41b8-93aa-b6df2035760f", "state": "FLUFF", "sender_peer_id": "n16", "wall_time": 1786639865.2645175}
+{"event": "receive", "node_id": "n11", "packet_id": "f10d5732-ecb0-41b8-93aa-b6df2035760f", "state": "FLUFF", "sender_peer_id": "n16", "wall_time": 1786639865.2645175}
+{"event": "receive", "node_id": "n9", "packet_id": "1f7a6f3c-bbb2-4a48-9926-ce9b7bcba464", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639865.2645175}
+{"event": "receive", "node_id": "n19", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639865.2645175}
+{"event": "receive", "node_id": "n21", "packet_id": "9fa13610-a45f-4af4-9c07-9b40745489b4", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639865.2650623}
+{"event": "receive", "node_id": "n20", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.2650623}
+{"event": "receive", "node_id": "n10", "packet_id": "53b9801f-a8fd-4468-913c-abe2b44ad88c", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.2676158}
+{"event": "origin", "node_id": "n0", "packet_id": "124d87ea-e73f-49c3-9806-afa6f88a97de", "wall_time": 1786639865.269616}
+{"event": "receive", "node_id": "n9", "packet_id": "22d5bcf3-eed3-4705-97e2-99fe17d6be27", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639865.2716546}
+{"event": "receive", "node_id": "n21", "packet_id": "f863a218-6c9a-4511-a497-96263e2a17d6", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639865.2733786}
+{"event": "receive", "node_id": "n0", "packet_id": "124d87ea-e73f-49c3-9806-afa6f88a97de", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.27786}
+{"event": "receive", "node_id": "n21", "packet_id": "868322a0-f667-4230-8ca2-361eac77361b", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639865.2807672}
+{"event": "receive", "node_id": "n0", "packet_id": "0ccbfb79-28f6-450d-a33e-e3e5f5ffe780", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639865.282075}
+{"event": "receive", "node_id": "n10", "packet_id": "ed475589-7cbf-4c53-b4a4-9500b7468222", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.282075}
+{"event": "receive", "node_id": "n5", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "FLUFF", "sender_peer_id": "n10", "wall_time": 1786639865.2872796}
+{"event": "receive", "node_id": "n15", "packet_id": "3ac48467-c4eb-4ee6-9c14-89819fe1ec61", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.2891526}
+{"event": "receive", "node_id": "n21", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.2891526}
+{"event": "receive", "node_id": "n10", "packet_id": "4f05cc9a-61a1-4c5f-88a2-32260392ce86", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.2891526}
+{"event": "receive", "node_id": "n5", "packet_id": "65b7266a-cce1-40bd-9edb-3c72fb3d6a8c", "state": "FLUFF", "sender_peer_id": "n21", "wall_time": 1786639865.2922318}
+{"event": "receive", "node_id": "n21", "packet_id": "acc14c52-c0cc-4cde-a924-00dcf3578b44", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.2922318}
+{"event": "origin", "node_id": "n10", "packet_id": "2f76fc1e-382a-4b3f-90f1-6aed62bc9699", "wall_time": 1786639865.2948623}
+{"event": "receive", "node_id": "n10", "packet_id": "2f76fc1e-382a-4b3f-90f1-6aed62bc9699", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.2984202}
+{"event": "receive", "node_id": "n23", "packet_id": "f10d5732-ecb0-41b8-93aa-b6df2035760f", "state": "FLUFF", "sender_peer_id": "n16", "wall_time": 1786639865.3107724}
+{"event": "origin", "node_id": "n13", "packet_id": "2585cfb4-55b3-44a6-addb-d6e52a7c5e7a", "wall_time": 1786639865.316383}
+{"event": "receive", "node_id": "n13", "packet_id": "2585cfb4-55b3-44a6-addb-d6e52a7c5e7a", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.3180125}
+{"event": "receive", "node_id": "n9", "packet_id": "1e16b994-6624-40ef-85c5-db4088e5856e", "state": "FLUFF", "sender_peer_id": "n4", "wall_time": 1786639865.325508}
+{"event": "receive", "node_id": "n13", "packet_id": "23b88fb5-7208-4402-a859-34185df8abac", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639865.325508}
+{"event": "receive", "node_id": "n5", "packet_id": "ed475589-7cbf-4c53-b4a4-9500b7468222", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639865.325508}
+{"event": "receive", "node_id": "n7", "packet_id": "a544c786-6a0b-4bb1-8544-93156253b36c", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639865.325508}
+{"event": "receive", "node_id": "n19", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "FLUFF", "sender_peer_id": "n14", "wall_time": 1786639865.3260818}
+{"event": "receive", "node_id": "n5", "packet_id": "2f76fc1e-382a-4b3f-90f1-6aed62bc9699", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639865.3298907}
+{"event": "receive", "node_id": "n10", "packet_id": "65b7266a-cce1-40bd-9edb-3c72fb3d6a8c", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.3298907}
+{"event": "receive", "node_id": "n21", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.3298907}
+{"event": "origin", "node_id": "n23", "packet_id": "e41769a5-3633-4760-b13e-049c4a754ba0", "wall_time": 1786639865.335171}
+{"event": "receive", "node_id": "n23", "packet_id": "e41769a5-3633-4760-b13e-049c4a754ba0", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.338783}
+{"event": "receive", "node_id": "n20", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.3413754}
+{"event": "receive", "node_id": "n5", "packet_id": "b918aad7-c077-447c-a0d0-87832a226ed2", "state": "STEM", "sender_peer_id": "n22", "wall_time": 1786639865.342387}
+{"event": "receive", "node_id": "n20", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.3446794}
+{"event": "origin", "node_id": "n8", "packet_id": "b0377b77-e2e8-4073-b9bc-f1728a161b87", "wall_time": 1786639865.345686}
+{"event": "receive", "node_id": "n8", "packet_id": "b0377b77-e2e8-4073-b9bc-f1728a161b87", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.3482194}
+{"event": "origin", "node_id": "n22", "packet_id": "5cc78315-4bcf-426c-b3ca-f43c2cd39533", "wall_time": 1786639865.3550446}
+{"event": "receive", "node_id": "n22", "packet_id": "5cc78315-4bcf-426c-b3ca-f43c2cd39533", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.3565853}
+{"event": "receive", "node_id": "n20", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.372194}
+{"event": "receive", "node_id": "n21", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.372194}
+{"event": "receive", "node_id": "n0", "packet_id": "65dcc798-b45a-4208-b784-94c19d9d4206", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639865.372194}
+{"event": "receive", "node_id": "n15", "packet_id": "53b9801f-a8fd-4468-913c-abe2b44ad88c", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.372194}
+{"event": "origin", "node_id": "n1", "packet_id": "c34d5ba0-04ba-4122-8170-8ebcb5800669", "wall_time": 1786639865.3750167}
+{"event": "receive", "node_id": "n21", "packet_id": "d7a9c8cc-168a-479d-8ba0-5517426f4e7d", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639865.3766565}
+{"event": "receive", "node_id": "n5", "packet_id": "3461b12f-e375-4501-8215-096e4a0fb11c", "state": "FLUFF", "sender_peer_id": "n21", "wall_time": 1786639865.377196}
+{"event": "receive", "node_id": "n8", "packet_id": "2585cfb4-55b3-44a6-addb-d6e52a7c5e7a", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639865.388121}
+{"event": "receive", "node_id": "n17", "packet_id": "4434a773-9227-40c8-aea4-67fcec9763e8", "state": "STEM", "sender_peer_id": "n7", "wall_time": 1786639865.388121}
+{"event": "origin", "node_id": "n7", "packet_id": "da5ab9f7-f67e-445a-8075-448746c4f493", "wall_time": 1786639865.3919978}
+{"event": "receive", "node_id": "n7", "packet_id": "da5ab9f7-f67e-445a-8075-448746c4f493", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.395075}
+{"event": "receive", "node_id": "n15", "packet_id": "65b7266a-cce1-40bd-9edb-3c72fb3d6a8c", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.4034135}
+{"event": "receive", "node_id": "n0", "packet_id": "b38d5c96-49eb-48c1-af0c-698fb6740347", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639865.4034135}
+{"event": "receive", "node_id": "n5", "packet_id": "772f734b-1e61-4d04-aede-aef13643e33c", "state": "STEM", "sender_peer_id": "n22", "wall_time": 1786639865.4034135}
+{"event": "receive", "node_id": "n21", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.4039283}
+{"event": "origin", "node_id": "n14", "packet_id": "81eed561-4cc4-456e-ae13-a34424d1f6dc", "wall_time": 1786639865.4049487}
+{"event": "receive", "node_id": "n22", "packet_id": "7f786c20-aa1d-4af4-9492-b8bcff119fd0", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.405998}
+{"event": "receive", "node_id": "n10", "packet_id": "124d87ea-e73f-49c3-9806-afa6f88a97de", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.405998}
+{"event": "receive", "node_id": "n14", "packet_id": "81eed561-4cc4-456e-ae13-a34424d1f6dc", "state": "STEM", "sender_peer_id": null, "is_origin": true, "wall_time": 1786639865.4101775}
+{"event": "receive", "node_id": "n10", "packet_id": "0ccbfb79-28f6-450d-a33e-e3e5f5ffe780", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.4134054}
+{"event": "receive", "node_id": "n10", "packet_id": "3461b12f-e375-4501-8215-096e4a0fb11c", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.4157236}
+{"event": "receive", "node_id": "n0", "packet_id": "4f05cc9a-61a1-4c5f-88a2-32260392ce86", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639865.4172592}
+{"event": "receive", "node_id": "n4", "packet_id": "1f7a6f3c-bbb2-4a48-9926-ce9b7bcba464", "state": "STEM", "sender_peer_id": "n9", "wall_time": 1786639865.420369}
+{"event": "receive", "node_id": "n19", "packet_id": "f71a7f7d-c271-46fc-8278-d277dfa1a33e", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639865.420369}
+{"event": "receive", "node_id": "n14", "packet_id": "48e1fd58-9502-42f6-a36e-65a5c0ab67d8", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639865.420369}
+{"event": "receive", "node_id": "n8", "packet_id": "23b88fb5-7208-4402-a859-34185df8abac", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639865.420369}
+{"event": "receive", "node_id": "n22", "packet_id": "9e02bbac-d1e4-44d1-97ba-4d3c0b0e7bb6", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.420369}
+{"event": "receive", "node_id": "n4", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639865.4230974}
+{"event": "receive", "node_id": "n14", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639865.4257936}
+{"event": "receive", "node_id": "n13", "packet_id": "b0377b77-e2e8-4073-b9bc-f1728a161b87", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639865.4278507}
+{"event": "receive", "node_id": "n18", "packet_id": "2585cfb4-55b3-44a6-addb-d6e52a7c5e7a", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639865.4278507}
+{"event": "receive", "node_id": "n22", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.4288707}
+{"event": "receive", "node_id": "n4", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639865.4304955}
+{"event": "receive", "node_id": "n0", "packet_id": "5c4aa4a2-978f-413f-acd5-d76de7ff2aca", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639865.4352977}
+{"event": "receive", "node_id": "n22", "packet_id": "992a3502-5877-4adf-bde9-ecd67b9e4818", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.444235}
+{"event": "receive", "node_id": "n15", "packet_id": "ed475589-7cbf-4c53-b4a4-9500b7468222", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.450364}
+{"event": "receive", "node_id": "n5", "packet_id": "124d87ea-e73f-49c3-9806-afa6f88a97de", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639865.450364}
+{"event": "receive", "node_id": "n4", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639865.450364}
+{"event": "receive", "node_id": "n20", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639865.450364}
+{"event": "receive", "node_id": "n16", "packet_id": "e41769a5-3633-4760-b13e-049c4a754ba0", "state": "STEM", "sender_peer_id": "n23", "wall_time": 1786639865.450894}
+{"event": "receive", "node_id": "n9", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639865.450894}
+{"event": "receive", "node_id": "n21", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.450894}
+{"event": "receive", "node_id": "n15", "packet_id": "2f76fc1e-382a-4b3f-90f1-6aed62bc9699", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.4562907}
+{"event": "receive", "node_id": "n20", "packet_id": "7b4f238a-9b99-4c96-a156-393d0bfdf9f2", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639865.459963}
+{"event": "receive", "node_id": "n12", "packet_id": "bc5116c7-5c8e-4af8-ab22-23b2745d0b19", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639865.4660485}
+{"event": "receive", "node_id": "n20", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.4806125}
+{"event": "receive", "node_id": "n18", "packet_id": "23b88fb5-7208-4402-a859-34185df8abac", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639865.4806125}
+{"event": "receive", "node_id": "n20", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.482711}
+{"event": "receive", "node_id": "n3", "packet_id": "2585cfb4-55b3-44a6-addb-d6e52a7c5e7a", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639865.4843886}
+{"event": "receive", "node_id": "n19", "packet_id": "4bb39961-be56-43a1-8330-5e8655152090", "state": "STEM", "sender_peer_id": "n9", "wall_time": 1786639865.4961042}
+{"event": "receive", "node_id": "n20", "packet_id": "acc14c52-c0cc-4cde-a924-00dcf3578b44", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639865.4966903}
+{"event": "receive", "node_id": "n15", "packet_id": "3461b12f-e375-4501-8215-096e4a0fb11c", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.4966903}
+{"event": "receive", "node_id": "n11", "packet_id": "e41769a5-3633-4760-b13e-049c4a754ba0", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639865.511529}
+{"event": "receive", "node_id": "n4", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639865.5280576}
+{"event": "receive", "node_id": "n17", "packet_id": "da5ab9f7-f67e-445a-8075-448746c4f493", "state": "STEM", "sender_peer_id": "n7", "wall_time": 1786639865.5280576}
+{"event": "receive", "node_id": "n14", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639865.5280576}
+{"event": "receive", "node_id": "n19", "packet_id": "069b352d-9bb7-49bb-85cb-a73255889394", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639865.5291033}
+{"event": "receive", "node_id": "n2", "packet_id": "4434a773-9227-40c8-aea4-67fcec9763e8", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639865.5339496}
+{"event": "receive", "node_id": "n9", "packet_id": "818f3dc7-e0fc-4a98-a9ae-aa5b704891d9", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639865.538517}
+{"event": "receive", "node_id": "n22", "packet_id": "12401274-b71c-4043-b27c-a21c03f70077", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.5434222}
+{"event": "receive", "node_id": "n15", "packet_id": "772f734b-1e61-4d04-aede-aef13643e33c", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.5434222}
+{"event": "receive", "node_id": "n3", "packet_id": "23b88fb5-7208-4402-a859-34185df8abac", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639865.5434222}
+{"event": "receive", "node_id": "n9", "packet_id": "6ce0544f-c09f-4204-8b1f-17801b8a5639", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639865.5434222}
+{"event": "receive", "node_id": "n5", "packet_id": "868322a0-f667-4230-8ca2-361eac77361b", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639865.5434222}
+{"event": "receive", "node_id": "n21", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.5434222}
+{"event": "receive", "node_id": "n0", "packet_id": "2f76fc1e-382a-4b3f-90f1-6aed62bc9699", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639865.5479739}
+{"event": "receive", "node_id": "n19", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "FLUFF", "sender_peer_id": "n14", "wall_time": 1786639865.5899134}
+{"event": "receive", "node_id": "n22", "packet_id": "6930d943-9602-4db0-a64c-70cd0d78dd83", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.5899134}
+{"event": "receive", "node_id": "n9", "packet_id": "a9567578-3106-4337-8ef4-1347bb2be6b6", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639865.5899134}
+{"event": "receive", "node_id": "n21", "packet_id": "b918aad7-c077-447c-a0d0-87832a226ed2", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.5905695}
+{"event": "receive", "node_id": "n0", "packet_id": "772f734b-1e61-4d04-aede-aef13643e33c", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639865.6195657}
+{"event": "receive", "node_id": "n14", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639865.6195657}
+{"event": "receive", "node_id": "n12", "packet_id": "da5ab9f7-f67e-445a-8075-448746c4f493", "state": "STEM", "sender_peer_id": "n17", "wall_time": 1786639865.6195657}
+{"event": "receive", "node_id": "n19", "packet_id": "22d5bcf3-eed3-4705-97e2-99fe17d6be27", "state": "STEM", "sender_peer_id": "n9", "wall_time": 1786639865.6195657}
+{"event": "receive", "node_id": "n4", "packet_id": "f71a7f7d-c271-46fc-8278-d277dfa1a33e", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639865.6195657}
+{"event": "receive", "node_id": "n5", "packet_id": "d7a9c8cc-168a-479d-8ba0-5517426f4e7d", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639865.620668}
+{"event": "receive", "node_id": "n13", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "FLUFF", "sender_peer_id": "n14", "wall_time": 1786639865.6240985}
+{"event": "receive", "node_id": "n22", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.6369383}
+{"event": "receive", "node_id": "n14", "packet_id": "b0377b77-e2e8-4073-b9bc-f1728a161b87", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639865.6507545}
+{"event": "receive", "node_id": "n16", "packet_id": "bc5116c7-5c8e-4af8-ab22-23b2745d0b19", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639865.6507545}
+{"event": "receive", "node_id": "n21", "packet_id": "124d87ea-e73f-49c3-9806-afa6f88a97de", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.666006}
+{"event": "receive", "node_id": "n5", "packet_id": "689d3e2c-fa2e-483c-af36-1c2342b7efc9", "state": "FLUFF", "sender_peer_id": "n22", "wall_time": 1786639865.6670203}
+{"event": "receive", "node_id": "n15", "packet_id": "868322a0-f667-4230-8ca2-361eac77361b", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.6670203}
+{"event": "receive", "node_id": "n9", "packet_id": "de255a4b-c4a7-4da1-80ab-204982d62af9", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639865.6675522}
+{"event": "receive", "node_id": "n8", "packet_id": "4f05cc9a-61a1-4c5f-88a2-32260392ce86", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.6808007}
+{"event": "receive", "node_id": "n22", "packet_id": "0023df3e-e5da-4d6f-a40c-f5c52a68362e", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.682118}
+{"event": "receive", "node_id": "n8", "packet_id": "5c4aa4a2-978f-413f-acd5-d76de7ff2aca", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.683118}
+{"event": "receive", "node_id": "n5", "packet_id": "263d795f-4171-414a-bfd4-9409f7aeb39e", "state": "STEM", "sender_peer_id": "n22", "wall_time": 1786639865.6872847}
+{"event": "receive", "node_id": "n22", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.6872847}
+{"event": "receive", "node_id": "n10", "packet_id": "689d3e2c-fa2e-483c-af36-1c2342b7efc9", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.6908395}
+{"event": "receive", "node_id": "n11", "packet_id": "bc5116c7-5c8e-4af8-ab22-23b2745d0b19", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639865.6978278}
+{"event": "receive", "node_id": "n13", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639865.6978278}
+{"event": "receive", "node_id": "n22", "packet_id": "7f7fd933-3699-4ad2-ba61-6e5d0261a667", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.7143855}
+{"event": "receive", "node_id": "n18", "packet_id": "5c4aa4a2-978f-413f-acd5-d76de7ff2aca", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639865.7280002}
+{"event": "receive", "node_id": "n8", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639865.7280002}
+{"event": "receive", "node_id": "n3", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639865.7280002}
+{"event": "receive", "node_id": "n12", "packet_id": "4434a773-9227-40c8-aea4-67fcec9763e8", "state": "STEM", "sender_peer_id": "n2", "wall_time": 1786639865.7448077}
+{"event": "receive", "node_id": "n9", "packet_id": "f71a7f7d-c271-46fc-8278-d277dfa1a33e", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639865.7448077}
+{"event": "receive", "node_id": "n22", "packet_id": "65b7266a-cce1-40bd-9edb-3c72fb3d6a8c", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.7448077}
+{"event": "receive", "node_id": "n3", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639865.775776}
+{"event": "receive", "node_id": "n18", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639865.775776}
+{"event": "receive", "node_id": "n8", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639865.775776}
+{"event": "receive", "node_id": "n3", "packet_id": "4f05cc9a-61a1-4c5f-88a2-32260392ce86", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639865.7783844}
+{"event": "receive", "node_id": "n3", "packet_id": "5c4aa4a2-978f-413f-acd5-d76de7ff2aca", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639865.781451}
+{"event": "receive", "node_id": "n16", "packet_id": "da5ab9f7-f67e-445a-8075-448746c4f493", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639865.7904031}
+{"event": "receive", "node_id": "n0", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639865.7904031}
+{"event": "receive", "node_id": "n4", "packet_id": "069b352d-9bb7-49bb-85cb-a73255889394", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639865.7904031}
+{"event": "receive", "node_id": "n8", "packet_id": "2f76fc1e-382a-4b3f-90f1-6aed62bc9699", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.7904031}
+{"event": "receive", "node_id": "n13", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "FLUFF", "sender_peer_id": "n14", "wall_time": 1786639865.8057728}
+{"event": "receive", "node_id": "n20", "packet_id": "65dcc798-b45a-4208-b784-94c19d9d4206", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.8067946}
+{"event": "receive", "node_id": "n15", "packet_id": "689d3e2c-fa2e-483c-af36-1c2342b7efc9", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.8067946}
+{"event": "receive", "node_id": "n19", "packet_id": "48e1fd58-9502-42f6-a36e-65a5c0ab67d8", "state": "FLUFF", "sender_peer_id": "n14", "wall_time": 1786639865.8067946}
+{"event": "receive", "node_id": "n0", "packet_id": "7b4f238a-9b99-4c96-a156-393d0bfdf9f2", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639865.8087935}
+{"event": "receive", "node_id": "n15", "packet_id": "263d795f-4171-414a-bfd4-9409f7aeb39e", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.809814}
+{"event": "receive", "node_id": "n19", "packet_id": "81eed561-4cc4-456e-ae13-a34424d1f6dc", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639865.811324}
+{"event": "receive", "node_id": "n20", "packet_id": "b918aad7-c077-447c-a0d0-87832a226ed2", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639865.8222036}
+{"event": "receive", "node_id": "n18", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639865.8378742}
+{"event": "receive", "node_id": "n11", "packet_id": "da5ab9f7-f67e-445a-8075-448746c4f493", "state": "STEM", "sender_peer_id": "n16", "wall_time": 1786639865.8378742}
+{"event": "receive", "node_id": "n18", "packet_id": "4f05cc9a-61a1-4c5f-88a2-32260392ce86", "state": "STEM", "sender_peer_id": "n3", "wall_time": 1786639865.8391294}
+{"event": "receive", "node_id": "n22", "packet_id": "53b9801f-a8fd-4468-913c-abe2b44ad88c", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.8529375}
+{"event": "receive", "node_id": "n5", "packet_id": "5cc78315-4bcf-426c-b3ca-f43c2cd39533", "state": "STEM", "sender_peer_id": "n22", "wall_time": 1786639865.8540206}
+{"event": "receive", "node_id": "n5", "packet_id": "9e02bbac-d1e4-44d1-97ba-4d3c0b0e7bb6", "state": "STEM", "sender_peer_id": "n22", "wall_time": 1786639865.8548708}
+{"event": "receive", "node_id": "n5", "packet_id": "992a3502-5877-4adf-bde9-ecd67b9e4818", "state": "STEM", "sender_peer_id": "n22", "wall_time": 1786639865.8548708}
+{"event": "receive", "node_id": "n4", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639865.8683088}
+{"event": "receive", "node_id": "n0", "packet_id": "263d795f-4171-414a-bfd4-9409f7aeb39e", "state": "STEM", "sender_peer_id": "n15", "wall_time": 1786639865.8683088}
+{"event": "receive", "node_id": "n13", "packet_id": "2f76fc1e-382a-4b3f-90f1-6aed62bc9699", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639865.868875}
+{"event": "receive", "node_id": "n15", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.869383}
+{"event": "receive", "node_id": "n8", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639865.8703113}
+{"event": "receive", "node_id": "n3", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639865.8703113}
+{"event": "receive", "node_id": "n22", "packet_id": "3461b12f-e375-4501-8215-096e4a0fb11c", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.9016018}
+{"event": "receive", "node_id": "n10", "packet_id": "5cc78315-4bcf-426c-b3ca-f43c2cd39533", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639865.9026265}
+{"event": "receive", "node_id": "n0", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639865.9026265}
+{"event": "receive", "node_id": "n18", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639865.9026265}
+{"event": "receive", "node_id": "n22", "packet_id": "b38d5c96-49eb-48c1-af0c-698fb6740347", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.9036207}
+{"event": "receive", "node_id": "n9", "packet_id": "069b352d-9bb7-49bb-85cb-a73255889394", "state": "STEM", "sender_peer_id": "n4", "wall_time": 1786639865.9307475}
+{"event": "receive", "node_id": "n21", "packet_id": "689d3e2c-fa2e-483c-af36-1c2342b7efc9", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639865.9307475}
+{"event": "receive", "node_id": "n16", "packet_id": "4434a773-9227-40c8-aea4-67fcec9763e8", "state": "STEM", "sender_peer_id": "n12", "wall_time": 1786639865.9307475}
+{"event": "receive", "node_id": "n20", "packet_id": "124d87ea-e73f-49c3-9806-afa6f88a97de", "state": "FLUFF", "sender_peer_id": "n21", "wall_time": 1786639865.932359}
+{"event": "receive", "node_id": "n8", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.946937}
+{"event": "receive", "node_id": "n6", "packet_id": "4434a773-9227-40c8-aea4-67fcec9763e8", "state": "FLUFF", "sender_peer_id": "n16", "wall_time": 1786639865.9615884}
+{"event": "receive", "node_id": "n11", "packet_id": "4434a773-9227-40c8-aea4-67fcec9763e8", "state": "FLUFF", "sender_peer_id": "n16", "wall_time": 1786639865.9615884}
+{"event": "receive", "node_id": "n15", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639865.9766314}
+{"event": "receive", "node_id": "n9", "packet_id": "715bdae9-606d-4224-924e-c29d136d7f48", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639865.9766314}
+{"event": "receive", "node_id": "n8", "packet_id": "7b4f238a-9b99-4c96-a156-393d0bfdf9f2", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639865.9766314}
+{"event": "receive", "node_id": "n18", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639865.9785564}
+{"event": "receive", "node_id": "n0", "packet_id": "5cc78315-4bcf-426c-b3ca-f43c2cd39533", "state": "STEM", "sender_peer_id": "n10", "wall_time": 1786639866.008386}
+{"event": "receive", "node_id": "n10", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639866.008386}
+{"event": "receive", "node_id": "n4", "packet_id": "48e1fd58-9502-42f6-a36e-65a5c0ab67d8", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639866.008386}
+{"event": "receive", "node_id": "n21", "packet_id": "65dcc798-b45a-4208-b784-94c19d9d4206", "state": "STEM", "sender_peer_id": "n20", "wall_time": 1786639866.0241835}
+{"event": "receive", "node_id": "n0", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639866.0247178}
+{"event": "receive", "node_id": "n18", "packet_id": "7b4f238a-9b99-4c96-a156-393d0bfdf9f2", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639866.0247178}
+{"event": "receive", "node_id": "n13", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639866.0247178}
+{"event": "receive", "node_id": "n19", "packet_id": "b0377b77-e2e8-4073-b9bc-f1728a161b87", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639866.0247178}
+{"event": "receive", "node_id": "n3", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "FLUFF", "sender_peer_id": "n18", "wall_time": 1786639866.0282583}
+{"event": "receive", "node_id": "n23", "packet_id": "4434a773-9227-40c8-aea4-67fcec9763e8", "state": "FLUFF", "sender_peer_id": "n16", "wall_time": 1786639866.0397375}
+{"event": "receive", "node_id": "n5", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "FLUFF", "sender_peer_id": "n10", "wall_time": 1786639866.0407543}
+{"event": "receive", "node_id": "n15", "packet_id": "5cc78315-4bcf-426c-b3ca-f43c2cd39533", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639866.0722826}
+{"event": "receive", "node_id": "n8", "packet_id": "263d795f-4171-414a-bfd4-9409f7aeb39e", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639866.0722826}
+{"event": "receive", "node_id": "n0", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "FLUFF", "sender_peer_id": "n8", "wall_time": 1786639866.0722826}
+{"event": "receive", "node_id": "n15", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639866.0740266}
+{"event": "receive", "node_id": "n3", "packet_id": "7b4f238a-9b99-4c96-a156-393d0bfdf9f2", "state": "STEM", "sender_peer_id": "n18", "wall_time": 1786639866.101349}
+{"event": "receive", "node_id": "n14", "packet_id": "2f76fc1e-382a-4b3f-90f1-6aed62bc9699", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639866.101349}
+{"event": "receive", "node_id": "n9", "packet_id": "48e1fd58-9502-42f6-a36e-65a5c0ab67d8", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639866.132039}
+{"event": "receive", "node_id": "n21", "packet_id": "992a3502-5877-4adf-bde9-ecd67b9e4818", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639866.132039}
+{"event": "receive", "node_id": "n13", "packet_id": "263d795f-4171-414a-bfd4-9409f7aeb39e", "state": "STEM", "sender_peer_id": "n8", "wall_time": 1786639866.132039}
+{"event": "receive", "node_id": "n15", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639866.1472225}
+{"event": "receive", "node_id": "n10", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639866.1482391}
+{"event": "receive", "node_id": "n21", "packet_id": "9e02bbac-d1e4-44d1-97ba-4d3c0b0e7bb6", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639866.162837}
+{"event": "receive", "node_id": "n20", "packet_id": "689d3e2c-fa2e-483c-af36-1c2342b7efc9", "state": "FLUFF", "sender_peer_id": "n21", "wall_time": 1786639866.1783721}
+{"event": "receive", "node_id": "n9", "packet_id": "81eed561-4cc4-456e-ae13-a34424d1f6dc", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639866.1932616}
+{"event": "receive", "node_id": "n5", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "state": "FLUFF", "sender_peer_id": "n10", "wall_time": 1786639866.1932616}
+{"event": "receive", "node_id": "n14", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "FLUFF", "sender_peer_id": "n13", "wall_time": 1786639866.2095795}
+{"event": "receive", "node_id": "n10", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639866.2095795}
+{"event": "receive", "node_id": "n0", "packet_id": "6930d943-9602-4db0-a64c-70cd0d78dd83", "state": "STEM", "sender_peer_id": "n22", "wall_time": 1786639866.2242746}
+{"event": "receive", "node_id": "n4", "packet_id": "b0377b77-e2e8-4073-b9bc-f1728a161b87", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639866.2242746}
+{"event": "receive", "node_id": "n20", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639866.2242746}
+{"event": "receive", "node_id": "n22", "packet_id": "d7a9c8cc-168a-479d-8ba0-5517426f4e7d", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639866.240812}
+{"event": "receive", "node_id": "n21", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639866.2428422}
+{"event": "receive", "node_id": "n5", "packet_id": "65dcc798-b45a-4208-b784-94c19d9d4206", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639866.2443826}
+{"event": "receive", "node_id": "n5", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "FLUFF", "sender_peer_id": "n10", "wall_time": 1786639866.2544804}
+{"event": "receive", "node_id": "n14", "packet_id": "263d795f-4171-414a-bfd4-9409f7aeb39e", "state": "STEM", "sender_peer_id": "n13", "wall_time": 1786639866.3177967}
+{"event": "receive", "node_id": "n4", "packet_id": "81eed561-4cc4-456e-ae13-a34424d1f6dc", "state": "STEM", "sender_peer_id": "n9", "wall_time": 1786639866.363678}
+{"event": "receive", "node_id": "n9", "packet_id": "b0377b77-e2e8-4073-b9bc-f1728a161b87", "state": "FLUFF", "sender_peer_id": "n4", "wall_time": 1786639866.363678}
+{"event": "receive", "node_id": "n15", "packet_id": "65dcc798-b45a-4208-b784-94c19d9d4206", "state": "STEM", "sender_peer_id": "n5", "wall_time": 1786639866.363678}
+{"event": "receive", "node_id": "n5", "packet_id": "b38d5c96-49eb-48c1-af0c-698fb6740347", "state": "FLUFF", "sender_peer_id": "n22", "wall_time": 1786639866.3787003}
+{"event": "receive", "node_id": "n20", "packet_id": "9e02bbac-d1e4-44d1-97ba-4d3c0b0e7bb6", "state": "STEM", "sender_peer_id": "n21", "wall_time": 1786639866.3942943}
+{"event": "receive", "node_id": "n10", "packet_id": "6930d943-9602-4db0-a64c-70cd0d78dd83", "state": "STEM", "sender_peer_id": "n0", "wall_time": 1786639866.3942943}
+{"event": "receive", "node_id": "n20", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639866.3949714}
+{"event": "receive", "node_id": "n10", "packet_id": "b38d5c96-49eb-48c1-af0c-698fb6740347", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639866.425984}
+{"event": "receive", "node_id": "n22", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639866.440769}
+{"event": "receive", "node_id": "n21", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639866.470668}
+{"event": "receive", "node_id": "n19", "packet_id": "2f76fc1e-382a-4b3f-90f1-6aed62bc9699", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639866.470668}
+{"event": "receive", "node_id": "n21", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639866.4716794}
+{"event": "receive", "node_id": "n20", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639866.517396}
+{"event": "receive", "node_id": "n15", "packet_id": "b38d5c96-49eb-48c1-af0c-698fb6740347", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639866.5179021}
+{"event": "receive", "node_id": "n22", "packet_id": "a4386fff-60dc-405b-8232-3d2385d53ab8", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639866.5179021}
+{"event": "receive", "node_id": "n19", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "FLUFF", "sender_peer_id": "n14", "wall_time": 1786639866.5332117}
+{"event": "receive", "node_id": "n22", "packet_id": "c11a8197-44c5-4ad8-bdb4-e4422f162f93", "state": "FLUFF", "sender_peer_id": "n0", "wall_time": 1786639866.5643678}
+{"event": "receive", "node_id": "n21", "packet_id": "b38d5c96-49eb-48c1-af0c-698fb6740347", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639866.6409035}
+{"event": "receive", "node_id": "n19", "packet_id": "263d795f-4171-414a-bfd4-9409f7aeb39e", "state": "STEM", "sender_peer_id": "n14", "wall_time": 1786639866.6564486}
+{"event": "receive", "node_id": "n22", "packet_id": "5f3835c0-a967-4a06-9ba6-014cb665ed29", "state": "FLUFF", "sender_peer_id": "n5", "wall_time": 1786639866.6722584}
+{"event": "receive", "node_id": "n4", "packet_id": "2f76fc1e-382a-4b3f-90f1-6aed62bc9699", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639866.750035}
+{"event": "receive", "node_id": "n9", "packet_id": "2f76fc1e-382a-4b3f-90f1-6aed62bc9699", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639866.7811239}
+{"event": "receive", "node_id": "n4", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639866.8123705}
+{"event": "receive", "node_id": "n9", "packet_id": "24f0f5c5-929a-4ac5-b052-58ad7df6e923", "state": "FLUFF", "sender_peer_id": "n19", "wall_time": 1786639866.9214318}
+{"event": "receive", "node_id": "n9", "packet_id": "263d795f-4171-414a-bfd4-9409f7aeb39e", "state": "STEM", "sender_peer_id": "n19", "wall_time": 1786639866.982747}
+{"event": "receive", "node_id": "n4", "packet_id": "263d795f-4171-414a-bfd4-9409f7aeb39e", "state": "STEM", "sender_peer_id": "n9", "wall_time": 1786639867.1079597}

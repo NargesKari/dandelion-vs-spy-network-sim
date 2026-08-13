@@ -168,10 +168,12 @@ if __name__ == "__main__":
     from pathlib import Path
     import statistics
 
-    seed_val = 42
-    
+    from config import TOPOLOGY_SEED, NUM_PACKETS, OUTPUTS_DIR
+
+    seed_val = TOPOLOGY_SEED  
+
     # 1. Create a master output directory with nested logs and phase folders
-    base_out_dir = Path("outputs")
+    base_out_dir = Path(OUTPUTS_DIR)
     log_dir = base_out_dir / "logs"
     phase1_out_dir = base_out_dir / "phase1"
     
@@ -184,7 +186,7 @@ if __name__ == "__main__":
 
     # 2. Run Phase 1
     # Pass the string representation of the log_path
-    topo, node_ids = run_phase1(seed=seed_val, num_packets=200, log_path=str(log_path))
+    topo, node_ids = run_phase1(seed=seed_val, num_packets=NUM_PACKETS, log_path=str(log_path))
 
     # 3. Extract topology summary
     summary_text = topo.summary()

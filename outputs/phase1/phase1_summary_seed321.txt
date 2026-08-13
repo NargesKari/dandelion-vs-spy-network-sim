@@ -1,0 +1,16 @@
+=== TOPOLOGY SUMMARY ===
+seed = 321
+nodes = 24, edges = 33
+clusters = 5
+degree min/avg/max = 2/2.75/5
+connected = True
+  cluster 0: size=4, boundary_edges=5
+  cluster 1: size=4, boundary_edges=5
+  cluster 2: size=4, boundary_edges=2
+  cluster 3: size=4, boundary_edges=3
+  cluster 4: size=3, boundary_edges=4
+
+=== SIMULATION RESULTS ===
+Nodes = 24
+Packets injected = 200, reached 80% coverage = 1
+T_80%: avg=748.8ms  median=748.8ms  stdev=0.0ms

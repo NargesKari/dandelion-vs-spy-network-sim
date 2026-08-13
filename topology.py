@@ -290,10 +290,16 @@ def generate_topology(seed: int, cfg: Optional[TopologyConfig] = None) -> Topolo
 
 if __name__ == "__main__":
     import sys
+    from pathlib import Path
+
+    from config import OUTPUTS_DIR
 
     seed = int(sys.argv[1]) if len(sys.argv) > 1 else 42
     topo = generate_topology(seed)
     print(topo.summary())
-    topo.save(rf"C:\Users\Big Boss\Documents\Term\Term5\CN\Project\topology_seed{seed}.json")
-    topo.plot(rf"C:\Users\Big Boss\Documents\Term\Term5\CN\Project\topology_seed{seed}.png")
-    print("saved topology JSON + PNG")
+
+    out_dir = Path(OUTPUTS_DIR) / "topology_preview"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    topo.save(str(out_dir / f"topology_seed{seed}.json"))
+    topo.plot(str(out_dir / f"topology_seed{seed}.png"))
+    print(f"saved topology JSON + PNG to {out_dir}")

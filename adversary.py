@@ -87,27 +87,21 @@ def select_bribed_nodes(topo, budget_fraction: float = 0.3, k: Optional[int] = N
     return set(spy_nodes)
 
 
-def sweep_optimal_spy_count(topo, node_ids: Dict[int, str], seed: int, num_packets: int,
-                             budget_fraction: float, log_path: str,
-                             settle_time_s: float = 3.0) -> Dict:
+def evaluate_spy_count_curve(log_path: str, ranked_ids: List[str], topo=None) -> List[Dict]:
     """
-    Implements the project's requirement to sweep the spy count up to max budget
-    to find the optimal number of bribed nodes in Phase 2.
+    Pure post-hoc analysis (no simulation is (re-)run here): for every spy-set
+    size k = 1..len(ranked_ids), evaluate baseline and proposed accuracy /
+    Score_adv using only the first k nodes of `ranked_ids` (best-ranked first,
+    see rank_spy_candidates) as the "credited" spy set.
+
+    This is valid to compute directly from a single already-recorded log
+    because the ground-truth log already contains every node's "receive"
+    events regardless of which nodes we currently choose to count as spies —
+    restricting to a subset simply asks "what would the attacker have seen
+    if only these k nodes had actually been bribed?".
     """
-    from phase1_simulator import run_phase1  # Local import to avoid circular dependency
-
-    n_total = topo.graph.number_of_nodes()
-    max_k = max(1, int(n_total * budget_fraction))
-
-    ranked_int = rank_spy_candidates(topo, max_k=max_k)
-    ranked_ids = [node_ids[n] for n in ranked_int]
-    full_spy_ids = set(ranked_ids)
-
-    run_phase1(seed=seed, num_packets=num_packets, log_path=log_path, topo=topo,
-               spy_ids=full_spy_ids, settle_time_s=settle_time_s)
-
     curve = []
-    for kk in range(1, max_k + 1):
+    for kk in range(1, len(ranked_ids) + 1):
         subset = set(ranked_ids[:kk])
         r_base = evaluate_attack(log_path, subset, baseline_guess, topo)
         r_prop = evaluate_attack(log_path, subset, proposed_guess, topo)
@@ -119,7 +113,36 @@ def sweep_optimal_spy_count(topo, node_ids: Dict[int, str], seed: int, num_packe
             "accuracy_proposed": r_prop["accuracy"],
             "score_adv_proposed": r_prop["score_adv"],
         })
+    return curve
 
+
+def sweep_optimal_spy_count(topo, node_ids: Dict[int, str], seed: int, num_packets: int,
+                             budget_fraction: float, log_path: str,
+                             settle_time_s: float = 3.0, run_seed: Optional[int] = None) -> Dict:
+    """
+    Implements the project's requirement to sweep the spy count up to max budget
+    to find the optimal number of bribed nodes in Phase 2 (Section 2-1-b:
+    "must determine the optimal number of spy nodes according to Score_adv").
+
+    Only ONE simulation is run, using the full max-budget spy set as the
+    "listening" superset (spy_delay_enabled stays False — no Phase-5 delay
+    here); every k <= max_k is then scored by replaying that same log via
+    evaluate_spy_count_curve, so the optimum is found without re-running the
+    network once per candidate k.
+    """
+    from phase1_simulator import run_phase1  # Local import to avoid circular dependency
+
+    n_total = topo.graph.number_of_nodes()
+    max_k = max(1, int(n_total * budget_fraction))
+
+    ranked_int = rank_spy_candidates(topo, max_k=max_k)
+    ranked_ids = [node_ids[n] for n in ranked_int]
+    full_spy_ids = set(ranked_ids)
+
+    run_phase1(seed=seed, num_packets=num_packets, log_path=log_path, topo=topo,
+               spy_ids=full_spy_ids, settle_time_s=settle_time_s, run_seed=run_seed)
+
+    curve = evaluate_spy_count_curve(log_path, ranked_ids, topo)
     best = max(curve, key=lambda c: c["score_adv_proposed"])
     return {"curve": curve, "best": best, "ranked_ids": ranked_ids, "max_k": max_k}
 
@@ -462,8 +485,24 @@ def plot_spy_selection(topo, spy_ids: Set[str], node_ids: Dict[int, str], path: 
 
 
 # ---------------------------------------------------------------------------
-# Evaluation: Accuracy and Score_adv
+# Evaluation: Accuracy, Score_adv, and Score_honest
 # ---------------------------------------------------------------------------
+def compute_score_honest(t80_seconds: Optional[float], detection_rate: float) -> Optional[float]:
+    """
+    Score_honest (Section 3-1-b of the project spec):
+        Score_honest = 1 / T80% * (1 - Adversary Detection Rate)
+    where T80% is in SECONDS and detection_rate is the attacker's guessing
+    accuracy (i.e. Adversary Detection Rate) for the method being scored.
+
+    Returns None when T80% is undefined (no packet in the scenario ever
+    reached 80% coverage), since 1/T80% is undefined in that case.
+    """
+    if t80_seconds is None or t80_seconds <= 0:
+        return None
+    return (1.0 / t80_seconds) * (1.0 - detection_rate)
+
+
+
 def evaluate_attack(log_path: str, spy_ids: Set[str], guess_fn, topo=None):
     """
     Evaluates the accuracy of an attack method with robust null/zero-division handling.

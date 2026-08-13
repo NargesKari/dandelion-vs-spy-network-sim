@@ -36,6 +36,12 @@ class Node:
     is_honest: bool = True  # False = spy/adversary-controlled node
     peers: Dict[str, PeerInfo] = field(default_factory=dict)
     seen_set: Set[str] = field(default_factory=set)
+    # Separate from seen_set: tracks packet_ids for which THIS node has already
+    # initiated a Fluff broadcast. Needed only by the Dandelion stem-cycle fallback
+    # in node_process.py (see NodeUDPProtocol._handle_packet) so that a packet
+    # looping back onto an already-seen node still reaches Fluff exactly once,
+    # instead of silently vanishing before the rest of the network ever sees it.
+    fluffed_set: Set[str] = field(default_factory=set)
 
     # ---- peer management ----
     def add_peer(self, peer_id: str, addr: Addr) -> None:
@@ -62,6 +68,13 @@ class Node:
 
     def mark_seen(self, packet_id: str) -> None:
         self.seen_set.add(packet_id)
+
+    # ---- fluff-fallback bookkeeping (Dandelion stem-cycle recovery) ----
+    def has_fluffed(self, packet_id: str) -> bool:
+        return packet_id in self.fluffed_set
+
+    def mark_fluffed(self, packet_id: str) -> None:
+        self.fluffed_set.add(packet_id)
 
     def __repr__(self) -> str:
         role = "honest" if self.is_honest else "SPY"

@@ -22,11 +22,27 @@ Message protocol over UDP (JSON):
   {"type": "INJECT", "packet_id": "..."}                          -> Control cmd: this node is the origin
   {"type": "SHUTDOWN"}                                            -> Control cmd: end simulation
 
+Stem-cycle recovery:
+  A single-path Stem hop only excludes the immediate previous sender, not the
+  whole walk history (the packet itself may not carry path/origin info, by
+  spec, so a node cannot know it in advance). On a graph with cycles this
+  occasionally sends a STEM packet back onto a node that already processed it
+  earlier in the same walk. Without special handling this would hit the
+  ordinary Seen Set drop and the packet would silently vanish before ever
+  reaching Fluff. See the stem-cycle branch in _handle_packet: the receiving
+  node is allowed to trigger the Fluff fallback exactly once in that case, so
+  full propagation is still guaranteed regardless of stem-path cycles.
+
 Phase 5 — Intentional delay by spy nodes:
-  If is_spy=True, this node applies an additional intentional delay of 
-  U(0, delay_base_ms of that specific link) before any transmission (for 
-  each neighbor independently); meaning the maximum intentional delay is 
-  exactly equal to the base delay of that link. This delay:
+  is_spy alone only marks a node's role (used to exclude spies from being
+  chosen as packet origins, and to let post-hoc analysis filter "what would a
+  spy have observed"). Per the project spec, intentional forwarding delay is
+  a Phase-5-only behavior, so it is gated by a SEPARATE flag,
+  spy_delay_enabled, which every other phase leaves False. Only when both
+  is_spy=True and spy_delay_enabled=True does this node apply an additional
+  intentional delay of U(0, delay_base_ms of that specific link) before any
+  transmission (for each neighbor independently); meaning the maximum
+  intentional delay is exactly equal to the base delay of that link. This delay:
     - Never causes packets to be dropped or held indefinitely (it is only 
       delayed, delivery is still guaranteed).
     - Is drawn from a completely isolated RNG (spy_rng, with an independent 
@@ -64,6 +80,7 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
         lock=None,
         is_spy: bool = False,
         spy_rng: Optional[random.Random] = None,
+        spy_delay_enabled: bool = False,
     ):
         self.node = node
         self.peer_delay = peer_delay
@@ -74,9 +91,12 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
         self.stem_p = stem_p  # None => phase 1/2 (flood); float => phase 3+ (dandelion)
         self.lock = lock
         self.transport = None
-        # Phase 5: Is this node a spy and permitted to apply intentional delay?
+        # Role marker (log filtering / origin exclusion) — does NOT by itself
+        # enable delay; see spy_delay_enabled below.
         self.is_spy = is_spy
         self.spy_rng = spy_rng  # Independent RNG, exclusively for drawing intentional delay
+        # Phase-5-only switch: is this spy currently permitted to apply intentional delay?
+        self.spy_delay_enabled = spy_delay_enabled
 
     def connection_made(self, transport):
         self.transport = transport
@@ -108,8 +128,9 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
         delay_ms = sample_delay(delay_base, self.rng)
 
         intentional_ms = 0.0
-        if self.is_spy and self.spy_rng is not None:
+        if self.is_spy and self.spy_delay_enabled and self.spy_rng is not None:
             # Intentional delay cap = delay_base of this link; never dropped.
+            # Only ever reached in Phase 5 (spy_delay_enabled=True there).
             intentional_ms = self.spy_rng.uniform(0.0, delay_base)
             log_event(self.log_path, {
                 "event": "spy_delay",
@@ -143,9 +164,37 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
     def _handle_packet(self, msg, addr: Addr):
         packet = Packet(packet_id=msg["packet_id"], state=msg["state"])
         sender_peer_id = self.addr_to_peer.get(addr)
+        if sender_peer_id is not None:
+            # Peer List requirement (Section 1-1): record last-contact time for this neighbor.
+            self.node.mark_peer_seen(sender_peer_id)
 
         if self.node.has_seen(packet.packet_id):
-            return  # According to Seen Set, duplicate packets are neither processed nor forwarded again
+            # According to Seen Set, duplicate packets are neither processed nor forwarded
+            # again — with one exception. A single-path Stem hop only avoids the immediate
+            # previous sender (the packet cannot carry full path history, by spec), so on a
+            # graph with cycles the walk can loop back onto a node that already saw it.
+            #
+            # Every node that only ever received the packet as a Stem unicast (i.e. it never
+            # itself flooded to its neighbors) is a dead end for everyone beyond it — its
+            # other neighbors were never told. Simply dropping the returning duplicate would
+            # leave the packet stuck in whatever small pocket the cycle closed around, no
+            # matter how long we wait, even though the rest of the network is fully connected
+            # to it. So: ANY duplicate arrival (Stem or Fluff) at a node that hasn't yet
+            # flooded this packet is allowed to trigger that flood now, to its neighbors other
+            # than whoever just resent it (has_fluffed guards against doing this more than
+            # once). This cascades: the node that first hits this dead end wakes up its
+            # Stem-only neighbors in turn, and so on, until the flood reaches everyone it can.
+            if self.stem_p is not None and not self.node.has_fluffed(packet.packet_id):
+                self.node.mark_fluffed(packet.packet_id)
+                log_event(self.log_path, {
+                    "event": "stem_cycle_fluff_fallback",
+                    "node_id": self.node.node_id,
+                    "packet_id": packet.packet_id,
+                    "incoming_state": packet.state,
+                    "sender_peer_id": sender_peer_id,
+                }, lock=self.lock)
+                self._forward_flood(packet.as_fluff(), exclude_peer_id=sender_peer_id)
+            return
 
         self.node.mark_seen(packet.packet_id)
         log_event(self.log_path, {
@@ -153,7 +202,7 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
             "node_id": self.node.node_id,
             "packet_id": packet.packet_id,
             "state": packet.state,
-            # sender_peer_id is only recorded in the reference ground-truth log, not in the 
+            # sender_peer_id is only recorded in the reference ground-truth log, not in the
             # network packet — this is required from Phase 2 onwards (attack analysis, Stem path reconstruction).
             "sender_peer_id": sender_peer_id,
         }, lock=self.lock)
@@ -165,6 +214,7 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
 
         # Phase 3+ mode: Dandelion
         if packet.state == FLUFF:
+            self.node.mark_fluffed(packet.packet_id)
             self._forward_flood(packet, exclude_peer_id=sender_peer_id)
             return
 
@@ -175,6 +225,7 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
             next_hop = self._forward_stem_single(packet, exclude_peer_id=sender_peer_id)
         if next_hop is None:
             # Either decided to Fluff with probability 1-p, or no eligible neighbor was available
+            self.node.mark_fluffed(packet.packet_id)
             self._forward_flood(packet.as_fluff(), exclude_peer_id=sender_peer_id)
 
     # ---- Packet initiation by the origin ----
@@ -200,18 +251,31 @@ class NodeUDPProtocol(asyncio.DatagramProtocol):
         next_hop = self._forward_stem_single(packet, exclude_peer_id=None)
         if next_hop is None:
             # If origin has no neighbors (shouldn't happen since minimum degree is guaranteed)
+            self.node.mark_fluffed(packet.packet_id)
             self._forward_flood(packet.as_fluff(), exclude_peer_id=None)
 
 
 def run_node(node_id: str, self_addr, peers: Dict[str, Addr], peer_delay: Dict[str, float],
              log_path: str, seed: int, stem_p: Optional[float] = None, lock=None,
-             is_spy: bool = False, spy_delay_seed: Optional[int] = None):
+             is_spy: bool = False, spy_delay_seed: Optional[int] = None,
+             spy_delay_enabled: bool = False, ready_event=None):
     """Entry point executed in an independent process (via multiprocessing).
 
-    is_spy / spy_delay_seed are only meaningful for Phase 5: if is_spy=True, 
-    a completely independent RNG (seed=spy_delay_seed) is created solely for 
-    drawing intentional delays; in phases 1 to 4 (is_spy=False, default mode), 
-    no intentional delay is applied and the behavior remains exactly as before.
+    is_spy marks this node's role only (origin exclusion + post-hoc "what would
+    a spy see" filtering) — it has no effect on protocol timing by itself.
+    spy_delay_enabled is the Phase-5-only switch that actually turns on the
+    intentional-delay behavior for spy nodes; every other phase leaves it at
+    its default (False), so marking a node as a spy in Phase 2 or Phase 3/4's
+    origin exclusion never silently perturbs propagation timing.
+
+    ready_event (a multiprocessing.Event, optional) is set once this node's
+    UDP socket is actually bound and listening. The orchestrator (see
+    phase1_simulator.run_phase1) waits on every node's ready_event before
+    sending the first packet — process spawn + import time is not constant
+    (it grows with how many nodes start at once and with system load), so a
+    fixed sleep before injecting packets is not reliable: UDP silently drops
+    datagrams sent to a port nothing is listening on yet, which would lose
+    packets with no error and no log trace.
     """
     node = Node(self_addr=tuple(self_addr), node_id=node_id, is_honest=not is_spy)
     addr_to_peer: Dict[Addr, str] = {}
@@ -221,7 +285,7 @@ def run_node(node_id: str, self_addr, peers: Dict[str, Addr], peer_delay: Dict[s
         addr_to_peer[addr] = pid
 
     rng = random.Random(seed)
-    spy_rng = random.Random(spy_delay_seed) if is_spy else None
+    spy_rng = random.Random(spy_delay_seed) if (is_spy and spy_delay_enabled) else None
 
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
@@ -229,11 +293,13 @@ def run_node(node_id: str, self_addr, peers: Dict[str, Addr], peer_delay: Dict[s
     listen = loop.create_datagram_endpoint(
         lambda: NodeUDPProtocol(
             node, peer_delay, addr_to_peer, log_path, rng, loop, stem_p=stem_p, lock=lock,
-            is_spy=is_spy, spy_rng=spy_rng,
+            is_spy=is_spy, spy_rng=spy_rng, spy_delay_enabled=spy_delay_enabled,
         ),
         local_addr=tuple(self_addr),
     )
     transport, _protocol = loop.run_until_complete(listen)
+    if ready_event is not None:
+        ready_event.set()
     try:
         loop.run_forever()
     finally:

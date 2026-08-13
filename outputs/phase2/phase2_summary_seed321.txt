@@ -1,15 +1,25 @@
 === PHASE 2 SIMULATION RESULTS (Seed: 321) ===
-Nodes = 24, Bribed spies = 7 (n0, n1, n12, n19, n3, n5, n8)
-Total packets = 200, Observed by >=1 spy = 162
+Nodes = 24, Bribed spies (30% budget) = 7 (n0, n1, n12, n19, n3, n5, n8)
+Total packets = 200, Observed by >=1 spy = 200
+T_80% (mean) = 937.6 ms
 
---- ACCURACY ---
-Baseline (one-hop backtrack)         : 0.605
-Proposed (Vector Profiling, new)     : 0.700
-Common-ancestor (older method)       : 0.600
-Multilateration (TDOA)                : 0.410
+--- ACCURACY (at 30% budget) ---
+Baseline (one-hop backtrack)         : 0.735
+Proposed (Hybrid Attack, new)        : 0.825
+Common-ancestor (older method)       : 0.735
+Multilateration (TDOA)                : 0.570
 
---- ADVERSARY SCORE (Score_adv) ---
-Baseline (one-hop backtrack)         : 0.0864
-Proposed (Vector Profiling, new)     : 0.1000
-Common-ancestor (older method)       : 0.0857
-Multilateration (TDOA)                : 0.0586
+--- ADVERSARY SCORE (Score_adv, at 30% budget) ---
+Baseline (one-hop backtrack)         : 0.1050
+Proposed (Hybrid Attack, new)        : 0.1179
+Common-ancestor (older method)       : 0.1050
+Multilateration (TDOA)                : 0.0814
+
+--- SCORE_HONEST (Section 3-1-b) ---
+vs Baseline guess                    : 0.2826
+vs Proposed guess                    : 0.1866
+
+--- OPTIMAL SPY COUNT (Section 2-1-b) ---
+Score_adv-optimal k = 1 (out of 7 allowed by 30% budget)
+  accuracy_proposed @ optimal k = 0.205
+  score_adv_proposed @ optimal k = 0.2050

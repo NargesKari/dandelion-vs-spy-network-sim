@@ -18,7 +18,7 @@ import socket
 import statistics
 import time
 from pathlib import Path
-from typing import Optional, Set
+from typing import Dict, Optional, Set
 
 from node_process import run_node
 from packet import new_packet_id
@@ -51,13 +51,24 @@ def build_node_configs(topo):
 
 def run_phase1(seed: int, num_packets: int, log_path: str, settle_time_s: float = 3.0,
                stem_p=None, topology_seed=None, origin_seed=None, run_seed=None,
-               spy_ids: Optional[Set[str]] = None, topo=None):
+               spy_ids: Optional[Set[str]] = None, topo=None,
+               spy_delay_enabled: bool = False):
     """
     stem_p=None  -> Phase 1/2: Simple Flood.
     stem_p=<p>   -> Phase 3+: Dandelion with probability p to continue Stem.
 
-    topology_seed / origin_seed / run_seed are separated to keep the topology 
+    topology_seed / origin_seed / run_seed are separated to keep the topology
     and origin sequences constant across multiple comparative runs.
+
+    spy_ids, when given, is used for TWO independent things: (1) excluding
+    those nodes from ever being chosen as a packet origin (per spec, origins
+    are always honest nodes, in every phase), and (2) marking is_spy=True on
+    those node processes for post-hoc "what would a spy see" log analysis.
+    It does NOT by itself cause any timing change. spy_delay_enabled is the
+    separate, Phase-5-only switch that turns on spies' intentional forwarding
+    delay; every other phase must leave it False so that simply naming a spy
+    set (Phase 2, or the origin-exclusion set reused in Phase 3/4) never
+    silently perturbs propagation timing.
     """
     # Use globally configured seeds if not explicitly provided
     topology_seed = TOPOLOGY_SEED if topology_seed is None else topology_seed
@@ -77,14 +88,15 @@ def run_phase1(seed: int, num_packets: int, log_path: str, settle_time_s: float 
     configs, node_ids, addr_of = build_node_configs(topo)
     log_lock = mp.Lock()
     procs = []
-    
+    ready_events = {n: mp.Event() for n in configs}
+
     for n, cfg in configs.items():
         is_spy = spy_ids is not None and cfg["node_id"] in spy_ids
-        
+
         # Use deterministic hash-based seeds to prevent overlap
         node_seed = seed_int("node_process", run_seed, n)
         spy_delay_seed = seed_int("spy_delay", run_seed, n) if is_spy else None
-        
+
         p = mp.Process(
             target=run_node,
             kwargs=dict(
@@ -94,13 +106,29 @@ def run_phase1(seed: int, num_packets: int, log_path: str, settle_time_s: float 
                 lock=log_lock,
                 is_spy=is_spy,
                 spy_delay_seed=spy_delay_seed,
+                spy_delay_enabled=spy_delay_enabled,
+                ready_event=ready_events[n],
             ),
             daemon=True,
         )
         p.start()
         procs.append(p)
 
-    time.sleep(0.3)  # Allow time for UDP sockets to bind
+    # Wait for EVERY node's UDP socket to actually be bound before injecting any
+    # packet. A fixed sleep here is not reliable: spawning 20-30 processes (each
+    # re-importing networkx etc., since Windows uses the "spawn" start method)
+    # can easily take longer than a short fixed delay under system load, and UDP
+    # silently drops datagrams sent to a port nobody is listening on yet — with
+    # no exception and no log trace, which would quietly lose packets.
+    STARTUP_TIMEOUT_S = 60.0
+    deadline = time.time() + STARTUP_TIMEOUT_S
+    for n, ev in ready_events.items():
+        remaining = max(0.0, deadline - time.time())
+        if not ev.wait(timeout=remaining):
+            raise RuntimeError(
+                f"Node {node_ids[n]} did not finish binding its UDP socket within "
+                f"{STARTUP_TIMEOUT_S}s; aborting before any packet is lost silently."
+            )
 
     rng = random.Random(origin_seed)
     ctrl_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -155,6 +183,19 @@ def compute_t80(log_path: str, total_nodes: int):
         if len(times) >= target:
             t80s.append(times[target - 1] - t0)
     return t80s, len(origins)
+
+
+def coverage_fractions(log_path: str, total_nodes: int):
+    """
+    Fraction of the network that ended up receiving each packet (shared by
+    phase1/2/3/5 reporting, so coverage is computed identically everywhere).
+    """
+    events = read_log(log_path)
+    receives: Dict[str, set] = {}
+    for e in events:
+        if e["event"] == "receive":
+            receives.setdefault(e["packet_id"], set()).add(e["node_id"])
+    return [len(nodes) / total_nodes for nodes in receives.values()]
 
 
 if __name__ == "__main__":

@@ -2,14 +2,13 @@
 Phase 1 Orchestrator (Basic Public Broadcast).
 
 This script:
-  1) Generates the topology with a specific seed.
+  1) Generates the topology with a specific seed and verifies its consistency.
   2) Spawns an independent process (multiprocessing) with a separate UDP socket for each node.
   3) Executes a 200-packet scenario: The origin of each packet is randomly selected from
-     honest nodes (spies excluded), with no fixed timing pattern (random injection intervals).
-  4) Records the "origin" event in the ground-truth log for each packet (actual origin +
-     actual time) — this information is never placed in the network packet.
-  5) Sends a SHUTDOWN command to all nodes after the dissemination finishes.
-  6) Calculates T_80% (time to reach 80% of nodes) for each packet from the log.
+     honest nodes (spies excluded), with no fixed timing pattern.
+  4) Records the "origin" event in the ground-truth log for each packet.
+  5) Sends a SHUTDOWN command to all nodes after dissemination finishes.
+  6) Calculates T_80% (time to reach 80% of nodes) for each packet.
 """
 
 import json
@@ -25,11 +24,13 @@ from node_process import run_node
 from packet import new_packet_id
 from sim_log import log_event, read_log
 from topology import generate_topology
+from config import seed_int, TOPOLOGY_SEED, ORIGIN_SEED, NUM_NODES
 
 BASE_PORT = 20000
 
 
 def build_node_configs(topo):
+    """Build configuration dictionary for all nodes including addresses and delays."""
     node_ids = {n: f"n{n}" for n in topo.graph.nodes}
     addr_of = {n: ("127.0.0.1", BASE_PORT + n) for n in topo.graph.nodes}
 
@@ -52,51 +53,43 @@ def run_phase1(seed: int, num_packets: int, log_path: str, settle_time_s: float 
                stem_p=None, topology_seed=None, origin_seed=None, run_seed=None,
                spy_ids: Optional[Set[str]] = None, topo=None):
     """
-    stem_p=None  -> Phase 1/2: Simple Flood (legacy behavior, unchanged).
+    stem_p=None  -> Phase 1/2: Simple Flood.
     stem_p=<p>   -> Phase 3+: Dandelion with probability p to continue Stem.
 
-    topology_seed / origin_seed / run_seed are separated for Phase 3+
-    to keep the topology and origin sequences constant across multiple
-    comparative runs (e.g., p=0.9 vs p=0.1). Only the random network behavior
-    (link jitter + Stem/Fluff coin) changes between runs. If not provided,
-    all default to `seed` (exact legacy behavior of Phase 1).
-
-    spy_ids (Phase 2 & Phase 5 Fix): A set of node_ids representing spies.
-    Spies are excluded from being packet origins (Phase 2 fix).
-    If a node is in spy_ids and we are in Phase 5, it will also apply
-    intentional delay behavior. If None, no node applies intentional delay.
-
-    topo: an already-generated Topology object. When the caller already
-    built the topology (e.g. to run select_bribed_nodes on it before
-    starting the simulation), pass it here to avoid regenerating it a
-    second time from topology_seed — generation is deterministic so the
-    result would be identical, but recomputing it is wasted work and
-    reads confusingly as if topology and spy selection were independent
-    steps when spy selection must actually happen on this exact object.
+    topology_seed / origin_seed / run_seed are separated to keep the topology 
+    and origin sequences constant across multiple comparative runs.
     """
-    topology_seed = seed if topology_seed is None else topology_seed
-    origin_seed = seed if origin_seed is None else origin_seed
-    run_seed = seed if run_seed is None else run_seed
+    # Use globally configured seeds if not explicitly provided
+    topology_seed = TOPOLOGY_SEED if topology_seed is None else topology_seed
+    origin_seed = ORIGIN_SEED if origin_seed is None else origin_seed
+    run_seed = seed_int("sim", "phase1", seed) if run_seed is None else run_seed
 
     Path(log_path).write_text("")  # Clear previous run log
 
     if topo is None:
         topo = generate_topology(topology_seed)
+        
+   # VERIFICATION: Ensure the topology is strictly consistent and within project limits (20-30)
+    actual_nodes = topo.graph.number_of_nodes()
+    assert 20 <= actual_nodes <= 30, f"Topology verification failed: {actual_nodes} nodes generated, expected between 20 and 30."
+
+
     configs, node_ids, addr_of = build_node_configs(topo)
     log_lock = mp.Lock()
     procs = []
     
     for n, cfg in configs.items():
         is_spy = spy_ids is not None and cfg["node_id"] in spy_ids
-        # Large offset separated from main rng seed space (run_seed*1000+n) so there is
-        # no overlap with other nodes' seeds or the main rng of this node.
-        spy_delay_seed = (run_seed * 1000 + n + 900_000_000) if is_spy else None
+        
+        # Use deterministic hash-based seeds to prevent overlap
+        node_seed = seed_int("node_process", run_seed, n)
+        spy_delay_seed = seed_int("spy_delay", run_seed, n) if is_spy else None
         
         p = mp.Process(
             target=run_node,
             kwargs=dict(
                 node_id=cfg["node_id"], self_addr=cfg["self_addr"], peers=cfg["peers"],
-                peer_delay=cfg["peer_delay"], log_path=log_path, seed=run_seed * 1000 + n,
+                peer_delay=cfg["peer_delay"], log_path=log_path, seed=node_seed,
                 stem_p=stem_p,
                 lock=log_lock,
                 is_spy=is_spy,
@@ -112,14 +105,14 @@ def run_phase1(seed: int, num_packets: int, log_path: str, settle_time_s: float 
     rng = random.Random(origin_seed)
     ctrl_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     
-    # CRITICAL FIX: Filter out spy nodes so they cannot be chosen as packet origins
+    # Filter out spy nodes so they cannot be chosen as packet origins
     if spy_ids is not None:
         origin_nodes = [n for n in topo.graph.nodes if node_ids[n] not in spy_ids]
     else:
         origin_nodes = list(topo.graph.nodes)
 
     for _ in range(num_packets):
-        origin = rng.choice(origin_nodes)  # Now it strictly picks from honest nodes
+        origin = rng.choice(origin_nodes)  # Strictly picks from honest nodes
         packet_id = new_packet_id()
         time.sleep(rng.uniform(0.004, 0.02))  # No pre-determined timing pattern
         
@@ -146,6 +139,7 @@ def run_phase1(seed: int, num_packets: int, log_path: str, settle_time_s: float 
 
 
 def compute_t80(log_path: str, total_nodes: int):
+    """Calculate the time it took for each packet to reach 80% of the network."""
     events = read_log(log_path)
     origins, receives = {}, {}
     for e in events:
@@ -177,28 +171,24 @@ if __name__ == "__main__":
     log_dir = base_out_dir / "logs"
     phase1_out_dir = base_out_dir / "phase1"
     
-    # Create the directories if they don't exist
     log_dir.mkdir(parents=True, exist_ok=True)
     phase1_out_dir.mkdir(parents=True, exist_ok=True)
     
-    # Define the log path explicitly inside the logs directory
     log_path = log_dir / f"phase1_seed{seed_val}.jsonl"
 
     # 2. Run Phase 1
-    # Pass the string representation of the log_path
     topo, node_ids = run_phase1(seed=seed_val, num_packets=NUM_PACKETS, log_path=str(log_path))
 
     # 3. Extract topology summary
     summary_text = topo.summary()
     
-    # 4. Save JSON and plot for the topology INSIDE the phase1 directory
+    # 4. Save JSON and plot for the topology
     topo.save(str(phase1_out_dir / f"topology_seed{seed_val}.json"))
     topo.plot(str(phase1_out_dir / f"topology_seed{seed_val}.png"))
 
     # 5. Compute T_80%
     t80s, n_origins = compute_t80(str(log_path), topo.graph.number_of_nodes())
     
-    # Prepare the results text
     results_str = f"Nodes = {topo.graph.number_of_nodes()}\n"
     results_str += f"Packets injected = {n_origins}, reached 80% coverage = {len(t80s)}\n"
     
@@ -210,7 +200,7 @@ if __name__ == "__main__":
         
         results_str += f"T_80%: avg={mean_val:.1f}ms  median={median_val:.1f}ms  stdev={std_val:.1f}ms\n"
         
-        # --- Create and save Histogram ---
+        # Create and save Histogram
         plt.figure(figsize=(8, 6))
         plt.hist(t80s_ms, bins=15, color='skyblue', edgecolor='black', alpha=0.7)
         plt.axvline(mean_val, color='red', linestyle='dashed', linewidth=2, label=f'Mean: {mean_val:.1f}ms')
@@ -222,13 +212,11 @@ if __name__ == "__main__":
         plt.legend()
         plt.grid(axis='y', alpha=0.75)
         
-        # Save the histogram INSIDE the phase1 directory
         plot_filename = phase1_out_dir / f"t80_histogram_seed{seed_val}.png"
         plt.savefig(str(plot_filename), dpi=150, bbox_inches='tight')
         plt.close()
         print(f"Histogram successfully saved to: {plot_filename}")
 
-    # Print to console for immediate feedback
     print("\n" + summary_text)
     print("\n" + results_str)
     

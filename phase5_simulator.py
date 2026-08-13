@@ -6,42 +6,28 @@ Phase 5 Question (based on the project description):
   joint estimation accuracy? And what is its effect on T_80%?"
 
 Experimental Design:
-  - The exact same topology and the same 9 spies (30%) from Phases 2 to 4 are used
-    (select_bribed_nodes using the same TOPOLOGY_SEED).
-  - For each p in {0.9, 0.5, 0.1} and each of the 5 independent runs (same run_seed
-    from Phase 3/4), we execute the network **twice** with perfectly identical initial seeds:
-      1) NO-DELAY  : spy_ids=None  -> Spies do not apply any intentional delay
-         (exactly equivalent to Phase 3/4).
-      2) WITH-DELAY: spy_ids=<9 spies> -> The same spies apply an intentional delay of
-         U(0, delay_base of the respective link) before any rebroadcast
-         (node_process.py, Phase 5 section).
-    Since the intentional delay is drawn from an RNG completely independent of the node's main rng
-    (see phase1_simulator.run_phase1), the only difference between the two runs
-    is the intentional delay itself — link jitter and each node's Stem/Fluff coin flips
-    remain perfectly identical in both conditions. This means we can measure the pure effect
-    of the intentional delay isolated from the normal random fluctuations of the network.
-  - On both logs, all three guessing methods (baseline / proposed / phase4) are
-    re-evaluated, and T_80% is recalculated.
-
-Note regarding SETTLE_TIME_S: Because intentional delay can slow down propagation
-(every hop passing through a spy arrives later by up to the link's delay_base),
-we have set a longer settle time for the WITH-DELAY condition compared to
-Phases 3/4 to give the last packets a chance to arrive.
+  - The exact same topology and the same 9 spies (30%) from Phases 2 to 4 are used.
+  - For each p in {0.9, 0.5, 0.1} and each of the 5 independent runs, we execute the 
+    network TWICE with perfectly identical initial deterministic seeds:
+      1) NO-DELAY  : spy_ids=None  -> Spies do not apply any intentional delay.
+      2) WITH-DELAY: spy_ids=<spies> -> Spies apply an intentional delay.
+    Since the intentional delay is drawn from an RNG completely independent of the 
+    node's main rng, the only difference between the two runs is the intentional delay itself.
 """
 
 import statistics
 from pathlib import Path
+import matplotlib.pyplot as plt
 
 from adversary import baseline_guess, evaluate_attack, phase4_guess, proposed_guess, select_bribed_nodes
 from phase1_simulator import build_node_configs, compute_t80, run_phase1
-from phase3_simulator import coverage_fractions
 from sim_log import read_log
 from topology import generate_topology
 from config import (TOPOLOGY_SEED, ORIGIN_SEED, NUM_PACKETS, P_VALUES, RUNS_PER_P,
-                    BUDGET_FRACTION, OUTPUTS_DIR)
+                    BUDGET_FRACTION, OUTPUTS_DIR, seed_int)
 
-LOG_DIR = f"{OUTPUTS_DIR}/logs/phase5"
-SETTLE_TIME_S = 10.0  # Greater than the 6 seconds in phase 3 because intentional delay slows down propagation
+LOG_DIR = Path(OUTPUTS_DIR) / "logs" / "phase5"
+SETTLE_TIME_S = 10.0  # Greater than phase 3 because intentional delay slows down propagation
 
 METHODS = {
     "baseline (phase2)": baseline_guess,
@@ -52,8 +38,18 @@ METHODS = {
 CONDITIONS = ("nodelay", "delay")
 
 
+def coverage_fractions(log_path: str, total_nodes: int):
+    """Standalone helper to calculate coverage from a log file."""
+    events = read_log(log_path)
+    receives = {}
+    for e in events:
+        if e["event"] in ("receive", "forward"):
+            receives.setdefault(e["packet_id"], set()).add(e["node_id"])
+    return [len(nodes) / total_nodes for nodes in receives.values()]
+
+
 def spy_delay_stats(log_path: str):
-    """Descriptive statistics on the applied intentional delays themselves (only meaningful for the 'delay' condition)."""
+    """Descriptive statistics on the applied intentional delays themselves."""
     events = [e for e in read_log(log_path) if e["event"] == "spy_delay"]
     vals = [e["intentional_delay_ms"] for e in events]
     if not vals:
@@ -62,43 +58,44 @@ def spy_delay_stats(log_path: str):
 
 
 def run_one(p: float, run_idx: int, spy_ids, condition: str):
+    """Execute a single scenario for a specific probability, run index, and delay condition."""
     assert condition in CONDITIONS
-    run_seed = int(p * 1000) * 100 + run_idx  # Same run_seed as phase 3/4 -> strictly comparable
-    log_path = f"{LOG_DIR}/p{p}_run{run_idx}_{condition}.jsonl"
+    
+    # Use deterministic hash-based seed to exactly match Phase 3 network execution
+    run_seed = seed_int("sim", p, run_idx)
+    log_path = LOG_DIR / f"p{p:.1f}_run{run_idx}_{condition}.jsonl"
 
     topo, node_ids = run_phase1(
-        seed=run_seed, num_packets=NUM_PACKETS, log_path=log_path,
+        seed=run_seed, num_packets=NUM_PACKETS, log_path=str(log_path),
         settle_time_s=SETTLE_TIME_S, stem_p=p,
         topology_seed=TOPOLOGY_SEED, origin_seed=ORIGIN_SEED, run_seed=run_seed,
         spy_ids=(spy_ids if condition == "delay" else None),
     )
+    
     total_nodes = topo.graph.number_of_nodes()
-    cov = coverage_fractions(log_path, total_nodes)
-    t80s, _n_origins = compute_t80(log_path, total_nodes)
+    cov = coverage_fractions(str(log_path), total_nodes)
+    t80s, _n_origins = compute_t80(str(log_path), total_nodes)
 
-    # Important note (bug fix): topo=topo must always be passed, otherwise proposed_guess
-    # and phase4_guess fall back to baseline_guess and the effect of intentional delay
-    # on the advanced methods would never be evaluated.
-    attack = {name: evaluate_attack(log_path, spy_ids, fn, topo=topo) for name, fn in METHODS.items()}
+    attack = {name: evaluate_attack(str(log_path), spy_ids, fn, topo=topo) for name, fn in METHODS.items()}
 
     return {
         "avg_coverage": statistics.mean(cov) if cov else 0.0,
         "reached80_frac": len(t80s) / NUM_PACKETS,
         "t80_ms": [t * 1000 for t in t80s],
         "attack": attack,
-        "delay_stats": spy_delay_stats(log_path),
+        "delay_stats": spy_delay_stats(str(log_path)),
     }
 
 
 def run_sweep(budget_fraction: float = BUDGET_FRACTION):
-    Path(LOG_DIR).mkdir(parents=True, exist_ok=True)
+    """Execute the parameter sweep for Phase 5."""
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
 
     topo = generate_topology(TOPOLOGY_SEED)
     _configs, node_ids, _addr_of = build_node_configs(topo)
     spy_indices = select_bribed_nodes(topo, budget_fraction=budget_fraction)
     spy_ids = {node_ids[i] for i in spy_indices}
 
-    # results[p][condition] = list of per-run dicts (length = RUNS_PER_P)
     results = {p: {c: [] for c in CONDITIONS} for p in P_VALUES}
     for p in P_VALUES:
         for run_idx in range(RUNS_PER_P):
@@ -109,12 +106,14 @@ def run_sweep(budget_fraction: float = BUDGET_FRACTION):
 
 
 def _fmt(vals):
+    """Format statistical values."""
     if not vals:
         return "n/a"
     return f"{statistics.mean(vals):.3f}/{statistics.median(vals):.3f}/{statistics.pstdev(vals):.3f}"
 
 
 def summarize(results) -> str:
+    """Format a textual summary of the delay analysis."""
     lines = []
     for p, by_cond in results.items():
         lines.append(f"=== p = {p} ===")
@@ -124,6 +123,7 @@ def summarize(results) -> str:
             avg_cov = [r["avg_coverage"] for r in runs]
             r80 = [r["reached80_frac"] for r in runs]
             label = "WITH intentional delay" if condition == "delay" else "NO delay (baseline)"
+            
             lines.append(f"  --- {label} ---")
             lines.append(
                 f"    avg_coverage(m/md/sd)={_fmt(avg_cov)}   reached80_frac(avg)={statistics.mean(r80):.3f}   "
@@ -148,14 +148,12 @@ def summarize(results) -> str:
 
 
 if __name__ == "__main__":
-    import matplotlib.pyplot as plt
-
     phase5_out_dir = Path(OUTPUTS_DIR) / "phase5"
     phase5_out_dir.mkdir(parents=True, exist_ok=True)
 
     spy_ids, results = run_sweep(budget_fraction=BUDGET_FRACTION)
 
-    topo = generate_topology(TOPOLOGY_SEED)  # Just for plotting (without re-running the simulation)
+    topo = generate_topology(TOPOLOGY_SEED)
     topo.plot(str(phase5_out_dir / f"topology_seed{TOPOLOGY_SEED}.png"))
 
     header = f"spies ({len(spy_ids)}): {', '.join(sorted(spy_ids))}\n\n"
@@ -165,10 +163,11 @@ if __name__ == "__main__":
     with open(phase5_out_dir / "phase5_summary.txt", "w", encoding="utf-8") as f:
         f.write(summary_text + "\n")
 
-    # Chart 1: T_80% with/without intentional delay vs. p
+    # Chart 1: T_80% with/without intentional delay
     x = list(range(len(P_VALUES)))
     width = 0.35
     fig, ax = plt.subplots(figsize=(8, 6))
+    
     for i, condition in enumerate(CONDITIONS):
         means, stdevs = [], []
         for p in P_VALUES:
@@ -178,6 +177,7 @@ if __name__ == "__main__":
         offsets = [xi + (i - 0.5) * width for xi in x]
         label = "With Intentional Delay" if condition == "delay" else "Without Intentional Delay"
         ax.bar(offsets, means, width, yerr=stdevs, capsize=4, label=label)
+        
     ax.set_xticks(x)
     ax.set_xticklabels([f"p={p}" for p in P_VALUES])
     ax.set_ylabel("T_80% (milliseconds)")
@@ -187,9 +187,10 @@ if __name__ == "__main__":
     fig.savefig(str(phase5_out_dir / "t80_delay_vs_nodelay.png"), dpi=150, bbox_inches="tight")
     plt.close(fig)
 
-    # Chart 2: Score_adv of proposed method with/without intentional delay vs. p
+    # Chart 2: Score_adv of proposed method with/without intentional delay
     method_of_interest = "proposed (phase2)"
     fig, ax = plt.subplots(figsize=(8, 6))
+    
     for i, condition in enumerate(CONDITIONS):
         means, stdevs = [], []
         for p in P_VALUES:
@@ -199,6 +200,7 @@ if __name__ == "__main__":
         offsets = [xi + (i - 0.5) * width for xi in x]
         label = "With Intentional Delay" if condition == "delay" else "Without Intentional Delay"
         ax.bar(offsets, means, width, yerr=stdevs, capsize=4, label=label)
+        
     ax.set_xticks(x)
     ax.set_xticklabels([f"p={p}" for p in P_VALUES])
     ax.set_ylabel(f"Score_adv ({method_of_interest})")

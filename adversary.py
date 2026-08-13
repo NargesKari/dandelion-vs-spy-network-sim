@@ -8,13 +8,12 @@ This module implements:
      spy is the origin).
   3) proposed_guess: Hybrid Attack (Topology Filter + TDOA Vector Profiling).
      This is the new, highly accurate default.
-  4) Legacy/Comparison methods: common_ancestor_guess, vector_profiling_guess,
+  4) phase4_guess: STEM-only backtrack model.
+  5) Legacy/Comparison methods: common_ancestor_guess, vector_profiling_guess,
      and multilateration_guess are kept for benchmarking in phase2_simulator.
-  5) plot_spy_selection: Visualizes which nodes were picked as spies.
 """
 
 import functools
-import random
 import statistics
 from typing import Dict, List, Optional, Set
 
@@ -42,24 +41,8 @@ def rank_spy_candidates(topo, max_k: Optional[int] = None) -> List[int]:
     """
     Produces an ORDERED ranking of candidate spy nodes (best first), up to
     `max_k` nodes (default: all nodes).
-
-    This improves on plain Greedy Set-Cover in two ways:
-      1) Coverage term (same idea as before): at each step, prefer the node
-         that adds the most previously-uncovered nodes (itself + its
-         neighbors) to the union of monitored nodes. This maximizes how much
-         of the network the spy set can "see" traffic from.
-      2) Separation tie-break (new): among candidates with similar coverage
-         gain, prefer the one that is topologically FARTHEST (more hops) from
-         already-chosen spies. This spreads spies across different clusters
-         instead of clumping them in one dense region, which in turn spreads
-         *when* each spy first observes a packet -- exactly the information
-         the TDOA-based proposed_guess() needs to triangulate an origin.
-      3) Degree tie-break (same idea as main.py's spy_ranking): prefers
-         higher-degree nodes as a final tie-breaker, since a spy sitting on
-         more links observes more of the packet's early hops.
-
-    Returns a list of node ids (ints, topo.graph node ids), NOT node_id
-    strings -- callers convert to "n{i}" via node_ids as needed.
+    
+    Uses improved criteria: Coverage gain -> Separation (topology spread) -> Degree tie-break.
     """
     g = topo.graph
     n_total = g.number_of_nodes()
@@ -91,15 +74,6 @@ def select_bribed_nodes(topo, budget_fraction: float = 0.3, k: Optional[int] = N
                          **kwargs) -> Set[int]:
     """
     Selects spy nodes using the improved ranking from rank_spy_candidates().
-
-    - If `k` is given explicitly, the top-k ranked candidates are returned
-      (used by phase 3/4/5 to reuse the exact spy set that phase 2's k-sweep
-      found optimal -- see config.SPY_COUNT and sweep_optimal_spy_count()).
-    - Otherwise, falls back to filling the budget ceiling
-      (n_total * budget_fraction), which is the project's hard cap of 30%.
-
-    Accepts **kwargs to absorb legacy parameters (like verbose) passed by
-    older orchestrator scripts.
     """
     g = topo.graph
     n_total = g.number_of_nodes()
@@ -117,29 +91,10 @@ def sweep_optimal_spy_count(topo, node_ids: Dict[int, str], seed: int, num_packe
                              budget_fraction: float, log_path: str,
                              settle_time_s: float = 3.0) -> Dict:
     """
-    Implements the project's requirement (Phase 2): "the attacker must
-    determine the OPTIMAL number of spy nodes with respect to the Score_adv
-    formula" -- rather than always bribing every node up to the 30% ceiling.
-
-    Key efficiency trick: in Phases 1-2 spy nodes behave EXACTLY like honest
-    nodes during the simulation (no intentional delay, no dropping -- that
-    only starts in Phase 5). So "being a spy" only affects (a) which nodes
-    are excluded from being packet origins, and (b) whose observations we
-    later read out of the log to run an attack. That means we can run the
-    network simulation ONCE with the full (budget-ceiling-sized) candidate
-    spy set marking origin-exclusion, and then re-evaluate baseline_guess /
-    proposed_guess for every prefix size k = 1..max_k of the ranked
-    candidate list purely by re-filtering the SAME log -- no need to re-run
-    the network max_k times. Because every k-subset is a subset of the
-    max_k set used for origin exclusion, honest-origin selection stays valid
-    for every k <= max_k.
-
-    Returns a dict with:
-      - "curve": list of {k, spy_ids, accuracy_*, score_adv_*} for k=1..max_k
-      - "best":  the entry of `curve` with the highest score_adv_proposed
-      - "ranked_ids": the full ranked candidate list (as node_id strings)
+    Implements the project's requirement to sweep the spy count up to max budget
+    to find the optimal number of bribed nodes in Phase 2.
     """
-    from phase1_simulator import run_phase1  # local import: avoids a circular import at module load time
+    from phase1_simulator import run_phase1  # Local import to avoid circular dependency
 
     n_total = topo.graph.number_of_nodes()
     max_k = max(1, int(n_total * budget_fraction))
@@ -196,10 +151,11 @@ def _spy_sightings_by_packet(log_path: str, spy_ids: Set[str]):
 def baseline_guess(sightings_for_packet: List[dict], topo=None, spy_ids=None, **kwargs) -> str:
     """
     Baseline method (Phase 2): one-hop backtrack.
-
-    Assumes the neighbor who sent the packet to the earliest observing
-    spy (sender_peer_id) is the true origin.
+    Assumes the neighbor who sent the packet to the earliest observing spy is the origin.
     """
+    if not sightings_for_packet:
+        return None
+        
     earliest = sightings_for_packet[0]
     sender = earliest.get("sender_peer_id")
 
@@ -209,13 +165,7 @@ def baseline_guess(sightings_for_packet: List[dict], topo=None, spy_ids=None, **
 def proposed_guess(sightings_for_packet: List[dict], topo=None, spy_ids=None, **kwargs) -> str:
     """
     Proposed method (Phase 2): Hybrid Attack (Topology Filter + TDOA Matching).
-    
-    1. TOPOLOGY FILTER: Exploits the deterministic routing graph. The origin 
-       is highly likely to be the sender to the first spy, or its neighbor.
-       This dramatically reduces the candidate pool and filters out jitter noise.
-    2. VECTOR PROFILING: Builds a Time-Difference-of-Arrival (TDOA) vector 
-       for the first 3 spies only.
-    3. Finds the filtered candidate with the closest analytical delay vector.
+    Uses the first sender as a topology filter, then refines based on TDOA.
     """
     if topo is None or spy_ids is None or len(sightings_for_packet) < 2:
         return baseline_guess(sightings_for_packet, topo, spy_ids)
@@ -224,7 +174,6 @@ def proposed_guess(sightings_for_packet: List[dict], topo=None, spy_ids=None, **
     int_to_str = {n: f"n{n}" for n in g.nodes}
     str_to_int = {f"n{n}": n for n in g.nodes}
 
-    # 1. TOPOLOGY FILTER: The origin must be the sender to the first spy, or its neighbor.
     first_spy_sighting = sightings_for_packet[0]
     first_sender_str = first_spy_sighting.get("sender_peer_id")
     
@@ -240,7 +189,7 @@ def proposed_guess(sightings_for_packet: List[dict], topo=None, spy_ids=None, **
     if not valid_candidates_str:
         return first_sender_str
 
-    # 2. VECTOR PROFILING: Only consider the first 3 observing spies to minimize Jitter noise
+    # Only consider the first 3 observing spies to minimize Jitter noise
     obs = sorted(sightings_for_packet, key=lambda e: e["wall_time"])[:3]
     if len(obs) < 2:
         return valid_candidates_str[0]
@@ -253,28 +202,21 @@ def proposed_guess(sightings_for_packet: List[dict], topo=None, spy_ids=None, **
         sid = str_to_int.get(e["node_id"])
         if sid is not None:
             observed_spy_ints.append(sid)
-            # TDOA vector relative to the first spy
             observed_rel_ms.append((e["wall_time"] - t0) * 1000.0)
 
     ref_spy = observed_spy_ints[0]
     best_candidate = None
     best_error = float("inf")
 
-    # 3. MATCHING: Compare observed vector against candidate theoretical vectors
+    # Match theoretical TDOA vs observed TDOA
     for c_str in valid_candidates_str:
         c_int = str_to_int[c_str]
-        
-        # Calculate theoretical shortest path delays using Dijkstra
         dist_from_c = nx.single_source_dijkstra_path_length(g, c_int, weight="delay_base_ms")
         
-        # If a spy is unreachable, skip
         if any(sid not in dist_from_c for sid in observed_spy_ints):
             continue
 
-        # Build theoretical TDOA vector
         predicted_rel_ms = [dist_from_c[sid] - dist_from_c[ref_spy] for sid in observed_spy_ints]
-        
-        # Euclidean distance between observed and predicted vectors
         error = sum((o - p) ** 2 for o, p in zip(observed_rel_ms, predicted_rel_ms))
 
         if error < best_error:
@@ -286,9 +228,8 @@ def proposed_guess(sightings_for_packet: List[dict], topo=None, spy_ids=None, **
 
 def phase4_guess(sightings_for_packet: List[dict], topo=None, spy_ids=None, **kwargs) -> str:
     """
-    Phase 4 method: STEM-only backtrack. Filters out FLUFF observations and
-    uses the earliest STEM sighting; falls back to the powerful hybrid attack
-    (proposed_guess) if no spy saw the packet in STEM.
+    Phase 4 method: STEM-only backtrack. 
+    Filters out FLUFF observations and uses the earliest STEM sighting.
     """
     stem_sightings = [e for e in sightings_for_packet if e.get("state") == "STEM"]
     if stem_sightings:
@@ -300,14 +241,10 @@ def phase4_guess(sightings_for_packet: List[dict], topo=None, spy_ids=None, **kw
 
 
 # ---------------------------------------------------------------------------
-# Legacy Origin Guessing Methods (Kept for compatibility and benchmarking)
+# Legacy Origin Guessing Methods
 # ---------------------------------------------------------------------------
 def common_ancestor_guess(sightings_for_packet: List[dict], topo, spy_ids: Set[str], **kwargs) -> str:
-    """
-    Common-Ancestor / Graph-Intersection attack (older method).
-    Collects the immediate senders to the first few observing spies, and
-    searches the topology for the honest node connected to the most of them.
-    """
+    """Legacy Common-Ancestor attack."""
     if topo is None or spy_ids is None or len(sightings_for_packet) < 2:
         return baseline_guess(sightings_for_packet, topo, spy_ids)
 
@@ -336,10 +273,7 @@ def common_ancestor_guess(sightings_for_packet: List[dict], topo, spy_ids: Set[s
         if v_str in spy_ids:
             continue
 
-        connections = 0
-        for suspect_int in suspects_int:
-            if v_int == suspect_int or g.has_edge(v_int, suspect_int):
-                connections += 1
+        connections = sum(1 for suspect_int in suspects_int if v_int == suspect_int or g.has_edge(v_int, suspect_int))
 
         if connections > max_connections:
             max_connections = connections
@@ -357,10 +291,7 @@ def common_ancestor_guess(sightings_for_packet: List[dict], topo, spy_ids: Set[s
 
 
 def build_reference_profiles(topo, spy_ids: Set[str]) -> Dict:
-    """
-    Offline profiling phase of the old Vector Profiling attack.
-    Kept solely for compatibility with phase2_simulator_3.py.
-    """
+    """Offline profiling phase of the Vector Profiling attack."""
     dist_matrix = build_distance_matrix(topo)
     str_to_int = {f"n{n}": n for n in topo.graph.nodes}
     spy_order = sorted(spy_ids)
@@ -387,9 +318,7 @@ def build_reference_profiles(topo, spy_ids: Set[str]) -> Dict:
 
 def vector_profiling_guess(sightings_for_packet: List[dict], topo=None, spy_ids=None,
                             profile_data: Optional[Dict] = None, **kwargs) -> str:
-    """
-    Runtime guessing phase of the old global Vector Profiling attack.
-    """
+    """Runtime guessing phase of the old global Vector Profiling attack."""
     if topo is None or spy_ids is None or profile_data is None or len(sightings_for_packet) < 2:
         return baseline_guess(sightings_for_packet, topo, spy_ids)
 
@@ -439,9 +368,7 @@ def vector_profiling_guess(sightings_for_packet: List[dict], topo=None, spy_ids=
 def multilateration_guess(sightings_for_packet: List[dict], topo=None, spy_ids=None,
                            dist_matrix: Optional[Dict[int, Dict[int, float]]] = None,
                            max_observations: int = 5, **kwargs) -> str:
-    """
-    Time-Difference-of-Arrival (TDOA) multilateration globally (kept for comparison).
-    """
+    """TDOA multilateration globally (kept for comparison)."""
     if topo is None or spy_ids is None or len(sightings_for_packet) < 2:
         return baseline_guess(sightings_for_packet, topo, spy_ids)
 
@@ -499,8 +426,6 @@ def make_multilateration_guess(topo):
 def plot_spy_selection(topo, spy_ids: Set[str], node_ids: Dict[int, str], path: str) -> None:
     """
     Saves a topology plot with the bribed (spy) nodes highlighted.
-    Useful to verify that the Greedy Set Cover algorithm distributed spies 
-    optimally across the graph.
     """
     import matplotlib.pyplot as plt
 
@@ -540,6 +465,9 @@ def plot_spy_selection(topo, spy_ids: Set[str], node_ids: Dict[int, str], path: 
 # Evaluation: Accuracy and Score_adv
 # ---------------------------------------------------------------------------
 def evaluate_attack(log_path: str, spy_ids: Set[str], guess_fn, topo=None):
+    """
+    Evaluates the accuracy of an attack method with robust null/zero-division handling.
+    """
     origins, sightings = _spy_sightings_by_packet(log_path, spy_ids)
 
     total = len(origins)
@@ -554,20 +482,20 @@ def evaluate_attack(log_path: str, spy_ids: Set[str], guess_fn, topo=None):
         observed += 1
         guess = guess_fn(obs, topo=topo, spy_ids=spy_ids)
 
-        if guess == o["node_id"]:
+        # Ensure guess exists before validating
+        if guess is not None and guess == o["node_id"]:
             correct += 1
 
-    accuracy = correct / total if total else 0.0
+    accuracy = correct / total if total > 0 else 0.0
     n_spies = len(spy_ids)
 
     return {
         "total_packets": total,
         "observed_by_spies": observed,
         "accuracy": accuracy,
-        "score_adv": accuracy / n_spies if n_spies else 0.0,
+        "score_adv": accuracy / n_spies if n_spies > 0 else 0.0,
         "n_spies": n_spies,
     }
-
 
 def evaluate_attack_all_methods(log_path: str, spy_ids: Set[str], topo=None,
                                  profile_data: Optional[Dict] = None):
@@ -586,12 +514,10 @@ def evaluate_attack_all_methods(log_path: str, spy_ids: Set[str], topo=None,
     }
 
     if topo is not None:
-        # Use the newly upgraded Hybrid Attack as the proposed method
         r_prop = evaluate_attack(log_path, spy_ids, proposed_guess, topo)
         result["accuracy_proposed"] = r_prop["accuracy"]
         result["score_adv_proposed"] = r_prop["score_adv"]
 
-        # Evaluate legacy methods
         if profile_data is None:
             profile_data = build_reference_profiles(topo, spy_ids)
             

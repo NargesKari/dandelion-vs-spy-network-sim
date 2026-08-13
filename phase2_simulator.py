@@ -2,28 +2,12 @@
 Phase 2 Orchestrator.
 
 Important design note: In phase 2, the packet dissemination protocol is
-still the public broadcast (Flood) from phase 1 (Dandelion is not yet
-introduced). The only difference is that a subset of nodes is considered
+still the public broadcast (Flood) from phase 1. A subset of nodes is considered
 "spies" and their observations are analyzed after the run to guess the origin.
-The spies exhibit no different behavior during the simulation (they receive
-and forward packets normally) — we simply read the reference log and filter
-which events belonged to the spy nodes.
 
-For this reason, phase2 reuses phase1_simulator.run_phase1; the only
-additional tasks are selecting the spy nodes (adversary.select_bribed_nodes)
-and then evaluating the attack (adversary.evaluate_attack_all_methods) on
-the same log.
-
-Order of operations (topology -> spy selection -> simulation), and why it
-can't be reversed: select_bribed_nodes() needs the topology (node degrees,
-cluster-boundary edges) to decide which nodes are worth bribing, so the
-topology must exist first. What *was* wrong before is that run_phase1() was
-regenerating the topology a second time from topology_seed instead of
-reusing the exact object spy selection ran on. Even though generation is
-deterministic (same seed -> identical graph) this was still redundant and
-confusing to read, as if spy selection and simulation depended on two
-independently-generated topologies. Fixed by generating the topology
-exactly once here and passing that same object into run_phase1(topo=topo).
+Order of operations (topology -> spy selection -> simulation):
+select_bribed_nodes() needs the topology to decide which nodes are worth bribing.
+The topology is generated exactly once and verified before running the simulation.
 """
 
 from pathlib import Path
@@ -32,6 +16,7 @@ from adversary import (build_reference_profiles, evaluate_attack_all_methods,
                         plot_spy_selection, select_bribed_nodes)
 from phase1_simulator import build_node_configs, run_phase1
 from topology import generate_topology
+from config import seed_int, TOPOLOGY_SEED, NUM_NODES, NUM_PACKETS, BUDGET_FRACTION, OUTPUTS_DIR
 
 
 def run_phase2(seed: int, num_packets: int = 200, budget_fraction: float = 0.3,
@@ -40,35 +25,34 @@ def run_phase2(seed: int, num_packets: int = 200, budget_fraction: float = 0.3,
 
     # 1. Generate the topology exactly once.
     topo = generate_topology(seed)
+    
+    # VERIFICATION: Ensure the topology is consistent
+   # VERIFICATION: Ensure the topology is consistent and within project limits (20-30)
+    actual_nodes = topo.graph.number_of_nodes()
+    assert 20 <= actual_nodes <= 30, f"Topology verification failed: {actual_nodes} nodes generated, expected between 20 and 30."
+    
     configs, node_ids, addr_of = build_node_configs(topo)
 
-    # 2. Select the Score_adv-optimal spy set on that topology, before
-    #    running the simulation (spy identity must be fixed before packet
-    #    injection so honest-only origin selection can use it).
+    # 2. Select the optimal spy set before running the simulation
     spy_indices = select_bribed_nodes(topo, budget_fraction=budget_fraction,
                                        verbose=verbose_spy_selection)
     spy_ids = {node_ids[i] for i in spy_indices}
 
-    # 3. Offline profiling phase (Vector Profiling attack): build every
-    #    HONEST node's reference timing vector against this exact spy set.
-    #    This must happen before runtime evaluation and depends only on
-    #    the topology + spy_ids (no packet traffic needed yet), which is
-    #    exactly why it's a separate, explicit step here rather than being
-    #    hidden inside evaluate_attack_all_methods.
+    # 3. Offline profiling phase (Vector Profiling attack)
     profile_data = build_reference_profiles(topo, spy_ids)
 
-    # 4. Run the simulation, reusing the SAME topology object (no
-    #    regeneration) and passing spy_ids so spies are excluded from
-    #    being origins.
+    # 4. Run the simulation using deterministic integration seed
+    run_seed = seed_int("sim", "phase2", seed)
     _, _ = run_phase1(
         seed=seed,
         num_packets=num_packets,
         log_path=log_path,
         topo=topo,
         spy_ids=spy_ids,
+        run_seed=run_seed
     )
 
-    # 5. Runtime evaluation of every method, reusing the precomputed profile.
+    # 5. Runtime evaluation of every method
     result = evaluate_attack_all_methods(log_path, spy_ids, topo=topo, profile_data=profile_data)
     return topo, spy_ids, result
 
@@ -77,10 +61,10 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
     from pathlib import Path
 
-    seed_val = 321
+    seed_val = TOPOLOGY_SEED
 
     # 1. Create master output directories for Phase 2
-    base_out_dir = Path("outputs")
+    base_out_dir = Path(OUTPUTS_DIR)
     log_dir = base_out_dir / "logs"
     phase2_out_dir = base_out_dir / "phase2"
 
@@ -89,13 +73,11 @@ if __name__ == "__main__":
 
     log_path = log_dir / f"phase2_seed{seed_val}.jsonl"
 
-    # 2. Run Phase 2 (budget_fraction is now a CEILING - select_bribed_nodes
-    #    decides the Score_adv-optimal number of spies up to this cap;
-    #    verbose_spy_selection prints the k-sweep table to the console)
+    # 2. Run Phase 2
     topo, spy_ids, result = run_phase2(
         seed=seed_val,
-        num_packets=200,
-        budget_fraction=0.3,
+        num_packets=NUM_PACKETS,
+        budget_fraction=BUDGET_FRACTION,
         log_path=str(log_path),
         verbose_spy_selection=True,
     )
@@ -130,8 +112,7 @@ if __name__ == "__main__":
     with open(summary_filename, "w", encoding="utf-8") as f:
         f.write(results_str)
 
-    # 5. Visualize which nodes were picked as spies (answers "which nodes did
-    #    we bribe" — useful to sanity-check select_bribed_nodes() visually).
+    # 5. Visualize which nodes were picked as spies
     node_ids_by_int = {n: f"n{n}" for n in topo.graph.nodes}
     spy_plot_filename = phase2_out_dir / f"spy_selection_seed{seed_val}.png"
     plot_spy_selection(topo, spy_ids, node_ids_by_int, str(spy_plot_filename))
@@ -140,6 +121,7 @@ if __name__ == "__main__":
     labels = ['Baseline', 'Proposed\n(Vector Profiling)']
     accuracies = [result['accuracy_baseline'], result['accuracy_proposed']]
     scores = [result['score_adv_baseline'], result['score_adv_proposed']]
+    
     if "accuracy_common_ancestor" in result:
         labels.append('Common-\nAncestor')
         accuracies.append(result['accuracy_common_ancestor'])

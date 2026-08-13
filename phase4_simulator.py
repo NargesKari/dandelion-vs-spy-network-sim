@@ -1,27 +1,30 @@
 """
 Phase 4 — Advanced Attack on Dandelion.
 
-This script reuses the same logs from Phase 3 (phase3_logs/p{p}_run{i}.jsonl) —
-because the reference log already contains all the necessary information (state,
-sender_peer_id for each receiver), and determining "which node is a spy"
-is just a filter applied to the same data after running the simulation.
-Therefore, there is no need to run the network simulation again.
+This script reuses the same logs from Phase 3 to evaluate the advanced attack.
+Since the reference log already contains all necessary state and sender information,
+determining which node is a spy is merely a filter applied post-simulation.
+There is no need to re-run the network simulation.
 
-For each p, we analyze all 5 runs using three methods:
+For each probability p, we analyze all 5 runs using three methods:
   - baseline_guess   (Phase 2, unchanged)
   - proposed_guess   (Phase 2, 1-hop backtrack regardless of STEM/FLUFF)
-  - phase4_guess     (New, 1-hop backtrack limited to STEM observations)
+  - phase4_guess     (New, 1-hop backtrack limited exclusively to STEM observations)
 
-We then report the mean/median/standard deviation of accuracy and Score_adv over the 5 runs.
+We then report the mean, median, and standard deviation of accuracy and Score_adv.
 """
 
 import statistics
+from pathlib import Path
+import matplotlib.pyplot as plt
 
 from adversary import baseline_guess, evaluate_attack, phase4_guess, proposed_guess, select_bribed_nodes
-from phase3_simulator import LOG_DIR, P_VALUES, RUNS_PER_P
 from phase1_simulator import build_node_configs
 from topology import generate_topology
-from config import TOPOLOGY_SEED, BUDGET_FRACTION, OUTPUTS_DIR
+from config import TOPOLOGY_SEED, BUDGET_FRACTION, OUTPUTS_DIR, P_VALUES, RUNS_PER_P
+
+# Point to Phase 3 logs explicitly
+PHASE3_LOG_DIR = Path(OUTPUTS_DIR) / "logs" / "phase3"
 
 METHODS = {
     "baseline (phase2)": baseline_guess,
@@ -31,34 +34,40 @@ METHODS = {
 
 
 def run_phase4_analysis(budget_fraction: float = BUDGET_FRACTION):
-    topo = generate_topology(TOPOLOGY_SEED)  # The same topology used in Phase 3 (config.py)
-    node_ids, _addr_of = None, None
+    """Run analysis for Phase 4 using existing Phase 3 logs."""
+    topo = generate_topology(TOPOLOGY_SEED)
     configs, node_ids, addr_of = build_node_configs(topo)
 
     spy_indices = select_bribed_nodes(topo, budget_fraction=budget_fraction)
     spy_ids = {node_ids[i] for i in spy_indices}
 
-    results = {}  # p -> method -> list of per-run dicts
+    results = {}
     for p in P_VALUES:
         results[p] = {name: [] for name in METHODS}
         for run_idx in range(RUNS_PER_P):
-            log_path = f"{LOG_DIR}/p{p}_run{run_idx}.jsonl"
+            log_path = PHASE3_LOG_DIR / f"p{p:.1f}_run{run_idx}.jsonl"
+            
+            # Ensure the log file exists before attempting to analyze
+            if not log_path.exists():
+                print(f"Warning: Log file {log_path} not found. Ensure Phase 3 has been executed.")
+                continue
+
             for name, guess_fn in METHODS.items():
-                # Important note (bug fix): topo=topo must always be passed, otherwise
-                # proposed_guess and phase4_guess fall back to baseline_guess due to topo=None
-                # and their advanced method is practically never executed --
-                # making the Phase 4 comparison meaningless.
-                r = evaluate_attack(log_path, spy_ids, guess_fn, topo=topo)
+                r = evaluate_attack(str(log_path), spy_ids, guess_fn, topo=topo)
                 results[p][name].append(r)
 
     return topo, spy_ids, results
 
 
 def summarize(results) -> str:
+    """Generate a formatted summary string of the attack performance."""
     lines = []
     for p, methods in results.items():
         lines.append(f"--- p = {p} ---")
         for name, runs in methods.items():
+            if not runs:
+                continue
+                
             acc = [r["accuracy"] for r in runs]
             score = [r["score_adv"] for r in runs]
             lines.append(
@@ -71,9 +80,6 @@ def summarize(results) -> str:
 
 
 if __name__ == "__main__":
-    from pathlib import Path
-    import matplotlib.pyplot as plt
-
     phase4_out_dir = Path(OUTPUTS_DIR) / "phase4"
     phase4_out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -87,16 +93,19 @@ if __name__ == "__main__":
     with open(phase4_out_dir / "phase4_summary.txt", "w", encoding="utf-8") as f:
         f.write(summary_text + "\n")
 
-    # Chart: Accuracy of all three methods vs. p (mean over 5 runs)
+    # Chart 1: Accuracy Comparison
     method_names = list(METHODS.keys())
     x = list(range(len(P_VALUES)))
     width = 0.25
     fig, ax = plt.subplots(figsize=(8, 6))
+    
     for i, name in enumerate(method_names):
-        means = [statistics.mean([r["accuracy"] for r in results[p][name]]) for p in P_VALUES]
-        stdevs = [statistics.pstdev([r["accuracy"] for r in results[p][name]]) for p in P_VALUES]
+        # Calculate statistics, ensuring we have data
+        means = [statistics.mean([r["accuracy"] for r in results[p][name]]) if results[p][name] else 0 for p in P_VALUES]
+        stdevs = [statistics.pstdev([r["accuracy"] for r in results[p][name]]) if results[p][name] else 0 for p in P_VALUES]
         offsets = [xi + (i - 1) * width for xi in x]
         ax.bar(offsets, means, width, yerr=stdevs, capsize=4, label=name)
+        
     ax.set_xticks(x)
     ax.set_xticklabels([f"p={p}" for p in P_VALUES])
     ax.set_ylabel("Source Estimation Accuracy")
@@ -106,13 +115,15 @@ if __name__ == "__main__":
     fig.savefig(str(phase4_out_dir / "accuracy_comparison_vs_p.png"), dpi=150, bbox_inches="tight")
     plt.close(fig)
 
-    # Chart: Score_adv of all three methods vs. p
+    # Chart 2: Score_adv Comparison
     fig, ax = plt.subplots(figsize=(8, 6))
+    
     for i, name in enumerate(method_names):
-        means = [statistics.mean([r["score_adv"] for r in results[p][name]]) for p in P_VALUES]
-        stdevs = [statistics.pstdev([r["score_adv"] for r in results[p][name]]) for p in P_VALUES]
+        means = [statistics.mean([r["score_adv"] for r in results[p][name]]) if results[p][name] else 0 for p in P_VALUES]
+        stdevs = [statistics.pstdev([r["score_adv"] for r in results[p][name]]) if results[p][name] else 0 for p in P_VALUES]
         offsets = [xi + (i - 1) * width for xi in x]
         ax.bar(offsets, means, width, yerr=stdevs, capsize=4, label=name)
+        
     ax.set_xticks(x)
     ax.set_xticklabels([f"p={p}" for p in P_VALUES])
     ax.set_ylabel("Score_adv")

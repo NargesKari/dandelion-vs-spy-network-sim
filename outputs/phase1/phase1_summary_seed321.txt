@@ -12,5 +12,5 @@ connected = True
 
 === SIMULATION RESULTS ===
 Nodes = 24
-Packets injected = 200, reached 80% coverage = 1
-T_80%: avg=748.8ms  median=748.8ms  stdev=0.0ms
+Packets injected = 200, reached 80% coverage = 143
+T_80%: avg=885.9ms  median=817.9ms  stdev=230.5ms

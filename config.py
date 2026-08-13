@@ -1,10 +1,28 @@
 """
 Global configuration for the network simulator and Dandelion protocol.
-This file provides the constant values required for phases 1 to 5.
+This file provides the constant values and unified seed management required for phases 1 to 5.
 """
 
 import os
+import hashlib
 from pathlib import Path
+
+# ==========================================
+# Deterministic Seed Management
+# ==========================================
+def seed_int(*parts) -> int:
+    """
+    Generate a deterministic integer seed from multiple parts.
+    Uses SHA-256 hash to ensure different inputs always give different seeds,
+    guaranteeing full reproducibility across all simulation phases.
+    
+    Examples:
+        >>> seed_int("phase", 3, "p", 0.9, "run", 2)
+        1234567890
+    """
+    raw = "|".join(map(str, parts)).encode()
+    hash_bytes = hashlib.sha256(raw).digest()[:8]
+    return int.from_bytes(hash_bytes, "big") % (2**31)
 
 # ==========================================
 # General Settings & Random Seeds

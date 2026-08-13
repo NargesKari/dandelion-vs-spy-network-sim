@@ -50,7 +50,7 @@ def build_node_configs(topo):
 
 def run_phase1(seed: int, num_packets: int, log_path: str, settle_time_s: float = 3.0,
                stem_p=None, topology_seed=None, origin_seed=None, run_seed=None,
-               spy_ids: Optional[Set[str]] = None):
+               spy_ids: Optional[Set[str]] = None, topo=None):
     """
     stem_p=None  -> Phase 1/2: Simple Flood (legacy behavior, unchanged).
     stem_p=<p>   -> Phase 3+: Dandelion with probability p to continue Stem.
@@ -65,6 +65,14 @@ def run_phase1(seed: int, num_packets: int, log_path: str, settle_time_s: float 
     Spies are excluded from being packet origins (Phase 2 fix).
     If a node is in spy_ids and we are in Phase 5, it will also apply
     intentional delay behavior. If None, no node applies intentional delay.
+
+    topo: an already-generated Topology object. When the caller already
+    built the topology (e.g. to run select_bribed_nodes on it before
+    starting the simulation), pass it here to avoid regenerating it a
+    second time from topology_seed — generation is deterministic so the
+    result would be identical, but recomputing it is wasted work and
+    reads confusingly as if topology and spy selection were independent
+    steps when spy selection must actually happen on this exact object.
     """
     topology_seed = seed if topology_seed is None else topology_seed
     origin_seed = seed if origin_seed is None else origin_seed
@@ -72,7 +80,8 @@ def run_phase1(seed: int, num_packets: int, log_path: str, settle_time_s: float 
 
     Path(log_path).write_text("")  # Clear previous run log
 
-    topo = generate_topology(topology_seed)
+    if topo is None:
+        topo = generate_topology(topology_seed)
     configs, node_ids, addr_of = build_node_configs(topo)
     log_lock = mp.Lock()
     procs = []
